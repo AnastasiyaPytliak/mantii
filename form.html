@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Form</title>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <form class="form" action="" method="post">
+
+        <div class="step step-1 active-step">
+          <div class="step-1__container">
+            <div class="step__header">
+              <div class="step__title">
+                Выберите комплект:
+              </div>
+              <img class="step__img" src="./image/basket.png" alt="" >
+            </div>
+            <div class="step__group-first">
+              <div class="step-1__group bakalavr-step">
+                <div class="step-1__btn">
+                  <input id="btn" class="btn active" name="Комплектация" value="просто" type="button">
+                  <input id="btn" class="btn" name="Комплектация" value="с капюшоном" type="button">
+                  <input id="btn" class="btn" name="Комплектация" value="с галстуком" type="button">
+                </div>
+                <div class="step-1__tabs bakalavr">
+                  <div class="step-1__tabs-name">Выбрать цвет капюшона</div>
+                  <div class="step-1__tabs-color">
+                    <div class="tab-color">
+                      <input class="color active" type="radio" id="color1" name="Цвет капюшона" value="синий">
+                      <label for="color1"></label>
+                    </div>
+                    <div class="tab-color">
+                      <input class="color" type="radio" id="color2" name="Цвет капюшона" value="красный">
+                      <label for="color2"></label>
+                    </div>
+                    <div class="tab-color">
+                      <input class="color" type="radio" id="color3" name="Цвет капюшона" value="золотой">
+                      <label for="color3"></label>
+                    </div>
+                    <div class="tab-color">
+                      <input class="color" type="radio" id="color4" name="Цвет капюшона" value="серебрянный">
+                      <label for="color4"></label>
+                    </div>
+                    <div class="tab-color">
+                      <input class="color" type="radio" id="color5" name="Цвет капюшона" value="фиолетовый">
+                      <label for="color5"></label>
+                    </div>
+                    <div class="tab-color">
+                      <input class="color" type="radio" id="color6" name="Цвет капюшона" value="голубой">
+                      <label for="color6"></label>
+                    </div>
+                  </div>
+                </div>
+                <div class="step-1__tabs bakalavr-tie">
+                  <div class="step-1__tabs-name">Выбрать цвет галстука</div>
+                  <div class="step-1__tabs-color">
+                    <div class="tab-color">
+                      <input class="color-tie active" type="radio" id="color1-tie" name="Цвет галстука" value="синий">
+                      <label for="color1-tie"></label>
+                    </div>
+                    <div class="tab-color">
+                      <input class="color-tie" type="radio" id="color2-tie" name="Цвет галстука" value="красный">
+                      <label for="color2-tie"></label>
+                    </div>
+                    <div class="tab-color">
+                      <input class="color-tie" type="radio" id="color3-tie" name="Цвет галстука" value="золотой">
+                      <label for="color3-tie"></label>
+                    </div>
+                    <div class="tab-color">
+                      <input class="color-tie" type="radio" id="color4-tie" name="Цвет галстука" value="белый">
+                      <label for="color4-tie"></label>
+                    </div>
+                    <div class="tab-color">
+                      <input class="color-tie" type="radio" id="color5-tie" name="Цвет галстука" value="зеленый">
+                      <label for="color5-tie"></label>
+                    </div>
+                  
+                  </div>
+                </div>
+                <div class="step-1__img bakalavr-img">
+                  <img src="./image/bakalavr.png" alt="">
+                </div>
+                <div class="step__btn">
+                <div class="step-1__title">Комплект Бакалавра</div>
+                <input class="btn next-btn" data-role="order1" type="button" name="Комплект Бакалавра" value="Заказать">
+                </div>
+              </div>
+              <div class="step-1__group magistr-step">
+                <div class="step-1__tabs magistr">
+                  <div class="step-1__tabs-name">Выбрать цвет капюшона</div>
+                  <div class="step-1__tabs-color">
+                    <div class="tab-color-mg">
+                      <input class="color-mg active" type="radio" id="color1-mg" name="Цвет капюшона" value="синий">
+                      <label for="color1-mg"></label>
+                    </div>
+                    <div class="tab-color-mg">
+                      <input class="color-mg" type="radio" id="color2-mg" name="Цвет капюшона" value="красный">
+                      <label for="color2-mg"></label>
+                    </div>
+                    <div class="tab-color-mg">
+                      <input class="color-mg" type="radio" id="color3-mg" name="Цвет капюшона" value="золотой">
+                      <label for="color3-mg"></label>
+                    </div>
+                    <div class="tab-color-mg">
+                      <input class="color-mg" type="radio" id="color4-mg" name="Цвет капюшона" value="серебрянный">
+                      <label for="color4-mg"></label>
+                    </div>
+                    <div class="tab-color-mg">
+                      <input class="color-mg" type="radio" id="color5-mg" name="Цвет капюшона" value="фиолетовый">
+                      <label for="color5-mg"></label>
+                    </div>
+                    <div class="tab-color-mg">
+                      <input class="color-mg" type="radio" id="color6-mg" name="Цвет капюшона" value="голубой">
+                      <label for="color6-mg"></label>
+                    </div>
+                  </div>
+                </div>
+                <div class="step-1__img magistr-img">
+                  <img src="./image/magistr/magistr-blue.jpg" alt="">
+                </div>
+                <div class="step__btn">
+                <div class="step-1__title">Комплект Магистра</div>
+                <input class="btn next-btn" data-role="order2" type="button" name="Комплект Магистра" value="Заказать">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step step-2 ">
+          <div class="step__header">
+            <button class="step__prev prev-btn">
+              <img src="./image/arrow.png" alt="">
+              назад
+            </button>
+            <div class="step__title">
+              Выберите комплект:
+            </div>
+            <img class="step__img" src="./image/basket.png" alt="" >
+          </div>
+          <div class="step__group">
+            <div class="step__buy">
+              <div class="step__buy-title">Покупка</div>
+              <div class="step__buy-details">
+                <div class="buy-name name">Комплект Бакалавра </div>
+                <div class="buy-price">
+                  <p>1450</p><span>р/шт</span></div>
+                <div class="buy-count">
+                  <span class="buy-count__sign minus" data-change="-1">-</span>
+                  <input type="text" class="in-num__count" value="0">
+                  <span class="buy-count__sign plus" data-change="+1">+</span>
+                </div>
+                <div class="buy-sum">
+                  <div class="buy-sum__name">сумма:</div>
+                  <div class="buy-sum__count"><p>0</p> <span>р</span></div>
+                </div>
+              </div>
+              <div class="step__summery">
+                <div class="buy-count">
+                  <input type="text" class="in-num" name="Количество к покупке" value="0">
+                </div>
+                <div class="buy-sum">
+                  <div class="buy-sum__count"><p>0</p> <span>р</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="step__buy rent">
+              <div class="step__buy-title">Аренда *</div>
+              <div class="step__buy-details">
+                <div class="buy-name name">Комплект Бакалавра </div>
+                <div class="rent-price">
+                  <p>500</p><span>р/шт</span></div>
+                <div class="buy-count">
+                  <span class="buy-count__sign minus-rent" data-change="-1">-</span>
+                  <input type="text" class="in-num in-num__rent" name="Количество к аренде" value="0">
+                  <span class="buy-count__sign plus-rent" data-change="+1">+</span>
+                </div>
+                <div class="buy-sum">
+                  <div class="buy-sum__name">сумма:</div>
+                  <div class="rent-sum__count"><p>0</p> <span>р</span></div>
+                </div>
+              </div>
+              <div class="step__buy-details">
+                <div class="buy-name">+ с покупкой шапки</div>
+                <div class="rent-price__cap">
+                  <p>800</p><span>р/шт</span></div>
+                <div class="buy-count">
+                  <span class="buy-count__sign minus-cap" data-change="-1">-</span>
+                  <input type="text" class="in-num in-num__cap" name="Количество к аренде с покупкой шапки" value="0">
+                  <span class="buy-count__sign plus-cap" data-change="+1">+</span>
+                </div>
+                <div class="buy-sum">
+                  <div class="buy-sum__name">сумма:</div>
+                  <div class="rent-sum__count-cap"><p>0</p> <span>р</span></div>
+                </div>
+              </div>
+              <div class="step__rent-summery">
+                <div class="buy-count">
+                  <input type="text" class="in-num__count" value="0">
+                </div>
+                <div class="buy-sum">
+                  <div class="buy-sum__count"><p>0</p> <span>р</span></div>
+                </div>
+            </div>
+          </div>
+
+            <div class="step__buy">
+              <div class="step__buy-title">Логотип</div>
+              <div class="step-logo__buy-details">
+                <div class="buy-name">Логотип Наклейка</div>
+                <div class="logo-price">
+                  <p>0</p><span>р/шт</span></div>
+                <div class="buy-count">
+                  <span class="buy-count__sign minus-logo" data-change="-1">-</span>
+                  <input type="text" class="in-num" name="Логотип Наклейка" value="0">
+                  <span class="buy-count__sign plus-logo" data-change="+1">+</span>
+                </div>
+              </div>
+              <div class="step-logo__buy-details">
+                <div class="buy-name">Логотип Вышивка</div>
+                <div class="logo-price__fancy">
+                  <p>200</p><span>р/шт</span></div>
+                <div class="buy-count">
+                  <span class="buy-count__sign minus-fancy" data-change="-1">-</span>
+                  <input type="text" class="in-num" name="Логотип Вышивка" value="0">
+                  <span class="buy-count__sign plus-fancy" data-change="+1">+</span>
+                </div>
+                <div class="buy-sum">
+                  <div class="logo-sum__name">Только для МГУ, РУДН и РЭУ</div>
+                </div>
+              </div>
+              <div class="step__logo-summery">
+                <div class="buy-sum">
+                  <div class="buy-sum__count"><p>0</p> <span>р</span></div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="step__all-summery">
+          <div class="buy-sum">
+            <div class="buy-sum__name">Итого:</div>
+            <div class="buy-sum__count"><p>0</p> <span>р</span></div>
+          </div>
+        </div>
+        <div class="step__info">Скидки и подарки представителям университетам и старостам. <a href="#">Звоните узнавайте</a></div>
+        <div class="step__more">* Максимальный срок аренды - 3 дня<br/>
+        При заказе от 5 шт - стоимость 400 р/шт<br/>
+        При заказе от 10 шт - бесплатная доставка </div>
+        <button class="btn step-2__btn next-btn" type="submit">Комплектация</button>
+        </div>
+
+
+      </form>
+    </div>
+  </div>
+  
+  <script src="./js/script.js"></script>
+</body>
+</html>
