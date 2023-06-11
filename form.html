@@ -12,7 +12,7 @@
     <div class="container">
       <form class="form" action="" method="post">
 
-        <div class="step step-1 active-step">
+        <div class="step step-1">
           <div class="step-1__container">
             <div class="step__header">
               <div class="step__title">
@@ -252,9 +252,284 @@
         <div class="step__more">* Максимальный срок аренды - 3 дня<br/>
         При заказе от 5 шт - стоимость 400 р/шт<br/>
         При заказе от 10 шт - бесплатная доставка </div>
-        <button class="btn step-2__btn next-btn" type="submit">Комплектация</button>
+        <button class="btn step-2__btn next-btn" type="button">Комплектация</button>
         </div>
 
+        <div class="step step-3">
+          <div class="step__header">
+            <button class="step__prev prev-btn">
+              <img src="./image/arrow.png" alt="">
+              назад
+            </button>
+            <div class="step__title">
+              Выберите комплект:
+            </div>
+            <img class="step__img" src="./image/basket.png" alt="" >
+          </div>
+          <div class="step-3__container">
+          <div class="step-3__logo">
+            <div class="logo__img">
+              <img src="" alt="" srcset="">
+            </div>
+            <div class="logo__details">
+              <div class="logo__list">
+                Выбрать логотип из списка
+              </div>
+              <div>или</div>
+              <div class="logo__add">
+                <label for="logo">Вставьте URL с изображением вашего логотипа</label>
+                <input class="logo-input" type="text" id="logo">
+              </div>
+            </div>
+          </div>
+          <div class="step-3__details">
+            <div class="step-3__sizes">
+              <div class="step-3__block">
+              <div class="buy-size">
+                <div class="size__title">Размер / Покупка</div>
+                <div class="buy-size__details">
+                  <div class="buy-size__items">
+                    <div class="buy-size__item">
+                      <div class="buy-size__item-title">S</div>
+                      <div class="buy-size__sm">150 - 165 см</div>
+                      <div class="buy-count">
+                        <span class="buy-count__s minus-s" data-change="-1">-</span>
+                        <input type="text" class="in-num" name="Размер S" value="0">
+                        <span class="buy-count__s plus-s" data-change="+1">+</span>
+                      </div>
+                    </div>
+                    <div class="buy-size__item">
+                      <div class="buy-size__item-title">M</div>
+                      <div class="buy-size__sm">150 - 165 см</div>
+                      <div class="buy-count">
+                        <span class="buy-count__m minus-m" data-change="-1">-</span>
+                        <input type="text" class="in-num" name="Размер M" value="0">
+                        <span class="buy-count__m plus-m" data-change="+1">+</span>
+                      </div>
+                    </div>
+                    <div class="buy-size__item">
+                      <div class="buy-size__item-title">L</div>
+                      <div class="buy-size__sm">150 - 165 см</div>
+                      <div class="buy-count">
+                        <span class="buy-count__l minus-l" data-change="-1">-</span>
+                        <input type="text" class="in-num" name="Размер L" value="0">
+                        <span class="buy-count__; plus-l" data-change="+1">+</span>
+                      </div>
+                    </div>
+                    <div class="buy-size__item">
+                      <div class="buy-size__item-title">XL</div>
+                      <div class="buy-size__sm">150 - 165 см</div>
+                      <div class="buy-count">
+                        <span class="buy-count__xl minus-xl" data-change="-1">-</span>
+                        <input type="text" class="in-num" name="Размер XL" value="0">
+                        <span class="buy-count__xl plus-xl" data-change="+1">+</span>
+                      </div>
+                    </div>
+                </div>
+                <div class="buy-size__sum">
+                  <div class="buy-size__all">
+                    <p class="size__text">Всего:</p>
+                    <p class="buy-size__count">0</p>
+                  </div>
+                  <div class="buy-size__choice">
+                    <p class="size__text">Выбрано:</p>
+                    <p class="buy-size__count">0</p>
+                  </div>
+                </div>
+                </div>
+              </div>
+              <div class="rent-size">
+                <div class="size__title">Размер / Аренда</div>
+                <div class="rent-size__details">
+                  <div class="rent-size__items">
+                    <div class="rent-size__item">
+                      <div class="rent-size__item-title">S</div>
+                      <div class="rent-size__sm">150 - 165 см</div>
+                      <div class="rent-count">
+                        <span class="rent-count__s minus-s" data-change="-1">-</span>
+                        <input type="text" class="in-num" name="Размер S" value="0">
+                        <span class="rent-count__s plus-s" data-change="+1">+</span>
+                      </div>
+                    </div>
+                    <div class="rent-size__item">
+                      <div class="rent-size__item-title">M</div>
+                      <div class="rent-size__sm">150 - 165 см</div>
+                      <div class="rent-count">
+                        <span class="rent-count__m minus-m" data-change="-1">-</span>
+                        <input type="text" class="in-num" name="Размер M" value="0">
+                        <span class="rent-count__m plus-m" data-change="+1">+</span>
+                      </div>
+                    </div>
+                    <div class="rent-size__item">
+                      <div class="rent-size__item-title">L</div>
+                      <div class="rent-size__sm">150 - 165 см</div>
+                      <div class="rent-count">
+                        <span class="rent-count__l minus-l" data-change="-1">-</span>
+                        <input type="text" class="in-num" name="Размер L" value="0">
+                        <span class="rent-count__; plus-l" data-change="+1">+</span>
+                      </div>
+                    </div>
+                    <div class="rent-size__item">
+                      <div class="rent-size__item-title">XL</div>
+                      <div class="rent-size__sm">150 - 165 см</div>
+                      <div class="rent-count">
+                        <span class="rent-count__xl minus-xl" data-change="-1">-</span>
+                        <input type="text" class="in-num" name="Размер XL" value="0">
+                        <span class="rent-count__xl plus-xl" data-change="+1">+</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rent-size__sum">
+                    <div class="rent-size__all">
+                      <p class="size__text">Всего:</p>
+                      <p class="rent-size__count">0</p>
+                    </div>
+                    <div class="rent-size__choice">
+                      <p class="size__text">Выбрано:</p>
+                      <p class="rent-size__count">0</p>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class="step-3__pick">
+                <div class="step-3__hood">
+                  <div class="hood-title">Цвет капюшона</div>
+                  <div class="hood__block">
+                    <select name="" id="">
+                      <option value="синий">синий</option>
+                      <option value="красный">красный</option>
+                      <option value="золотой">золотой</option>
+                      <option value="серебристиый">серебристиый</option>
+                      <option value="фиолетовый">фиолетовый</option>
+                      <option value="бирюзовый">бирюзовый</option>
+                    </select>
+                    <div class="hood-colors">Выбрать разные цвета</div>
+                  </div>
+                </div>
+                <div class="step-3__brush">
+                  <div class="brush-title">Цвет кисточки</div>
+                  <div class="brush__block">
+                    <select name="" id="">
+                      <option value="черный">черный</option>
+                      <option value="синий">синий</option>
+                      <option value="красный">красный</option>
+                      <option value="золотой">золотой</option>
+                      <option value="серебристиый">серебристиый</option>
+                      <option value="фиолетовый">фиолетовый</option>
+                      <option value="бирюзовый">бирюзовый</option>
+                    </select>
+                    <div class="brush-colors">Выбрать разные цвета</div>
+                  </div>
+                </div>
+              </div>
+              <div class="step-3__notification">* При аренде цвет кисточки только черный, 
+                но вы можете оставить заявку в комментариях, мы постараемся...</div>
+              <button class="btn step-2__btn next-btn" type="button">Оформить заказ</button>
+              </div>
+              <div class="step-3__img">
+                <img src="" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step step-4 active-step">
+          <div class="step__header">
+            <button class="step__prev prev-btn">
+              <img src="./image/arrow.png" alt="">
+              назад
+            </button>
+            <div class="step__title">
+              Оформить заказ
+            </div>
+            <img class="step__img" src="./image/basket-full.png" alt="" >
+          </div>
+          <div class="step-4__container">
+            <div class="step-4__block">
+              <div class="step-4__block-item">
+                <div class="step-4__row">
+                  <label for="">Название учебного заведения и факультет</label>
+                  <input class="step-4__uni" type="text" name="" id="">
+                </div>
+                <div class="step-4__row">
+                  <label for="">Группа</label>
+                  <input class="step-4__group" type="text" name="" id="">
+                </div>
+              </div>
+              <div class="step-4__block-item">
+                <div class="step-4__row">
+                  <label for="">Имя</label>
+                  <input type="text" name="" id="">
+                </div>
+                <div class="step-4__row">
+                  <label for="">Whatsapp</label>
+                  <input type="" name="" id="" placeholder="+7 *** *** ** **">
+                </div>
+              </div>
+              <div class="step-4__block-item">
+                <div class="step-4__row">
+                  <label for="">Адрес доставки</label>
+                  <input class="step-4__delivery" type="text" name="" id="">
+                </div>
+              </div>
+              <div class="step-4__block-item">
+                <div class="step-4__row">
+                  <label for="">Дата доставки</label>
+                  <input type="text" name="" id="" placeholder="01.01.2023">
+                </div>
+                <div class="step-4__row">
+                  <label for="">Время доставки</label>
+                  <input type="" name="" id="" placeholder="14:00">
+                </div>
+              </div>
+              <div class="step-4__block-item add-address">
+                <label for="address" class="switch">
+                  <input class="step-4__add-address" type="checkbox" type="checkbox" name="" id="address">
+                  <span class="slider round"></span>
+                </label>
+                <span>Адрес возврата не совпадает с адресом доставки</ы>
+              </div>
+              <div class="step-4__block-item">
+                <div class="step-4__row">
+                  <label for="">Адрес возврата</label>
+                  <input class="step-4__return" type="text" name="" id="">
+                </div>
+              </div>
+              <div class="step-4__block-item">
+                <div class="step-4__row">
+                  <label for="">Комментарий</label>
+                  <textarea name="" id="" ></textarea>
+                </div>
+              </div>
+              <div class="step-4__block-item">
+                <input class="step-4__politics" type="checkbox" name="" id="politics">
+                <label for="politics">Согласен с <span><a href="">политикой обработки персональных данных</a></span></label>
+              </div>
+            </div>
+            <div class="step-4__block-second">
+              <div class="step-4-services">
+                <p>Комплект</p>
+                <p>Услуга</p>
+                <p>Кол-во</p>
+                <p>Итого</p>
+              </div>
+              <div class="step-4__orders">
+                <div class="step-4__order">
+                  <p class="order-name">Комплект Бакалавра</p>  
+                  <p class="order-serive">покупка</p>  
+                  <p class="order-count">5 <span>шт</span></p>  
+                  <p class="order-price">4500<span>р</span></p>  
+                </div>
+              </div>
+              <div class="step-4__sum">
+                <p class="sum-text">Итого к оплате</p>
+                <p class="sum-all">14250 <span>р</span></p>
+              </div>
+            </div>
+          </div>
+          <button class="btn step-2__btn" type="submit">Заказать</button>
+        </div>
 
       </form>
     </div>
