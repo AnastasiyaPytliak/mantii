@@ -4,15 +4,16 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./image/favicon.ico" type="image/x-icon" rel="shortcut icon">
   <link rel="stylesheet" href="./css/style.css">
-  <title>Form</title>
+  <title>Форма заказа мантий</title>
 </head>
 <body>
   <div class="wrapper">
     <div class="container">
       <form class="form" action="" method="post">
 
-        <div class="step step-1">
+        <div class="step step-1 active-step">
           <div class="step-1__container">
             <div class="step__header">
               <div class="step__title">
@@ -31,7 +32,7 @@
                   <div class="step-1__tabs-name">Выбрать цвет капюшона</div>
                   <div class="step-1__tabs-color">
                     <div class="tab-color">
-                      <input class="color active" type="radio" id="color1" name="Цвет капюшона" value="синий">
+                      <input class="color" type="radio" id="color1" name="Цвет капюшона" value="синий">
                       <label for="color1"></label>
                     </div>
                     <div class="tab-color">
@@ -60,7 +61,7 @@
                   <div class="step-1__tabs-name">Выбрать цвет галстука</div>
                   <div class="step-1__tabs-color">
                     <div class="tab-color">
-                      <input class="color-tie active" type="radio" id="color1-tie" name="Цвет галстука" value="синий">
+                      <input class="color-tie" type="radio" id="color1-tie" name="Цвет галстука" value="синий">
                       <label for="color1-tie"></label>
                     </div>
                     <div class="tab-color">
@@ -294,7 +295,7 @@
                       <div class="buy-size__sm">150 - 165 см</div>
                       <div class="buy-count">
                         <span class="buy-count__s minus-s" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Размер S" value="0">
+                        <input type="text" class="in-num" name="Покупка - Размер S" value="0">
                         <span class="buy-count__s plus-s" data-change="+1">+</span>
                       </div>
                     </div>
@@ -303,7 +304,7 @@
                       <div class="buy-size__sm">150 - 165 см</div>
                       <div class="buy-count">
                         <span class="buy-count__m minus-m" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Размер M" value="0">
+                        <input type="text" class="in-num" name="Покупка - Размер M" value="0">
                         <span class="buy-count__m plus-m" data-change="+1">+</span>
                       </div>
                     </div>
@@ -312,7 +313,7 @@
                       <div class="buy-size__sm">150 - 165 см</div>
                       <div class="buy-count">
                         <span class="buy-count__l minus-l" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Размер L" value="0">
+                        <input type="text" class="in-num" name="Покупка - Размер L" value="0">
                         <span class="buy-count__; plus-l" data-change="+1">+</span>
                       </div>
                     </div>
@@ -321,7 +322,7 @@
                       <div class="buy-size__sm">150 - 165 см</div>
                       <div class="buy-count">
                         <span class="buy-count__xl minus-xl" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Размер XL" value="0">
+                        <input type="text" class="in-num" name="Покупка - Размер XL" value="0">
                         <span class="buy-count__xl plus-xl" data-change="+1">+</span>
                       </div>
                     </div>
@@ -347,7 +348,7 @@
                       <div class="rent-size__sm">150 - 165 см</div>
                       <div class="rent-count">
                         <span class="rent-count__s minus-s" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Размер S" value="0">
+                        <input type="text" class="in-num" name="Аренда - Размер S" value="0">
                         <span class="rent-count__s plus-s" data-change="+1">+</span>
                       </div>
                     </div>
@@ -356,7 +357,7 @@
                       <div class="rent-size__sm">150 - 165 см</div>
                       <div class="rent-count">
                         <span class="rent-count__m minus-m" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Размер M" value="0">
+                        <input type="text" class="in-num" name="Аренда - Размер M" value="0">
                         <span class="rent-count__m plus-m" data-change="+1">+</span>
                       </div>
                     </div>
@@ -365,7 +366,7 @@
                       <div class="rent-size__sm">150 - 165 см</div>
                       <div class="rent-count">
                         <span class="rent-count__l minus-l" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Размер L" value="0">
+                        <input type="text" class="in-num" name="Аренда - Размер L" value="0">
                         <span class="rent-count__; plus-l" data-change="+1">+</span>
                       </div>
                     </div>
@@ -374,7 +375,7 @@
                       <div class="rent-size__sm">150 - 165 см</div>
                       <div class="rent-count">
                         <span class="rent-count__xl minus-xl" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Размер XL" value="0">
+                        <input type="text" class="in-num" name="Аренда - Размер XL" value="0">
                         <span class="rent-count__xl plus-xl" data-change="+1">+</span>
                       </div>
                     </div>
@@ -408,7 +409,7 @@
                   </div>
                 </div>
                 <div class="step-3__brush">
-                  <div class="brush-title">Цвет кисточки</div>
+                  <div class="brush-title">Цвет кисточки (покупка) *</div>
                   <div class="brush__block">
                     <select name="" id="">
                       <option value="черный">черный</option>
@@ -423,18 +424,19 @@
                   </div>
                 </div>
               </div>
-              <div class="step-3__notification">* При аренде цвет кисточки только черный, 
-                но вы можете оставить заявку в комментариях, мы постараемся...</div>
+              <div class="step-3__notification">* При аренде шапочка предоставляется только с кисточкой черного цвета, 
+                но вы можете оставить заявку в комментариях, мы постараемся 
+                предоставить вам шапочку с кисточкой в указанном вами цвете</div>
               <button class="btn step-2__btn next-btn" type="button">Оформить заказ</button>
               </div>
               <div class="step-3__img">
-                <img src="" alt="">
+                <img src='./image/bakalavr.png' alt="">
               </div>
             </div>
           </div>
         </div>
 
-        <div class="step step-4 active-step">
+        <div class="step step-4">
           <div class="step__header">
             <button class="step__prev prev-btn">
               <img src="./image/arrow.png" alt="">
@@ -485,12 +487,12 @@
               </div>
               <div class="step-4__block-item add-address">
                 <label for="address" class="switch">
-                  <input class="step-4__add-address" type="checkbox" type="checkbox" name="" id="address">
+                  <input class="step-4__add-address" type="checkbox" type="checkbox" name="" id="address" onclick="validate()">
                   <span class="slider round"></span>
                 </label>
-                <span>Адрес возврата не совпадает с адресом доставки</ы>
+                <span>Адрес возврата не совпадает с адресом доставки</span>
               </div>
-              <div class="step-4__block-item">
+              <div class="step-4__block-item return">
                 <div class="step-4__row">
                   <label for="">Адрес возврата</label>
                   <input class="step-4__return" type="text" name="" id="">
@@ -528,7 +530,7 @@
               </div>
             </div>
           </div>
-          <button class="btn step-2__btn" type="submit">Заказать</button>
+          <button class="btn step-2__btn form__submit" type="submit">Заказать</button>
         </div>
 
       </form>

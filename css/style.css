@@ -588,8 +588,10 @@ input.in-num__count {
 }
 .step-3__img {
   width: 530px;
-  height: 725px;
-  background: #EFEFEF;
+  text-align: center;
+}
+.step-3__img img{
+  height: 700px;
 }
 .size__title {
   font-family: 'Lato', sans-serif;
@@ -929,3 +931,9 @@ input:checked + .slider:before {
   line-height: 37px;
   color: #202020;
 }
+.return {
+  transition: 0.55s opacity, 0.55s visibility;
+}
+/* .add-address #address:checked ~ * .return {
+  display: block;
+} */
