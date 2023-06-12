@@ -46,6 +46,8 @@ const stepHoodShow = document.querySelector('.step-3__hood')
 const stepBrushShow = document.querySelector('.brush__block select')
 const buySizeCount = document.querySelector('.buy-size__count')
 const rentSizeCount = document.querySelector('.rent-size__count')
+const sumOrder = document.querySelector('.step-4__sum .sum-all p')
+console.log(sumOrder.textContent);
 
 nextBtn.forEach(button=>{
   button.addEventListener('click', () => {
@@ -271,6 +273,7 @@ function handleCountBuy (e) {
     sum.textContent = +priceBakalavr.textContent * +e.target.parentElement.querySelector("input").value;
     buySumValue.textContent = sum.textContent
     sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent 
+    sumOrder.textContent = sumAll.textContent
   } else if (e.target.classList.contains("minus") && +e.target.parentElement.querySelector("input").value > 0) {
     --e.target.parentElement.querySelector("input").value;
     buySizeCount.textContent = e.target.parentElement.querySelector("input").value
@@ -278,6 +281,7 @@ function handleCountBuy (e) {
     sum.textContent = +priceBakalavr.textContent * +e.target.parentElement.querySelector("input").value;
     buySumValue.textContent = sum.textContent 
     sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent 
+    sumOrder.textContent = sumAll.textContent
   }
 }
 
@@ -292,6 +296,7 @@ function handleCountRent (e) {
     sumRent.textContent = +priceBakalavrRent.textContent * +e.target.parentElement.querySelector("input").value;
     rentSumValue.textContent = +sumRentCap.textContent + +sumRent.textContent 
     sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent 
+    sumOrder.textContent = sumAll.textContent
   } else if (e.target.classList.contains("minus-rent") && +e.target.parentElement.querySelector("input").value > 0) {
     --e.target.parentElement.querySelector("input").value;
     if (+e.target.parentElement.querySelector("input").value < 5) {
@@ -302,6 +307,7 @@ function handleCountRent (e) {
     sumRent.textContent = +priceBakalavrRent.textContent * +e.target.parentElement.querySelector("input").value;
     rentSumValue.textContent = +sumRentCap.textContent + +sumRent.textContent 
     sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent 
+    sumOrder.textContent = sumAll.textContent
   }
 }
 
@@ -346,10 +352,12 @@ function handleCountLogoFancy (e) {
     ++e.target.parentElement.querySelector("input").value;
     logoValue.textContent = +logoPrice.textContent * +e.target.parentElement.querySelector("input").value;
     sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent 
+    sumOrder.textContent = sumAll.textContent
   } else if (e.target.classList.contains("minus-fancy") && +e.target.parentElement.querySelector("input").value > 0) {
     --e.target.parentElement.querySelector("input").value;
     logoValue.textContent = +logoPrice.textContent * +e.target.parentElement.querySelector("input").value;
     sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent 
+    sumOrder.textContent = sumAll.textContent
   }
 } 
 

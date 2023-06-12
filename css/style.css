@@ -649,7 +649,6 @@ input.in-num__count {
 .buy-size__choice,
 .rent-size__choice {
   display: flex;
-  align-items: center;
 }
 .buy-size__all,
 .rent-size__all {
@@ -930,6 +929,11 @@ input:checked + .slider:before {
   font-size: 28px;
   line-height: 37px;
   color: #202020;
+  display: flex;
+  justify-content: flex-end;
+}
+.sum-all p {
+  margin-right: 5px;
 }
 .return {
   transition: 0.55s opacity, 0.55s visibility;
