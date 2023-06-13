@@ -30,7 +30,7 @@ const rentCapValue = document.querySelector('.rent .step__buy-details .buy-count
 const logoValue = document.querySelector('.step__logo-summery .buy-sum__count p');
 const logoPrice = document.querySelector('.logo-price__fancy p');
 const sumAll = document.querySelector('.step__all-summery .buy-sum__count p');
-const tabs = document.querySelector('.step-1__tabs');
+// const tabs = document.querySelector('.step-1__tabs');
 const colorTabs = document.querySelector('.step-1__tabs.bakalavr')
 const colorTieTabs = document.querySelector('.step-1__tabs.bakalavr-tie')
 const colorTabsMg = document.querySelector('.step-1__tabs.magistr')
@@ -38,16 +38,25 @@ const stepBakalavr = document.querySelector('.bakalavr-step')
 const stepMagistr = document.querySelector('.magistr-step')
 const orderName = document.querySelector('.buy-name')
 const step2 = document.querySelector('.step-2')
-const step1AtiveBakalavr = document.querySelector('.step-1__btn .btn.active')
+// const step1AtiveBakalavr = document.querySelector('.step-1__btn .btn.active')
 const magistrImg = document.querySelector('.magistr-img img')
 const bakalavrImg = document.querySelector('.bakalavr-img img')
 const stepImg = document.querySelector('.step-3__img img')
 const stepHoodShow = document.querySelector('.step-3__hood')
+const stepTieShow = document.querySelector('.step-3__tie')
 const stepBrushShow = document.querySelector('.brush__block select')
 const buySizeCount = document.querySelector('.buy-size__count')
 const rentSizeCount = document.querySelector('.rent-size__count')
 const sumOrder = document.querySelector('.step-4__sum .sum-all p')
-console.log(sumOrder.textContent);
+// const logoElement = document.querySelector('.step-3__logo')
+const logoDivElement = document.querySelector('.logo__list')
+const logoModalElement = document.querySelector('.wrap')
+const step3Element = document.querySelector('.step-3')
+const logoImgElement = document.querySelector('.logo__img img')
+const logoImgBlockElement = document.querySelector('.logo__img')
+const logoRowImgElement = document.querySelector('.modal-logo__row')
+const uniElement = document.querySelector('.step-4__uni')
+
 
 nextBtn.forEach(button=>{
   button.addEventListener('click', () => {
@@ -97,14 +106,17 @@ function handleClickActive (e) {
       case 'просто':
         priceBakalavr.textContent = '1450'
         stepHoodShow.setAttribute('style', 'display:none')
+        stepTieShow.setAttribute('style', 'display:none')
         break;
       case 'с капюшоном':
         priceBakalavr.textContent = '1750'
         stepHoodShow.setAttribute('style', 'display:block')
+        stepTieShow.setAttribute('style', 'display:none')
         break;
       case 'с галстуком':
         priceBakalavr.textContent = '1650'
         stepHoodShow.setAttribute('style', 'display:none')
+        stepTieShow.setAttribute('style', 'display:block')
       break;
 
     }
@@ -118,6 +130,7 @@ function handleClickActive (e) {
 
       priceBakalavr.textContent = '1750'
       stepHoodShow.setAttribute('style', 'display:block')
+      stepTieShow.setAttribute('style', 'display:none')
 
       stepBakalavr.querySelectorAll('.active').forEach(i => {
         i.classList.remove('active')
@@ -169,7 +182,7 @@ function handleClickActiveColor (e) {
         bakalavrImg.src = './image/bakalavr-hood/bakalavr-hood-gold.jpg'
         stepImg.src = './image/bakalavr-hood/bakalavr-hood-gold.jpg'
         break;
-      case 'серебрянный':
+      case 'серебристый':
         bakalavrImg.src = './image/bakalavr-hood/bakalavr-hood-silver.jpg'
         stepImg.src = './image/bakalavr-hood/bakalavr-hood-silver.jpg'
         break;
@@ -185,6 +198,13 @@ function handleClickActiveColor (e) {
         bakalavrImg.src = './image/bakalavr-hood/bakalavr-hood-bue.png'
         stepImg.src.src = './image/bakalavr-hood/bakalavr-hood-bue.png'
     }
+
+    const select = document.querySelector('#hood').getElementsByTagName('option');
+
+      for (let i = 0; i < select.length; i++) {
+          if (select[i].value === e.target.value) select[i].selected = true;
+      }
+
   } else if (e.target.classList.contains('color-mg')) {
       document.querySelectorAll('input.color-mg').forEach(i => {
         i.classList.remove('active')
@@ -218,6 +238,13 @@ function handleClickActiveColor (e) {
           magistrImg.src = './image/magistr/magistr-blue.jpg'
           stepImg.src = './image/magistr/magistr-blue.jpg'
       }
+
+      const select = document.querySelector('#hood').getElementsByTagName('option');
+
+      for (let i = 0; i < select.length; i++) {
+          if (select[i].value === e.target.value) select[i].selected = true;
+      }
+
     } else if (e.target.classList.contains('color-tie')) {
       document.querySelectorAll('input.color-tie').forEach(i => {
         i.classList.remove('active')
@@ -247,22 +274,13 @@ function handleClickActiveColor (e) {
           bakalavrImg.src = './image/bakalavr-tie/bakalavr-tie-blue.png'
           stepImg.src = './image/bakalavr-tie/bakalavr-tie-blue.png'
       }
+      const select = document.querySelector('#tie').getElementsByTagName('option');
+
+      for (let i = 0; i < select.length; i++) {
+          if (select[i].value === e.target.value) select[i].selected = true;
+      }
     }
   e.target.classList.add('active')
-}
-
-function handleSubmitForm (e) {
-  e.preventDefault();
-  const data = []
-  formElement.querySelectorAll('.active').forEach(i => {
-    const {name, value} = i;
-    data.push({name, value})
-  })
-  formElement.querySelectorAll('.in-num').forEach(i => {
-    const {name, value} = i;
-    data.push({name, value})
-  })
-  console.log(data);
 }
 
 function handleCountBuy (e) {
@@ -369,7 +387,6 @@ function validate() {
     document.querySelector('.return').setAttribute('style', 'display:none')
   }
 }
-validate()
 
 function showRent() {
   if (+document.querySelector('.in-num__rent').value > 0 || +document.querySelector('.in-num__cap').value > 0) {
@@ -387,6 +404,23 @@ function showRent() {
   }
 }
 
+function handleChooseLogo (e) {
+  if (e.target.classList.contains('logo__list')) {
+    logoModalElement.setAttribute('style', 'display:flex')
+  } else if (e.target.classList.contains('modal-logo__close')) {
+    logoModalElement.setAttribute('style', 'display:none')
+  } else if (e.target.classList.contains('modal-logo__img')) {
+    logoRowImgElement.querySelectorAll('.show').forEach(i => {
+      i.classList.remove('show')
+    })
+
+    e.target.parentElement.classList.add('show')
+    uniElement.value = e.target.parentElement.querySelector('.modal-title__logo').textContent
+    logoImgElement.src = e.target.src
+    logoImgBlockElement.setAttribute('style', 'background:transparent; width:auto;')
+    logoModalElement.setAttribute('style', 'display:none')
+  }
+}
 
 // const checkbox = document.getElementById("politics");
 // const btn_submit = document.querySelector(".form__submit");
@@ -398,24 +432,39 @@ function showRent() {
 //         btn_submit.setAttribute("disabled", true);
 //     }
 // });
+// console.log(document.querySelector('.hood__block select option').value);
 
+validate()
+
+function handleSubmitForm (e) {
+  e.preventDefault();
+  const data = []
+  formElement.querySelectorAll('.active').forEach(i => {
+    const {name, value} = i;
+    data.push({name, value})
+  })
+  formElement.querySelectorAll('.in-num').forEach(i => {
+    const {name, value} = i;
+    data.push({name, value})
+  })
+  console.log(data);
+}
+
+header.addEventListener('click', handleClickToggleActive)
+header.addEventListener('click', handleClickShowColor)
+bodyStep1.addEventListener('click', handleClickActive)
 colorTabs.addEventListener('click', handleClickActiveColor)
 colorTabsMg.addEventListener('click', handleClickActiveColor)
 colorTieTabs.addEventListener('click', handleClickActiveColor)
-header.addEventListener('click', handleClickToggleActive)
-bodyStep1.addEventListener('click', handleClickActive)
-header.addEventListener('click', handleClickShowColor)
-formElement.addEventListener('submit', handleSubmitForm)
+
+step3Element.addEventListener('click', handleChooseLogo)
+
 formElement.addEventListener('click', handleCountBuy)
 formElement.addEventListener('click', handleCountRent)
 formElement.addEventListener('click', handleCountRentCap)
 formElement.addEventListener('click', handleCountLogoFancy)
 formElement.addEventListener('click', handleCountLogo)
-minus.addEventListener('click', handleSubmitForm)
-
 formElement.addEventListener('click', showRent)
 formElement.addEventListener('click', handleToggleBrush)
-
-// bodyStep1.addEventListener('click', handleChangeSrcMagistr)
-
-
+// minus.addEventListener('click', handleSubmitForm)
+formElement.addEventListener('submit', handleSubmitForm)
