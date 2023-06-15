@@ -148,6 +148,8 @@ function handleClickActive (e) {
   if (e.target.dataset.role == 'order1') {
     e.target.classList.add('active')
 
+    reset ()
+
     stepMagistr.querySelectorAll('.active').forEach(i => {
       i.classList.remove('active')
     })
@@ -170,7 +172,6 @@ function handleClickActive (e) {
         stepHoodShow.setAttribute('style', 'display:none')
         stepTieShow.setAttribute('style', 'display:block')
       break;
-
     }
   
     step2.querySelectorAll('.name').forEach(i => {
@@ -183,7 +184,14 @@ function handleClickActive (e) {
     } else if (e.target.dataset.role == 'order2') {
       e.target.classList.add('active')
 
+      reset ()
+
       priceBakalavr.textContent = '1750'
+
+      if (document.querySelector('.color-mg.active').value == 'синий') {
+        stepImg.src = './image/magistr/magistr-blue.jpg'
+      }
+
       stepHoodShow.setAttribute('style', 'display:block')
       stepTieShow.setAttribute('style', 'display:none')
 
@@ -197,6 +205,7 @@ function handleClickActive (e) {
         orderSecondName.textContent = i.textContent 
         orderThirdName.textContent = i.textContent 
       })
+
     }      
 }
 
@@ -245,15 +254,15 @@ function handleClickActiveColor (e) {
         break;
       case 'фиолетовый':
         bakalavrImg.src = './image/bakalavr-hood/bakalavr-hood-purple.jpg'
-        stepImg.src.src = './image/bakalavr-hood/bakalavr-hood-purple.jpg'
+        stepImg.src = './image/bakalavr-hood/bakalavr-hood-purple.jpg'
         break;
       case 'голубой':
         bakalavrImg.src = './image/bakalavr-hood/bakalavr-hood-light-blue.jpg'
-        stepImg.src.src = './image/bakalavr-hood/bakalavr-hood-light-blue.jpg'
+        stepImg.src = './image/bakalavr-hood/bakalavr-hood-light-blue.jpg'
         break;
       default:
         bakalavrImg.src = './image/bakalavr-hood/bakalavr-hood-bue.png'
-        stepImg.src.src = './image/bakalavr-hood/bakalavr-hood-bue.png'
+        stepImg.src = './image/bakalavr-hood/bakalavr-hood-bue.png'
     }
 
     const select = document.querySelector('#hood').getElementsByTagName('option');
@@ -301,11 +310,12 @@ function handleClickActiveColor (e) {
       for (let i = 0; i < select.length; i++) {
           if (select[i].value === e.target.value) select[i].selected = true;
       }
-
+      e.target.classList.add('active')
     } else if (e.target.classList.contains('color-tie')) {
       document.querySelectorAll('input.color-tie').forEach(i => {
         i.classList.remove('active')
       })
+      e.target.classList.add('active')
       switch(e.target.value) {
         case 'cиний':
           bakalavrImg.src = './image/bakalavr-tie/bakalavr-tie-blue.png'
@@ -336,8 +346,60 @@ function handleClickActiveColor (e) {
       for (let i = 0; i < select.length; i++) {
           if (select[i].value === e.target.value) select[i].selected = true;
       }
+      e.target.classList.add('active')
     }
-  e.target.classList.add('active')
+}
+
+function reset () {
+  inputSumValue.value = '0'
+  countBuyTie.textContent = '0'
+  countBuyHood.textContent = '0'
+  orderFirstCount.textContent = '0'
+  buySizeCount.textContent = '0'
+  countBuyWithBrush.textContent = '0'
+
+  sum.textContent = '0'
+
+  buySumValue.textContent = '0'
+  orderFirstPrice.textContent = '0'
+  sumAll.textContent = '0'
+  sumOrder.textContent = '0'
+
+  inputRentSumValue.value = '0'
+  rentSizeCount.textContent = '0'
+  orderSecondCount.textContent = '0'
+  countRentTie.textContent =  '0'
+  countRentHood.textContent = '0'
+  
+  sumRent.textContent = '0'
+  orderSecondPrice.textContent = '0'
+
+  rentSumValue.textContent = '0'
+
+  orderThirdCount.textContent = '0'
+  
+  sumRentCap.textContent = '0'
+  orderThirdPrice.textContent = '0'
+  orderForthCount.textContent = '0'
+  uniElement.value = ''
+  orderFifthCount.textContent = '0'
+  logoValue.textContent = '0'
+  orderFifthPrice.textContent = '0'
+
+  document.querySelectorAll('.in-num__count').forEach(i => {
+    i.value = '0'
+  })
+
+  document.querySelectorAll('.in-num').forEach(i => {
+    i.value = '0'
+  })
+
+  document.querySelectorAll('.logo__img-ch').forEach(i => {
+    i.src = ''
+  })
+
+  logoImgBlockElement.setAttribute('style', 'background:#EFEFEF; width:140px;;')
+
 }
 
 function handleCountBuy (e) {
@@ -393,7 +455,8 @@ function handleCountBuy (e) {
 
 function handleCountRent (e) {
   if (e.target.classList.contains("plus-rent")) {
-    ++e.target.parentElement.querySelector("input").value;
+    ++e.target.parentElement.querySelector("input").value
+    orderSecondCount.textContent = e.target.parentElement.querySelector("input").value
 
     if (+e.target.parentElement.querySelector("input").value > 4) {
       priceBakalavrRent.textContent = '400'
@@ -408,13 +471,16 @@ function handleCountRent (e) {
     if (+e.target.parentElement.querySelector("input").value > 0 && +inputSumValue.value == 0 && +rentCapValue.value == 0) {
       modalBrushBuyBlock.setAttribute('style', 'display:none')
       modalBrushBtn.setAttribute('style','display:none')
+    } else if (+e.target.parentElement.querySelector("input").value >= 0 && +inputSumValue.value != 0 && +rentCapValue.value != 0) {
+      modalBrushBuyBlock.setAttribute('style', 'display:block')
+      modalBrushBtn.setAttribute('style','display:block')
     }
 
     inputRentSumValue.value = +rentValue.value + +rentCapValue.value
     rentSizeCount.textContent = inputRentSumValue.value
-    orderSecondCount.textContent = e.target.parentElement.querySelector("input").value
     countRentTie.textContent =  inputRentSumValue.value
     countRentHood.textContent = inputRentSumValue.value
+  
     
     sumRent.textContent = +priceBakalavrRent.textContent * +e.target.parentElement.querySelector("input").value;
     orderSecondPrice.textContent = sumRent.textContent
@@ -424,7 +490,8 @@ function handleCountRent (e) {
     sumOrder.textContent = sumAll.textContent
 
   } else if (e.target.classList.contains("minus-rent") && +e.target.parentElement.querySelector("input").value > 0) {
-    --e.target.parentElement.querySelector("input").value;
+    --e.target.parentElement.querySelector("input").value
+    orderSecondCount.textContent = e.target.parentElement.querySelector("input").value
 
     if (+e.target.parentElement.querySelector("input").value < 5) {
       priceBakalavrRent.textContent = '500'
@@ -436,14 +503,16 @@ function handleCountRent (e) {
       modalTieRentBlock.setAttribute('style', 'display:none')
     } 
 
-    if (+e.target.parentElement.querySelector("input").value == 0 && +inputSumValue.value != 0 && +rentCapValue.value != 0) {
+    if (+e.target.parentElement.querySelector("input").value > 0 && +inputSumValue.value == 0 && +rentCapValue.value == 0) {
+      modalBrushBuyBlock.setAttribute('style', 'display:none')
+      modalBrushBtn.setAttribute('style','display:none')
+    } else if (+e.target.parentElement.querySelector("input").value >= 0 && +inputSumValue.value != 0 && +rentCapValue.value != 0) {
       modalBrushBuyBlock.setAttribute('style', 'display:block')
       modalBrushBtn.setAttribute('style','display:block')
     }
 
     inputRentSumValue.value = +rentValue.value + +rentCapValue.value
     rentSizeCount.textContent = inputRentSumValue.value
-    orderSecondCount.textContent = e.target.parentElement.querySelector("input").value
     countRentTie.textContent =  inputRentSumValue.value
     countRentHood.textContent = inputRentSumValue.value
 
@@ -466,6 +535,14 @@ function handleCountRentCap (e) {
       modalTieRentBlock.setAttribute('style', 'display:block')
       modalBrushBuyBlock.setAttribute('style', 'display:block')
     } 
+
+    if (+e.target.parentElement.querySelector("input").value > 0 && +inputSumValue.value == 0 && +rentCapValue.value == 0) {
+      modalBrushBuyBlock.setAttribute('style', 'display:none')
+      modalBrushBtn.setAttribute('style','display:none')
+    } else if (+e.target.parentElement.querySelector("input").value >= 0 && (+inputSumValue.value != 0 || +rentCapValue.value != 0)) {
+      modalBrushBuyBlock.setAttribute('style', 'display:block')
+      modalBrushBtn.setAttribute('style','display:block')
+    }
     
     inputRentSumValue.value = +rentValue.value + +rentCapValue.value
     countBuyWithBrush.textContent = +rentCapValue.value + +inputSumValue.value
@@ -473,7 +550,7 @@ function handleCountRentCap (e) {
 
     orderThirdCount.textContent = e.target.parentElement.querySelector("input").value
 
-    countRentHood.textContent = e.target.parentElement.querySelector("input").value
+    countRentHood.textContent = inputRentSumValue.value 
     
     sumRentCap.textContent = +priceBakalavrRentCap.textContent * +e.target.parentElement.querySelector("input").value;
     orderThirdPrice.textContent = sumRentCap.textContent
@@ -491,12 +568,20 @@ function handleCountRentCap (e) {
       modalBrushBuyBlock.setAttribute('style', 'display:none')
     } 
 
+    if (+e.target.parentElement.querySelector("input").value > 0 && +inputSumValue.value == 0 && +rentCapValue.value == 0) {
+      modalBrushBuyBlock.setAttribute('style', 'display:none')
+      modalBrushBtn.setAttribute('style','display:none')
+    } else if (+e.target.parentElement.querySelector("input").value >= 0 && +inputSumValue.value != 0 && +rentCapValue.value != 0) {
+      modalBrushBuyBlock.setAttribute('style', 'display:block')
+      modalBrushBtn.setAttribute('style','display:block')
+    }
+
     inputRentSumValue.value = +rentValue.value + +rentCapValue.value
     rentSizeCount.textContent = inputRentSumValue.value
+    countRentHood.textContent = inputRentSumValue.value 
 
     orderThirdCount.textContent = e.target.parentElement.querySelector("input").value
     countBuyWithBrush.textContent = +rentCapValue.value + +inputSumValue.value
-    countRentHood.textContent = e.target.parentElement.querySelector("input").value
 
     sumRentCap.textContent = +priceBakalavrRentCap.textContent * +e.target.parentElement.querySelector("input").value;
     orderThirdPrice.textContent = sumRentCap.textContent
@@ -978,23 +1063,13 @@ function handleChooseLogo (e) {
 }
 
 function handleShowBrushChoice (e) {
-  if (e.target.classList.contains('brush-colors') && (+buySizeCount.textContent > 0 || +rentSizeCount.textContent > 0)) {
+  if (e.target.classList.contains('brush-colors') && +buySizeCount.textContent > 0) {
     brushModalElement.setAttribute('style', 'display:flex')
-  } else if (e.target.classList.contains('modal-logo__close')) {
+  } else if  (e.target.classList.contains('brush-colors') && +rentSizeCount.textContent > 0) {
+    brushModalElement.setAttribute('style', 'display:flex')
+  }  else if  (e.target.classList.contains('modal-logo__close')) {
     brushModalElement.setAttribute('style', 'display:none')
   } 
-  
-  // else if (e.target.classList.contains('modal-logo__img')) {
-  //   logoRowImgElement.querySelectorAll('.show').forEach(i => {
-  //     i.classList.remove('show')
-  //   })
-
-  //   e.target.parentElement.classList.add('show')
-  //   uniElement.value = e.target.parentElement.querySelector('.modal-title__logo').textContent
-  //   logoImgElement.src = e.target.src
-  //   logoImgBlockElement.setAttribute('style', 'background:transparent; width:auto;')
-  //   logoModalElement.setAttribute('style', 'display:none')
-  // }
 }
 
 function handleShowHoodChoice (e) {
@@ -1013,17 +1088,6 @@ function handleShowTieChoice (e) {
   } 
 }
 
-// const checkbox = document.getElementById("politics");
-// const btn_submit = document.querySelector(".form__submit");
-
-// checkbox.addEventListener("change", () => {
-//     if (checkbox.checked) {
-//         btn_submit.removeAttribute("disabled");
-//     } else {
-//         btn_submit.setAttribute("disabled", true);
-//     }
-// });
-// console.log(document.querySelector('.hood__block select option').value);
 validate()
 
 function handleSubmitForm (e) {
@@ -1035,7 +1099,9 @@ function handleSubmitForm (e) {
   })
   formElement.querySelectorAll('.in-num').forEach(i => {
     const {name, value} = i;
+    if (+i.value > 0 && i.value != '') {
     data.push({name, value})
+    }
   })
   if (formElement.querySelector('.logo__img-ch').src && !logoInput.value) {
     formElement.querySelectorAll('.logo__img-ch').forEach(i => {
@@ -1053,7 +1119,6 @@ function handleSubmitForm (e) {
     data.push({name, value})
   })
   console.log(data);
-  alert('Ваш заказ принят')
 }
 
 header.addEventListener('click', handleClickToggleActive)
@@ -1063,7 +1128,7 @@ colorTabs.addEventListener('click', handleClickActiveColor)
 colorTabsMg.addEventListener('click', handleClickActiveColor)
 colorTieTabs.addEventListener('click', handleClickActiveColor)
 
-step3Element.addEventListener('click', handleChooseLogo)
+step2.addEventListener('click', handleChooseLogo)
 step3Element.addEventListener('click', handleShowBrushChoice)
 step3Element.addEventListener('click', handleShowHoodChoice)
 step3Element.addEventListener('click', handleShowTieChoice)
@@ -1081,7 +1146,7 @@ formElement.addEventListener('click', handleCountLogoFancy)
 formElement.addEventListener('click', handleCountLogo)
 formElement.addEventListener('click', showRent)
 formElement.addEventListener('click', handleToggleBrush)
-// minus.addEventListener('click', handleSubmitForm)
+
 formElement.addEventListener('submit', handleSubmitForm)
 
 step3sizeRent.addEventListener('click', handleGetSizeRent)
