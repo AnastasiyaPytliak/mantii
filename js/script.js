@@ -1088,6 +1088,16 @@ function handleShowTieChoice (e) {
   } 
 }
 
+const number = '375295203312';
+function sendToWhatsapp(text, phone) {
+
+  text = encodeURIComponent(text);
+
+  let url = `https://web.whatsapp.com/send?phone=${phone}&text=${text}&source=&data=`;
+
+  window.open(url);
+}
+
 validate()
 
 function handleSubmitForm (e) {
@@ -1118,6 +1128,9 @@ function handleSubmitForm (e) {
     const {name, value} = i;
     data.push({name, value})
   })
+  const text = 'Ваш заказ оформлен.'
+
+  sendToWhatsapp(text, number);
   console.log(data);
 }
 
