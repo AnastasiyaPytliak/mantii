@@ -42,20 +42,72 @@ const step2 = document.querySelector('.step-2')
 const magistrImg = document.querySelector('.magistr-img img')
 const bakalavrImg = document.querySelector('.bakalavr-img img')
 const stepImg = document.querySelector('.step-3__img img')
+
 const stepHoodShow = document.querySelector('.step-3__hood')
 const stepTieShow = document.querySelector('.step-3__tie')
 const stepBrushShow = document.querySelector('.brush__block select')
+
 const buySizeCount = document.querySelector('.buy-size__count')
+const buySizeCountCh = document.querySelector('.buy-size__count-ch')
 const rentSizeCount = document.querySelector('.rent-size__count')
+const rentSizeCountCh = document.querySelector('.rent-size__count-ch')
+
 const sumOrder = document.querySelector('.step-4__sum .sum-all p')
 // const logoElement = document.querySelector('.step-3__logo')
+
 const logoDivElement = document.querySelector('.logo__list')
 const logoModalElement = document.querySelector('.wrap')
+const hoodModalElement = document.querySelector('.wrap-hood')
+const tieModalElement = document.querySelector('.wrap-tie')
+const brushModalElement = document.querySelector('.wrap-brush')
+
 const step3Element = document.querySelector('.step-3')
+
 const logoImgElement = document.querySelector('.logo__img img')
 const logoImgBlockElement = document.querySelector('.logo__img')
 const logoRowImgElement = document.querySelector('.modal-logo__row')
 const uniElement = document.querySelector('.step-4__uni')
+const logoInput = document.querySelector('.logo-input')
+
+const step3sizeRent = document.querySelector('.rent-size')
+const step3sizeBuy = document.querySelector('.buy-size')
+
+const orderFirst = document.querySelector('.order-first')
+const orderFirstName = document.querySelector('.order-first .order-name')
+const orderFirstCount = document.querySelector('.order-first .order-count p')
+const orderFirstPrice = document.querySelector('.order-first .order-price p')
+
+const orderSecond = document.querySelector('.order-second')
+const orderSecondName = document.querySelector('.order-second .order-name')
+const orderSecondCount = document.querySelector('.order-second .order-count p')
+const orderSecondPrice = document.querySelector('.order-second .order-price p')
+
+const orderThird = document.querySelector('.order-third')
+const orderThirdName = document.querySelector('.order-third .order-name')
+const orderThirdCount = document.querySelector('.order-third .order-count p')
+const orderThirdPrice = document.querySelector('.order-third .order-price p')
+
+const orderForth = document.querySelector('.order-forth')
+const orderForthCount = document.querySelector('.order-forth .order-count p')
+
+const orderFifth = document.querySelector('.order-fifth')
+const orderFifthCount = document.querySelector('.order-fifth .order-count p')
+const orderFifthPrice = document.querySelector('.order-fifth .order-price p')
+
+const countBuyTie = document.querySelector('.modal-tie__buy-count')
+const countBuyHood = document.querySelector('.modal-hood__buy-count')
+const countBuyWithBrush = document.querySelector('.modal-brush__buy-count')
+const countRentTie = document.querySelector('.modal-tie__rent-count')
+const countRentHood = document.querySelector('.modal-hood__rent-count')
+
+const modalHoodBuyBlock = document.querySelector('.modal-color__hood-buy')
+const modalHoodRentBlock = document.querySelector('.modal-color__hood-rent')
+
+const modalTieBuyBlock = document.querySelector('.modal-color__tie-buy')
+const modalTieRentBlock = document.querySelector('.modal-color__tie-rent')
+
+const modalBrushBuyBlock = document.querySelector('.modal-color__brush-buy')
+const modalBrushBtn = document.querySelector('.brush-colors')
 
 
 nextBtn.forEach(button=>{
@@ -123,6 +175,9 @@ function handleClickActive (e) {
   
     step2.querySelectorAll('.name').forEach(i => {
       i.textContent = `${e.target.name} ${category()}`
+      orderFirstName.textContent = i.textContent 
+      orderSecondName.textContent = i.textContent 
+      orderThirdName.textContent = i.textContent 
     })
 
     } else if (e.target.dataset.role == 'order2') {
@@ -138,6 +193,9 @@ function handleClickActive (e) {
 
       step2.querySelectorAll('.name').forEach(i => {
         i.textContent = e.target.name
+        orderFirstName.textContent = i.textContent 
+        orderSecondName.textContent = i.textContent 
+        orderThirdName.textContent = i.textContent 
       })
     }      
 }
@@ -176,7 +234,6 @@ function handleClickActiveColor (e) {
       case 'красный':
         bakalavrImg.src = './image/bakalavr-hood/bakalavr-hood-red.jpg'
         stepImg.src = './image/bakalavr-hood/bakalavr-hood-red.jpg'
-        console.log('dfd');
         break;
       case 'золотой':
         bakalavrImg.src = './image/bakalavr-hood/bakalavr-hood-gold.jpg'
@@ -286,18 +343,49 @@ function handleClickActiveColor (e) {
 function handleCountBuy (e) {
   if (e.target.classList.contains("plus")) {
     ++e.target.parentElement.querySelector("input").value;
+
+    if (+e.target.parentElement.querySelector("input").value > 0) {
+      orderFirst.setAttribute('style', 'display:flex')
+      modalHoodBuyBlock.setAttribute('style', 'display:block')
+      modalTieBuyBlock.setAttribute('style', 'display:block')
+      modalBrushBuyBlock.setAttribute('style', 'display:block')
+    }
+
     inputSumValue.value = e.target.parentElement.querySelector("input").value
+    countBuyTie.textContent = e.target.parentElement.querySelector("input").value
+    countBuyHood.textContent = e.target.parentElement.querySelector("input").value
+    orderFirstCount.textContent = e.target.parentElement.querySelector("input").value
     buySizeCount.textContent = e.target.parentElement.querySelector("input").value
+    countBuyWithBrush.textContent = +rentCapValue.value + +inputSumValue.value
+
     sum.textContent = +priceBakalavr.textContent * +e.target.parentElement.querySelector("input").value;
+
     buySumValue.textContent = sum.textContent
+    orderFirstPrice.textContent = sum.textContent
     sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent 
     sumOrder.textContent = sumAll.textContent
+    
   } else if (e.target.classList.contains("minus") && +e.target.parentElement.querySelector("input").value > 0) {
     --e.target.parentElement.querySelector("input").value;
-    buySizeCount.textContent = e.target.parentElement.querySelector("input").value
+
+    if (+e.target.parentElement.querySelector("input").value == 0) {
+      orderFirst.setAttribute('style', 'display:none')
+      modalHoodBuyBlock.setAttribute('style', 'display:none')
+      modalTieBuyBlock.setAttribute('style', 'display:none')
+      modalBrushBuyBlock.setAttribute('style', 'display:none')
+    }
+
+    countBuyTie.textContent = e.target.parentElement.querySelector("input").value
+    countBuyHood.textContent = e.target.parentElement.querySelector("input").value
     inputSumValue.value = e.target.parentElement.querySelector("input").value
+    orderFirstCount.textContent = e.target.parentElement.querySelector("input").value
+    buySizeCount.textContent = e.target.parentElement.querySelector("input").value
+    countBuyWithBrush.textContent = +rentCapValue.value + +inputSumValue.value
+
     sum.textContent = +priceBakalavr.textContent * +e.target.parentElement.querySelector("input").value;
+
     buySumValue.textContent = sum.textContent 
+    orderFirstPrice.textContent = sum.textContent
     sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent 
     sumOrder.textContent = sumAll.textContent
   }
@@ -306,23 +394,62 @@ function handleCountBuy (e) {
 function handleCountRent (e) {
   if (e.target.classList.contains("plus-rent")) {
     ++e.target.parentElement.querySelector("input").value;
+
     if (+e.target.parentElement.querySelector("input").value > 4) {
       priceBakalavrRent.textContent = '400'
     } 
+
+    if (+e.target.parentElement.querySelector("input").value > 0) {
+      orderSecond.setAttribute('style', 'display:flex')
+      modalHoodRentBlock.setAttribute('style', 'display:block')
+      modalTieRentBlock.setAttribute('style', 'display:block')
+    } 
+
+    if (+e.target.parentElement.querySelector("input").value > 0 && +inputSumValue.value == 0 && +rentCapValue.value == 0) {
+      modalBrushBuyBlock.setAttribute('style', 'display:none')
+      modalBrushBtn.setAttribute('style','display:none')
+    }
+
     inputRentSumValue.value = +rentValue.value + +rentCapValue.value
     rentSizeCount.textContent = inputRentSumValue.value
+    orderSecondCount.textContent = e.target.parentElement.querySelector("input").value
+    countRentTie.textContent =  inputRentSumValue.value
+    countRentHood.textContent = inputRentSumValue.value
+    
     sumRent.textContent = +priceBakalavrRent.textContent * +e.target.parentElement.querySelector("input").value;
+    orderSecondPrice.textContent = sumRent.textContent
+
     rentSumValue.textContent = +sumRentCap.textContent + +sumRent.textContent 
     sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent 
     sumOrder.textContent = sumAll.textContent
+
   } else if (e.target.classList.contains("minus-rent") && +e.target.parentElement.querySelector("input").value > 0) {
     --e.target.parentElement.querySelector("input").value;
+
     if (+e.target.parentElement.querySelector("input").value < 5) {
       priceBakalavrRent.textContent = '500'
     }  
+
+    if (+e.target.parentElement.querySelector("input").value == 0) {
+      orderSecond.setAttribute('style', 'display:none')
+      modalHoodRentBlock.setAttribute('style', 'display:none')
+      modalTieRentBlock.setAttribute('style', 'display:none')
+    } 
+
+    if (+e.target.parentElement.querySelector("input").value == 0 && +inputSumValue.value != 0 && +rentCapValue.value != 0) {
+      modalBrushBuyBlock.setAttribute('style', 'display:block')
+      modalBrushBtn.setAttribute('style','display:block')
+    }
+
     inputRentSumValue.value = +rentValue.value + +rentCapValue.value
     rentSizeCount.textContent = inputRentSumValue.value
+    orderSecondCount.textContent = e.target.parentElement.querySelector("input").value
+    countRentTie.textContent =  inputRentSumValue.value
+    countRentHood.textContent = inputRentSumValue.value
+
     sumRent.textContent = +priceBakalavrRent.textContent * +e.target.parentElement.querySelector("input").value;
+    orderSecondPrice.textContent = sumRent.textContent
+
     rentSumValue.textContent = +sumRentCap.textContent + +sumRent.textContent 
     sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent 
     sumOrder.textContent = sumAll.textContent
@@ -332,16 +459,48 @@ function handleCountRent (e) {
 function handleCountRentCap (e) {
   if (e.target.classList.contains("plus-cap")) {
     ++e.target.parentElement.querySelector("input").value; 
+    
+    if (+e.target.parentElement.querySelector("input").value > 0) {
+      orderThird.setAttribute('style', 'display:flex')
+      modalHoodRentBlock.setAttribute('style', 'display:block')
+      modalTieRentBlock.setAttribute('style', 'display:block')
+      modalBrushBuyBlock.setAttribute('style', 'display:block')
+    } 
+    
     inputRentSumValue.value = +rentValue.value + +rentCapValue.value
+    countBuyWithBrush.textContent = +rentCapValue.value + +inputSumValue.value
     rentSizeCount.textContent = inputRentSumValue.value
+
+    orderThirdCount.textContent = e.target.parentElement.querySelector("input").value
+
+    countRentHood.textContent = e.target.parentElement.querySelector("input").value
+    
     sumRentCap.textContent = +priceBakalavrRentCap.textContent * +e.target.parentElement.querySelector("input").value;
+    orderThirdPrice.textContent = sumRentCap.textContent
+
     rentSumValue.textContent = +sumRentCap.textContent + +sumRent.textContent 
     sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent 
+
   } else if (e.target.classList.contains("minus-cap") && +e.target.parentElement.querySelector("input").value > 0) {
     --e.target.parentElement.querySelector("input").value;
+
+    if (+e.target.parentElement.querySelector("input").value == 0) {
+      orderThird.setAttribute('style', 'display:none')
+      modalHoodRentBlock.setAttribute('style', 'display:none')
+      modalTieRentBlock.setAttribute('style', 'display:none')
+      modalBrushBuyBlock.setAttribute('style', 'display:none')
+    } 
+
     inputRentSumValue.value = +rentValue.value + +rentCapValue.value
     rentSizeCount.textContent = inputRentSumValue.value
+
+    orderThirdCount.textContent = e.target.parentElement.querySelector("input").value
+    countBuyWithBrush.textContent = +rentCapValue.value + +inputSumValue.value
+    countRentHood.textContent = e.target.parentElement.querySelector("input").value
+
     sumRentCap.textContent = +priceBakalavrRentCap.textContent * +e.target.parentElement.querySelector("input").value;
+    orderThirdPrice.textContent = sumRentCap.textContent
+
     rentSumValue.textContent = +sumRentCap.textContent + +sumRent.textContent 
     sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent 
   }
@@ -360,20 +519,416 @@ function handleToggleBrush () {
 function handleCountLogo (e) {
   if (e.target.classList.contains("plus-logo")) {
     ++e.target.parentElement.querySelector("input").value;
+
+    if (+e.target.parentElement.querySelector("input").value > 0) {
+      orderForth.setAttribute('style', 'display:flex')
+    } 
+    orderForthCount.textContent = e.target.parentElement.querySelector("input").value
+
   } else if (e.target.classList.contains("minus-logo") && +e.target.parentElement.querySelector("input").value > 0) {
     --e.target.parentElement.querySelector("input").value;
+
+    if (+e.target.parentElement.querySelector("input").value == 0) {
+      orderForth.setAttribute('style', 'display:none')
+    } 
+    orderForthCount.textContent = e.target.parentElement.querySelector("input").value
   }
+}
+
+function data () {
+  let inputGrand = document.querySelectorAll('.rent-count .in-num');
+  let inputGrandSum = 0;
+  
+  for(let i = 0; i < inputGrand.length; i++){	
+    inputGrandSum += +inputGrand[i].value	
+  }
+  rentSizeCountCh.textContent = inputGrandSum
+}
+
+function handleGetSizeRent (e) {
+  if (e.target.classList.contains("plus-s") && +rentSizeCountCh.textContent < +rentSizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    data ()
+  } else if (e.target.classList.contains("minus-s") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    data ()
+  }
+
+  if (e.target.classList.contains("plus-m") && +rentSizeCountCh.textContent < +rentSizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    data ()
+  } else if (e.target.classList.contains("minus-m") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    data ()
+  }
+
+  if (e.target.classList.contains("plus-l") && +rentSizeCountCh.textContent < +rentSizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    data ()
+  } else if (e.target.classList.contains("minus-l") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    data ()
+  }
+
+  if (e.target.classList.contains("plus-xl") && +rentSizeCountCh.textContent < +rentSizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    data ()
+  } else if (e.target.classList.contains("minus-xl") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    data ()
+  }
+}
+
+function dataBuy () {
+  let inputGrandC = document.querySelectorAll('.buy-count__s .in-num');
+  let inputGrandSumC = 0;
+  
+  for(let i = 0; i < inputGrandC.length; i++){	
+    inputGrandSumC += +inputGrandC[i].value	
+  }
+  buySizeCountCh.textContent = inputGrandSumC
+}
+
+function handleGetSizeBuy (e) {
+  if (e.target.classList.contains("plus__buy-s") && +buySizeCountCh.textContent < +buySizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataBuy ()
+  } else if (e.target.classList.contains("minus__buy-s") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataBuy ()
+  }
+
+  if (e.target.classList.contains("plus__buy-m") && +buySizeCountCh.textContent < +buySizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataBuy ()
+  } else if (e.target.classList.contains("minus__buy-m") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataBuy ()
+  }
+
+  if (e.target.classList.contains("plus__buy-l") && +buySizeCountCh.textContent < +buySizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataBuy ()
+  } else if (e.target.classList.contains("minus__buy-l") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataBuy ()
+  }
+
+  if (e.target.classList.contains("plus__buy-xl") && +buySizeCountCh.textContent < +buySizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataBuy ()
+  } else if (e.target.classList.contains("minus__buy-xl") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataBuy ()
+  }
+}
+
+function dataColorHoodBuy () {
+  let inputGrand = document.querySelectorAll('.hood-buy__count .in-num');
+  let inputGrandSum = 0;
+  
+  for(let i = 0; i < inputGrand.length; i++){	
+    inputGrandSum += +inputGrand[i].value	
+  }
+  return inputGrandSum
+}
+
+function handleColorBuyHood (e) {
+  if (e.target.classList.contains("plus__buy-blue") && dataColorHoodBuy() < +buySizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorHoodBuy ()
+  } else if (e.target.classList.contains("minus__buy-blue") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorHoodBuy ()
+  }
+
+  if (e.target.classList.contains("plus__buy-red") && dataColorHoodBuy() < +buySizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorHoodBuy ()
+  } else if (e.target.classList.contains("minus__buy-red") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorHoodBuy ()
+  }
+
+  if (e.target.classList.contains("plus__buy-gold") && dataColorHoodBuy() < +buySizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorHoodBuy ()
+  } else if (e.target.classList.contains("minus__buy-gold") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorHoodBuy ()
+  }
+
+  if (e.target.classList.contains("plus__buy-silver") && dataColorHoodBuy() < +buySizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorHoodBuy ()
+  } else if (e.target.classList.contains("minus__buy-silver") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorHoodBuy ()
+  }
+
+  if (e.target.classList.contains("plus__buy-purple") && dataColorHoodBuy() < +buySizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorHoodBuy ()
+  } else if (e.target.classList.contains("minus__buy-purple") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorHoodBuy ()
+  }
+
+  if (e.target.classList.contains("plus__buy-light") && dataColorHoodBuy() < +buySizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorHoodBuy ()
+  } else if (e.target.classList.contains("minus__buy-light") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorHoodBuy ()
+  }
+
+}
+
+function dataColorHoodRent () {
+  let inputGrand = document.querySelectorAll('.hood-rent__count .in-num');
+  let inputGrandSum = 0;
+  
+  for(let i = 0; i < inputGrand.length; i++){	
+    inputGrandSum += +inputGrand[i].value	
+  }
+  return inputGrandSum
+}
+
+function handleColorRentHood (e) {
+  if (e.target.classList.contains("plus__rent-blue") && dataColorHoodRent() < +rentSizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorHoodRent ()
+  } else if (e.target.classList.contains("minus__rent-blue") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorHoodRent ()
+  }
+
+  if (e.target.classList.contains("plus__rent-red") && dataColorHoodRent() < +rentSizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorHoodRent ()
+  } else if (e.target.classList.contains("minus__rent-red") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorHoodRent ()
+  }
+
+  if (e.target.classList.contains("plus__rent-gold") && dataColorHoodRent() < +rentSizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorHoodRent ()
+  } else if (e.target.classList.contains("minus__rent-gold") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorHoodRent ()
+  }
+
+  if (e.target.classList.contains("plus__rent-silver") && dataColorHoodRent() < +rentSizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorHoodRent ()
+  } else if (e.target.classList.contains("minus__rent-silver") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorHoodRent ()
+  }
+
+  if (e.target.classList.contains("plus__rent-purple") && dataColorHoodRent() < +rentSizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorHoodRent ()
+  } else if (e.target.classList.contains("minus__rent-purple") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorHoodRent ()
+  }
+
+  if (e.target.classList.contains("plus__rent-light") && dataColorHoodRent() < +rentSizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorHoodRent ()
+  } else if (e.target.classList.contains("minus__rent-light") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorHoodRent ()
+  }
+}
+
+function dataColorTieBuy () {
+  let inputGrand = document.querySelectorAll('.tie-buy__count .in-num');
+  let inputGrandSum = 0;
+  
+  for(let i = 0; i < inputGrand.length; i++){	
+    inputGrandSum += +inputGrand[i].value	
+  }
+  return inputGrandSum
+}
+
+function handleColorBuyTie (e) {
+  if (e.target.classList.contains("plus-tie__buy-blue") && dataColorTieBuy() < +buySizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorTieBuy ()
+  } else if (e.target.classList.contains("minus-tie__buy-blue") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorTieBuy ()
+  }
+
+  if (e.target.classList.contains("plus-tie__buy-red") && dataColorTieBuy() < +buySizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorTieBuy ()
+  } else if (e.target.classList.contains("minus-tie__buy-red") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorTieBuy ()
+  }
+
+  if (e.target.classList.contains("plus-tie__buy-gold") && dataColorTieBuy() < +buySizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorTieBuy ()
+  } else if (e.target.classList.contains("minus-tie__buy-gold") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorTieBuy ()
+  }
+
+  if (e.target.classList.contains("plus-tie__buy-white") && dataColorTieBuy() < +buySizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorTieBuy ()
+  } else if (e.target.classList.contains("minus-tie__buy-white") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorTieBuy ()
+  }
+
+  if (e.target.classList.contains("plus-tie__buy-green") && dataColorTieBuy() < +buySizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorTieBuy ()
+  } else if (e.target.classList.contains("minus-tie__buy-green") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorTieBuy ()
+  }
+}
+
+function dataColorTieRent () {
+  let inputGrand = document.querySelectorAll('.tie-rent__count .in-num');
+  let inputGrandSum = 0;
+  
+  for(let i = 0; i < inputGrand.length; i++){	
+    inputGrandSum += +inputGrand[i].value	
+  }
+  return inputGrandSum
+}
+
+function handleColorRentTie (e) {
+  if (e.target.classList.contains("plus-tie__rent-blue") && dataColorTieRent() < +rentSizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorTieRent ()
+  } else if (e.target.classList.contains("minus-tie__rent-blue") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorTieRent ()
+  }
+  if (e.target.classList.contains("plus-tie__rent-red") && dataColorTieRent() < +rentSizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorTieRent ()
+  } else if (e.target.classList.contains("minus-tie__rent-red") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorTieRent ()
+  }
+
+  if (e.target.classList.contains("plus-tie__rent-gold") && dataColorTieRent() < +rentSizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorTieRent ()
+  } else if (e.target.classList.contains("minus-tie__rent-gold") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorTieRent ()
+  }
+
+  if (e.target.classList.contains("plus-tie__rent-white") && dataColorTieRent() < +rentSizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorTieRent ()
+  } else if (e.target.classList.contains("minus-tie__rent-white") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorTieRent ()
+  }
+
+  if (e.target.classList.contains("plus-tie__rent-green") && dataColorTieRent() < +rentSizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorTieRent ()
+  } else if (e.target.classList.contains("minus-tie__rent-green") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorTieRent ()
+  }
+}
+
+function dataColorBrushBuy () {
+  let inputGrand = document.querySelectorAll('.brush-buy__count .in-num');
+  let inputGrandSum = 0;
+  
+  for(let i = 0; i < inputGrand.length; i++){	
+    inputGrandSum += +inputGrand[i].value	
+  }
+  return inputGrandSum
+}
+
+function handleColorBrushBuy (e) {
+  if (e.target.classList.contains("plus-brush__buy-blue") && dataColorBrushBuy() < +buySizeCount.textContent + +rentCapValue.value) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorBrushBuy ()
+  } else if (e.target.classList.contains("minus-brush__buy-blue") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorBrushBuy ()
+  }
+
+  if (e.target.classList.contains("plus-brush__buy-red") && dataColorBrushBuy() < +buySizeCount.textContent + +rentCapValue.value) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorBrushBuy ()
+  } else if (e.target.classList.contains("minus-brush__buy-red") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorBrushBuy ()
+  }
+
+  if (e.target.classList.contains("plus-brush__buy-gold") && dataColorBrushBuy() < +buySizeCount.textContent + +rentCapValue.value) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorBrushBuy ()
+  } else if (e.target.classList.contains("minus-brush__buy-gold") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorBrushBuy ()
+  }
+
+  if (e.target.classList.contains("plus-brush__buy-silver") && dataColorBrushBuy() < +buySizeCount.textContent + +rentCapValue.value) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorBrushBuy ()
+  } else if (e.target.classList.contains("minus-brush__buy-silver") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorBrushBuy ()
+  }
+
+  if (e.target.classList.contains("plus-brush__buy-purple") && dataColorBrushBuy() < +buySizeCount.textContent + +rentSizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorBrushBuy ()
+  } else if (e.target.classList.contains("minus-brush__buy-purple") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorBrushBuy ()
+  }
+
+  if (e.target.classList.contains("plus-brush__buy-light") && dataColorBrushBuy() < +buySizeCount.textContent + +rentSizeCount.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorBrushBuy ()
+  } else if (e.target.classList.contains("minus-brush__buy-light") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorBrushBuy ()
+  }
+
 }
 
 function handleCountLogoFancy (e) {
   if (e.target.classList.contains("plus-fancy")) {
     ++e.target.parentElement.querySelector("input").value;
+
+    if (+e.target.parentElement.querySelector("input").value > 0) {
+      orderFifth.setAttribute('style', 'display:flex')
+    } 
+    orderFifthCount.textContent = e.target.parentElement.querySelector("input").value
     logoValue.textContent = +logoPrice.textContent * +e.target.parentElement.querySelector("input").value;
+    orderFifthPrice.textContent = logoValue.textContent
     sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent 
     sumOrder.textContent = sumAll.textContent
   } else if (e.target.classList.contains("minus-fancy") && +e.target.parentElement.querySelector("input").value > 0) {
     --e.target.parentElement.querySelector("input").value;
+
+    if (+e.target.parentElement.querySelector("input").value == 0) {
+      orderFifth.setAttribute('style', 'display:none')
+    } 
+    orderFifthCount.textContent = e.target.parentElement.querySelector("input").value
     logoValue.textContent = +logoPrice.textContent * +e.target.parentElement.querySelector("input").value;
+    orderFifthPrice.textContent = logoValue.textContent
     sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent 
     sumOrder.textContent = sumAll.textContent
   }
@@ -422,6 +977,42 @@ function handleChooseLogo (e) {
   }
 }
 
+function handleShowBrushChoice (e) {
+  if (e.target.classList.contains('brush-colors') && (+buySizeCount.textContent > 0 || +rentSizeCount.textContent > 0)) {
+    brushModalElement.setAttribute('style', 'display:flex')
+  } else if (e.target.classList.contains('modal-logo__close')) {
+    brushModalElement.setAttribute('style', 'display:none')
+  } 
+  
+  // else if (e.target.classList.contains('modal-logo__img')) {
+  //   logoRowImgElement.querySelectorAll('.show').forEach(i => {
+  //     i.classList.remove('show')
+  //   })
+
+  //   e.target.parentElement.classList.add('show')
+  //   uniElement.value = e.target.parentElement.querySelector('.modal-title__logo').textContent
+  //   logoImgElement.src = e.target.src
+  //   logoImgBlockElement.setAttribute('style', 'background:transparent; width:auto;')
+  //   logoModalElement.setAttribute('style', 'display:none')
+  // }
+}
+
+function handleShowHoodChoice (e) {
+  if (e.target.classList.contains('hood-colors')) {
+    hoodModalElement.setAttribute('style', 'display:flex')
+  } else if (e.target.classList.contains('modal-logo__close')) {
+    hoodModalElement.setAttribute('style', 'display:none')
+  } 
+}
+
+function handleShowTieChoice (e) {
+  if (e.target.classList.contains('tie-colors')) {
+    tieModalElement.setAttribute('style', 'display:flex')
+  } else if (e.target.classList.contains('modal-logo__close')) {
+    tieModalElement.setAttribute('style', 'display:none')
+  } 
+}
+
 // const checkbox = document.getElementById("politics");
 // const btn_submit = document.querySelector(".form__submit");
 
@@ -433,7 +1024,6 @@ function handleChooseLogo (e) {
 //     }
 // });
 // console.log(document.querySelector('.hood__block select option').value);
-
 validate()
 
 function handleSubmitForm (e) {
@@ -447,7 +1037,23 @@ function handleSubmitForm (e) {
     const {name, value} = i;
     data.push({name, value})
   })
+  if (formElement.querySelector('.logo__img-ch').src && !logoInput.value) {
+    formElement.querySelectorAll('.logo__img-ch').forEach(i => {
+      const {name, src} = i;
+      data.push({name, src})
+    })
+  } else {
+    formElement.querySelectorAll('.logo-input').forEach(i => {
+      const {name, value} = i;
+      data.push({name, value})
+    })
+  }
+  formElement.querySelectorAll('.text-input').forEach(i => {
+    const {name, value} = i;
+    data.push({name, value})
+  })
   console.log(data);
+  alert('Ваш заказ принят')
 }
 
 header.addEventListener('click', handleClickToggleActive)
@@ -458,6 +1064,15 @@ colorTabsMg.addEventListener('click', handleClickActiveColor)
 colorTieTabs.addEventListener('click', handleClickActiveColor)
 
 step3Element.addEventListener('click', handleChooseLogo)
+step3Element.addEventListener('click', handleShowBrushChoice)
+step3Element.addEventListener('click', handleShowHoodChoice)
+step3Element.addEventListener('click', handleShowTieChoice)
+
+step3Element.addEventListener('click', handleColorBuyHood)
+step3Element.addEventListener('click', handleColorRentHood)
+step3Element.addEventListener('click', handleColorBuyTie)
+step3Element.addEventListener('click', handleColorRentTie)
+step3Element.addEventListener('click', handleColorBrushBuy)
 
 formElement.addEventListener('click', handleCountBuy)
 formElement.addEventListener('click', handleCountRent)
@@ -468,3 +1083,6 @@ formElement.addEventListener('click', showRent)
 formElement.addEventListener('click', handleToggleBrush)
 // minus.addEventListener('click', handleSubmitForm)
 formElement.addEventListener('submit', handleSubmitForm)
+
+step3sizeRent.addEventListener('click', handleGetSizeRent)
+step3sizeBuy.addEventListener('click', handleGetSizeBuy)
