@@ -739,7 +739,7 @@ select {
 }
 .step-3__notification {
   margin-top: 40px;
-  width: 600px;
+  max-width: 600px;
 }
 .step-4__container {
   display: grid;
@@ -1185,4 +1185,45 @@ input:checked + .slider:before {
   width: 24px;
   height: 24px;
   background-color: green;
+}
+
+@media (max-width: 992px) {
+  .step__group-first {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 16px;
+  }
+  .step-3__details {
+    flex-direction: column;
+    align-items: center;
+  }
+  .step-3__img {
+    order: 1;
+  }
+  .step-3__sizes {
+    order: 2
+  }
+  .step-3__sizes {
+    align-items: center;
+  }
+  .step-3__block {
+    grid-template-columns: 340px;
+  }
+  .brush__block {
+    flex-direction: column;
+  }
+  .hood-colors, .tie-colors, .brush-colors {
+    margin-left: 0;
+  }
+  select {
+    width: auto;
+    margin-bottom: 20px;
+  }
+  .step-3__notification {
+    margin-right: 16px;
+    margin-left: 16px;
+  }
+  .step-4__container {
+    grid-template-columns: 1fr
+  }
 }
