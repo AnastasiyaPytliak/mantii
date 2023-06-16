@@ -1211,7 +1211,8 @@ input:checked + .slider:before {
   }
   .step__rent-summery .buy-count,
   .step__summery .buy-count {
-    margin-right: 168px;
+    margin-right: 166px;
+    margin-left: 58px;
   }
   .step__header  {
     flex-direction: column;
@@ -1244,7 +1245,7 @@ input:checked + .slider:before {
     margin-bottom: 15px;
   }
   .step-logo__buy-details:nth-child(3) .buy-count {
-    margin-left: 0;
+    margin-left: -18px;
   }
   .step-logo__buy-details .logo-price {
     margin-right: 27px;
@@ -1349,16 +1350,26 @@ input:checked + .slider:before {
     margin-right: -47px;
     margin-left: -20px;
   }
-  .step__summery .buy-sum__count {
-    padding-right: 48px;
+  /* .step__summery .buy-sum__count {
+    padding-right: 47px;
+    margin-left: -3px;
   }
   .step__rent-summery .buy-sum__count {
     padding-right: 87px;
   }
   .step-logo__buy-details .buy-count {
     margin-left: 0;
-  }
+  } */
   .logo-sum__name {
     margin-top: 10px;
+  }
+  .step__summery, .step__rent-summery, .step__logo-summery {
+    justify-content: inherit;
+  }
+  .step__logo-summery {
+    justify-content: end;
+  }
+  .form {
+    overflow: hidden;
   }
 }
