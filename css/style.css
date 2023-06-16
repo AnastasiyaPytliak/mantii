@@ -1382,4 +1382,12 @@ input:checked + .slider:before {
   .step-4__politics + label {
     font-size: 13px;
   }
+  .buy-size__item, 
+  .rent-size__item {
+    justify-content: inherit;
+    padding-left: 10px;
+  }
+  .step-3__img {
+    width: auto;
+  }
 }
