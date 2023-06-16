@@ -1390,4 +1390,8 @@ input:checked + .slider:before {
   .step-3__img {
     width: auto;
   }
+  .step-1__img img {
+    width: 300px;
+    max-height: inherit;
+  }
 }
