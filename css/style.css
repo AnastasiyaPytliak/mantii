@@ -1244,8 +1244,13 @@ input:checked + .slider:before {
     margin-right: 0;
     margin-bottom: 15px;
   }
+  .step-logo__buy-details:nth-child(2) .buy-count {
+    margin-left: 10px;
+    margin-right: 0;
+  }
   .step-logo__buy-details:nth-child(3) .buy-count {
-    margin-left: -18px;
+    margin-left: 9px;
+    margin-right: 0;
   }
   .step-logo__buy-details .logo-price {
     margin-right: 27px;
