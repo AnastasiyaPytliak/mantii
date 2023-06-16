@@ -919,14 +919,14 @@ input:checked + .slider:before {
   margin-bottom: 20px;
   position: relative;
 }
-.step-4__order::after {
+/* .step-4__order::after {
   content: url('../image/delete.png');
   position: absolute;
   right: -16px;
   bottom: 17px;
   width: 14px;
   height: 14px;
-}
+} */
 .order-first,
 .order-second,
 .order-third,
@@ -1294,7 +1294,11 @@ input:checked + .slider:before {
     padding: 0 50px;
   }
   .step-4__container {
-    grid-template-columns: 400px;
+    grid-template-columns: 380px;
+    overflow: hidden;
+  }
+  .step-4__block-second {
+    padding: 15px;
   }
   .step-4__block-item {
     display: block;
@@ -1306,7 +1310,8 @@ input:checked + .slider:before {
   }
   .step-4__row {
     margin-right: 0px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    margin-top: 15px;
   }
   .slider:before {
     bottom: 0;
@@ -1341,7 +1346,7 @@ input:checked + .slider:before {
     left: calc(50% - 182px/2);
   }
   .hood-buy__items {
-    grid-template-columns: 170px 170px;
+    grid-template-columns: 250px;
   }
   .modal-logo, .modal-hood, .modal-tie, .modal-brush {
     width: auto;
@@ -1355,16 +1360,6 @@ input:checked + .slider:before {
     margin-right: -47px;
     margin-left: -20px;
   }
-  /* .step__summery .buy-sum__count {
-    padding-right: 47px;
-    margin-left: -3px;
-  }
-  .step__rent-summery .buy-sum__count {
-    padding-right: 87px;
-  }
-  .step-logo__buy-details .buy-count {
-    margin-left: 0;
-  } */
   .logo-sum__name {
     margin-top: 10px;
   }
@@ -1374,7 +1369,17 @@ input:checked + .slider:before {
   .step__logo-summery {
     justify-content: end;
   }
-  .form {
-    overflow: hidden;
+  .modal-color__brush-buy {
+    margin-top: 10px;
+  }
+  .step-3__img img {
+    max-width: 400px;
+    height: 100%;
+  }
+  .rent-size {
+    margin-top: 10px
+  }
+  .step-4__politics + label {
+    font-size: 13px;
   }
 }
