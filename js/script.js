@@ -399,6 +399,10 @@ function reset () {
     i.src = ''
   })
 
+  logoRowImgElement.querySelectorAll('.show').forEach(i => {
+    i.classList.remove('show')
+  })
+
   logoImgBlockElement.setAttribute('style', 'background:#EFEFEF; width:140px;;')
 
 }
