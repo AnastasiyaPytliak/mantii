@@ -1188,10 +1188,48 @@ input:checked + .slider:before {
 }
 
 @media (max-width: 992px) {
+  .container {
+    align-items: center;
+  } 
   .step__group-first {
     flex-direction: column;
     align-items: center;
-    margin: 0 16px;
+    padding: 0 16px;
+    width: 500px;
+  }
+  .step-1__group {
+    width: 100%;
+  }
+  .step-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .step__group {
+    width: 500px;
+  }
+  .step-3__logo {
+    flex-direction: column;
+  }
+  .step__buy-details {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .logo__details {
+    margin-top: 20px;
+  }
+  .step-logo__buy-details {
+    flex-wrap: wrap;
+  }
+  .step-logo__buy-details .buy-name,
+  .step-logo__buy-details .logo-price__fancy {
+    margin-right: 0;
+  }
+  .step-logo__buy-details .logo-price {
+    margin-right: 27px;
+  }
+  .logo-sum__name {
+    margin-left: 105px;
   }
   .step-3__details {
     flex-direction: column;
@@ -1226,4 +1264,5 @@ input:checked + .slider:before {
   .step-4__container {
     grid-template-columns: 1fr
   }
+
 }
