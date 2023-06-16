@@ -412,8 +412,8 @@ button {
   line-height: 22px;
   color: #707070;
 
-  width: 22px;
-  height: 22px;
+  width: 30px;
+  height: 30px;
   text-align: center;
   margin: 0 9px;
   background: #F5F5F5;
@@ -1126,6 +1126,11 @@ input:checked + .slider:before {
 }
 .hood-buy {
   cursor: pointer;
+  font-size: 20px;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
 }
 .hood-buy__item {
   padding: 15px 17px;
@@ -1294,8 +1299,7 @@ input:checked + .slider:before {
     padding: 0 50px;
   }
   .step-4__container {
-    grid-template-columns: 380px;
-    overflow: hidden;
+    grid-template-columns: 360px;
   }
   .step-4__block-second {
     padding: 15px;
@@ -1320,7 +1324,7 @@ input:checked + .slider:before {
     margin-right: 40px;
   }
   .step-4-services p:nth-child(2) {
-    margin-right: 58px;
+    margin-right: 42px;
   }
   .step-4-services p:nth-child(3) {
     margin-right: 23px;
@@ -1330,10 +1334,11 @@ input:checked + .slider:before {
     width: 90px;
   }
   .order-serive {
-    width: 70px;
+    width: 44px;
   }
   .order-count {
     margin-right: 30px;
+    margin-left: 9px;
   }
   .step-4__sum {
     margin-bottom: 340px;
@@ -1370,7 +1375,7 @@ input:checked + .slider:before {
     justify-content: end;
   }
   .modal-color__brush-buy {
-    margin-top: 10px;
+    margin-top: 48px;
   }
   .step-3__img img {
     max-width: 400px;
@@ -1394,4 +1399,20 @@ input:checked + .slider:before {
     width: 300px;
     max-height: inherit;
   }
+  .step-4__block-item label span {
+    margin-right: 0px;
+  }
+  .step-4__order {
+    font-size: 16px;
+  }
+  .step__group .step__buy:first-child .step__buy-title {
+    margin-top: 25px;
+  }
+  .modal-color__hood-buy {
+    margin-top: 40px;
+  }
+  .politic {
+    margin: 30px 0 20px;
+  }
 }
+
