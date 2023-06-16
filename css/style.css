@@ -1247,7 +1247,7 @@ input:checked + .slider:before {
   .step-3__block {
     grid-template-columns: 340px;
   }
-  .brush__block {
+  .hood__block, .tie__block, .brush__block  {
     flex-direction: column;
   }
   .hood-colors, .tie-colors, .brush-colors {
