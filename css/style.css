@@ -1196,7 +1196,7 @@ input:checked + .slider:before {
     align-items: center;
     padding: 0 16px;
     margin: 0 16px;
-    width: 500px;
+    width: 400px;
   }
   .step-1__group {
     width: 100%;
