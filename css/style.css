@@ -532,7 +532,6 @@ input.in-num__count {
 .step-3__container {
   display: flex;
   flex-direction: column;
-  /* width: 1040px; */
 }
 .step-3__logo {
   margin-top: 20px;
@@ -1212,7 +1211,7 @@ input:checked + .slider:before {
   }
   .step__rent-summery .buy-count,
   .step__summery .buy-count {
-    margin-right: 200px;
+    margin-right: 168px;
   }
   .step__header  {
     flex-direction: column;
@@ -1254,7 +1253,7 @@ input:checked + .slider:before {
     margin-bottom: 15px;
   }
   .step__header {
-    align-content: center;
+    align-items: center;
   }
   .step-3__details {
     flex-direction: column;
@@ -1331,8 +1330,35 @@ input:checked + .slider:before {
   .step-4__block-item {
     margin-bottom: 0px;
   }
-  .step-2__btn {
+  .step-4__container + .step-2__btn {
     position: relative;
     left: calc(50% - 182px/2);
+  }
+  .hood-buy__items {
+    grid-template-columns: 170px 170px;
+  }
+  .modal-logo, .modal-hood, .modal-tie, .modal-brush {
+    width: auto;
+  }
+  .buy-size {
+    margin-top: 30px;
+  }
+  .buy-count, 
+  .buy-count__s, 
+  .rent-count {
+    margin-right: -47px;
+    margin-left: -20px;
+  }
+  .step__summery .buy-sum__count {
+    padding-right: 48px;
+  }
+  .step__rent-summery .buy-sum__count {
+    padding-right: 87px;
+  }
+  .step-logo__buy-details .buy-count {
+    margin-left: 0;
+  }
+  .logo-sum__name {
+    margin-top: 10px;
   }
 }

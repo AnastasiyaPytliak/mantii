@@ -270,6 +270,7 @@ function handleClickActiveColor (e) {
       for (let i = 0; i < select.length; i++) {
           if (select[i].value === e.target.value) select[i].selected = true;
       }
+      e.target.classList.add('active')
 
   } else if (e.target.classList.contains('color-mg')) {
       document.querySelectorAll('input.color-mg').forEach(i => {
