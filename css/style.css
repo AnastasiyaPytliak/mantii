@@ -1207,7 +1207,24 @@ input:checked + .slider:before {
     align-items: center;
   }
   .step__group {
-    width: 500px;
+    width: 400px;
+    padding: 0 16px;
+  }
+  .step__rent-summery .buy-count,
+  .step__summery .buy-count {
+    margin-right: 200px;
+  }
+  .step__header  {
+    flex-direction: column;
+  }
+  .step__prev {
+    position: static;
+    margin-bottom: 15px;
+    justify-content: center;
+  }
+  .step__more {
+    margin-top: 40px;
+    padding: 0 20px;
   }
   .step-3__logo {
     flex-direction: column;
@@ -1225,12 +1242,19 @@ input:checked + .slider:before {
   .step-logo__buy-details .buy-name,
   .step-logo__buy-details .logo-price__fancy {
     margin-right: 0;
+    margin-bottom: 15px;
+  }
+  .step-logo__buy-details:nth-child(3) .buy-count {
+    margin-left: 0;
   }
   .step-logo__buy-details .logo-price {
     margin-right: 27px;
   }
-  .logo-sum__name {
-    margin-left: 105px;
+  .buy-name {
+    margin-bottom: 15px;
+  }
+  .step__header {
+    align-content: center;
   }
   .step-3__details {
     flex-direction: column;
@@ -1247,6 +1271,7 @@ input:checked + .slider:before {
   }
   .step-3__block {
     grid-template-columns: 340px;
+    margin: 0;
   }
   .hood__block, .tie__block, .brush__block  {
     flex-direction: column;
@@ -1261,9 +1286,53 @@ input:checked + .slider:before {
   .step-3__notification {
     margin-right: 16px;
     margin-left: 16px;
+    padding: 0 50px;
   }
   .step-4__container {
-    grid-template-columns: 1fr
+    grid-template-columns: 400px;
   }
-
+  .step-4__block-item {
+    display: block;
+  }
+  .step-4__group,
+  .step-4__uni {
+    width: 100%;
+    max-width: 100%;
+  }
+  .step-4__row {
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+  .slider:before {
+    bottom: 0;
+  }
+  .step-4-services p:first-child {
+    margin-right: 40px;
+  }
+  .step-4-services p:nth-child(2) {
+    margin-right: 58px;
+  }
+  .step-4-services p:nth-child(3) {
+    margin-right: 23px;
+    white-space: nowrap;
+  }
+  .order-name {
+    width: 90px;
+  }
+  .order-serive {
+    width: 70px;
+  }
+  .order-count {
+    margin-right: 30px;
+  }
+  .step-4__sum {
+    margin-bottom: 340px;
+  }
+  .step-4__block-item {
+    margin-bottom: 0px;
+  }
+  .step-2__btn {
+    position: relative;
+    left: calc(50% - 182px/2);
+  }
 }
