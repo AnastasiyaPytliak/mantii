@@ -1195,6 +1195,7 @@ input:checked + .slider:before {
     flex-direction: column;
     align-items: center;
     padding: 0 16px;
+    margin: 0 16px;
     width: 500px;
   }
   .step-1__group {
