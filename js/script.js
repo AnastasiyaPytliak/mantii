@@ -584,9 +584,11 @@ function handleCountRent (e) {
   if (e.target.classList.contains("plus-rent")) {
     ++e.target.parentElement.querySelector("input").value
     orderSecondCount.textContent = e.target.parentElement.querySelector("input").value
+    inputRentSumValue.value = +rentValue.value + +rentCapValue.value
 
-    if (+e.target.parentElement.querySelector("input").value > 4) {
+    if (inputRentSumValue.value > 4) {
       priceBakalavrRent.textContent = '400'
+      priceBakalavrRentCap.textContent = '800'
     } 
 
     if (+e.target.parentElement.querySelector("input").value > 0) {
@@ -603,12 +605,11 @@ function handleCountRent (e) {
       modalBrushBtn.setAttribute('style','display:block')
     }
 
-    inputRentSumValue.value = +rentValue.value + +rentCapValue.value
+
     rentSizeCount.textContent = inputRentSumValue.value
     countRentTie.textContent =  inputRentSumValue.value
     countRentHood.textContent = inputRentSumValue.value
   
-    
     sumRent.textContent = +priceBakalavrRent.textContent * +e.target.parentElement.querySelector("input").value;
     orderSecondPrice.textContent = sumRent.textContent
 
@@ -619,9 +620,11 @@ function handleCountRent (e) {
   } else if (e.target.classList.contains("minus-rent") && +e.target.parentElement.querySelector("input").value > 0) {
     --e.target.parentElement.querySelector("input").value
     orderSecondCount.textContent = e.target.parentElement.querySelector("input").value
+    inputRentSumValue.value = +rentValue.value + +rentCapValue.value
 
-    if (+e.target.parentElement.querySelector("input").value < 5) {
+    if (inputRentSumValue.value < 5) {
       priceBakalavrRent.textContent = '500'
+      priceBakalavrRentCap.textContent = '900'
     }  
 
     if (+e.target.parentElement.querySelector("input").value == 0) {
@@ -638,7 +641,6 @@ function handleCountRent (e) {
       modalBrushBtn.setAttribute('style','display:block')
     }
 
-    inputRentSumValue.value = +rentValue.value + +rentCapValue.value
     rentSizeCount.textContent = inputRentSumValue.value
     countRentTie.textContent =  inputRentSumValue.value
     countRentHood.textContent = inputRentSumValue.value
