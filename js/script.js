@@ -82,6 +82,7 @@ const orderThirdCount = document.querySelector('.order-third .order-count p')
 const orderThirdPrice = document.querySelector('.order-third .order-price p')
 
 const orderForth = document.querySelector('.order-forth')
+const orderForthName = document.querySelector('.order-forth .order-name')
 const orderForthCount = document.querySelector('.order-forth .order-count p')
 
 const orderFifth = document.querySelector('.order-fifth')
@@ -1258,19 +1259,26 @@ const hood = () => {
   return arrayBrush
 }
 
-const costItems = () => {
+const getOrderDetails = () => {
   let data = []
   if (+orderFirstPrice.textContent) {
-    data.push({name: `${orderFirstName.textContent} (покупка)`, value: orderFirstPrice.textContent})
+    data.push({name: 'Комплект (покупка)', value: orderFirstName.textContent})
+    data.push({name: 'Cтоимость (покупка)', value: orderFirstPrice.textContent})
   }
   if (+orderSecondPrice.textContent) {
-    data.push({name: `${orderSecondName.textContent} (аренда)`, value: orderSecondPrice.textContent})
+    data.push({name: 'Комплект (аренда)', value: orderSecondName.textContent})
+    data.push({name: 'Стоимость (аренда)', value: orderSecondPrice.textContent})
   }
   if (+orderThirdPrice.textContent) {
-    data.push({name: `${orderThirdName.textContent} (с покупкой шапки)`, value: orderThirdPrice.textContent})
+    data.push({name: 'Комплект (аренда с покупкой шапки)', value: orderThirdName.textContent})
+    data.push({name: 'Стоимость (аренда с покупкой шапки)', value: orderThirdPrice.textContent})
+  }
+  if (+orderForthCount.textContent) {
+    data.push({name: 'Логотип', value: orderForthName.textContent})
   }
   if (+orderFifthPrice.textContent) {
-    data.push({name: orderFifthName.textContent, value: orderFifthPrice.textContent})
+    data.push({name: 'Логотип', value: orderFifthName.textContent})
+    data.push({name: 'Стоимость (вышивка)', value: orderFifthPrice.textContent})
   }
   return data
 }
@@ -1280,7 +1288,7 @@ validate()
 function handleSubmitForm (e) {
   e.preventDefault();
   const data = []
-  data.push(...costItems(), ...hood(), ...tie(), ...brush())
+  data.push(...getOrderDetails(), ...hood(), ...tie(), ...brush())
 
   formElement.querySelectorAll('.in-num').forEach(i => {
     const {name, value} = i;
