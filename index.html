@@ -51,7 +51,7 @@
                       <label for="color5"></label>
                     </div>
                     <div class="tab-color">
-                      <input class="color" type="radio" id="color6" name="Цвет капюшона" value="голубой">
+                      <input class="color" type="radio" id="color6" name="Цвет капюшона" value="бирюзовый">
                       <label for="color6"></label>
                     </div>
                   </div>
@@ -107,7 +107,7 @@
                       <label for="color3-mg"></label>
                     </div>
                     <div class="tab-color-mg">
-                      <input class="color-mg" type="radio" id="color4-mg" name="Цвет капюшона" value="серебрянный">
+                      <input class="color-mg" type="radio" id="color4-mg" name="Цвет капюшона" value="серебристый">
                       <label for="color4-mg"></label>
                     </div>
                     <div class="tab-color-mg">
@@ -115,7 +115,7 @@
                       <label for="color5-mg"></label>
                     </div>
                     <div class="tab-color-mg">
-                      <input class="color-mg" type="radio" id="color6-mg" name="Цвет капюшона" value="голубой">
+                      <input class="color-mg" type="radio" id="color6-mg" name="Цвет капюшона" value="бирюзовый">
                       <label for="color6-mg"></label>
                     </div>
                   </div>
@@ -655,7 +655,7 @@
                       <option value="синий">синий</option>
                       <option value="красный">красный</option>
                       <option value="золотой">золотой</option>
-                      <option value="серебристиый">серебристый</option>
+                      <option value="серебристый">серебристый</option>
                       <option value="фиолетовый">фиолетовый</option>
                       <option value="бирюзовый">бирюзовый</option>
                     </select>
@@ -679,10 +679,11 @@
                   <div class="brush-title">Цвет кисточки на шапке (покупка) *</div>
                   <div class="brush__block">
                     <select name="" id="brush">
+                      <option value="черный">черный</option>
                       <option value="синий">синий</option>
                       <option value="красный">красный</option>
                       <option value="золотой">золотой</option>
-                      <option value="серебристиый">серебристый</option>
+                      <option value="серебристый">серебристый</option>
                       <option value="фиолетовый">фиолетовый</option>
                       <option value="бирюзовый">бирюзовый</option>
                     </select>
@@ -769,12 +770,12 @@
                       </div>
                       <div class="hood-buy__item">
                         <div class="hood-buy__info">
-                          <div class="hood-buy__title">Голубой</div>
+                          <div class="hood-buy__title">Бирюзовый</div>
                           <div class="hood-buy__color-light"></div>
                         </div>
                         <div class="hood-buy__count">
                           <span class="hood-buy minus__buy-light" data-change="-1">-</span>
-                          <input type="text" class="in-num" name="Цвет капюшона (покупка) - цвет голубой" value="0">
+                          <input type="text" class="in-num" name="Цвет капюшона (покупка) - цвет бирюзовый" value="0">
                           <span class="hood-buy plus__buy-light" data-change="+1">+</span>
                         </div>
                       </div>
@@ -1028,7 +1029,7 @@
                       </div>
                       <div class="brush-buy__count">
                         <span class="hood-buy minus-brush__buy-red" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Цвет кисточки (покупка) - цвет красный" value="0">
+                        <input type="text" class="in-num" name="Цвет кисточки (покупка) - цвет красный" value="1">
                         <span class="hood-buy plus-brush__buy-red" data-change="+1">+</span>
                       </div>
                     </div>
@@ -1067,13 +1068,24 @@
                     </div>
                     <div class="hood-buy__item">
                       <div class="hood-buy__info">
-                        <div class="hood-buy__title">Голубой</div>
+                        <div class="hood-buy__title">Бирюзовый</div>
                         <div class="hood-buy__color-light"></div>
                       </div>
                       <div class="brush-buy__count">
                         <span class="hood-buy minus-brush__buy-light" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Цвет кисточки (покупка) - цвет голубой" value="0">
+                        <input type="text" class="in-num" name="Цвет кисточки (покупка) - цвет бирюзовый" value="0">
                         <span class="hood-buy plus-brush__buy-light" data-change="+1">+</span>
+                      </div>
+                    </div>
+                    <div class="hood-buy__item">
+                      <div class="hood-buy__info">
+                        <div class="hood-buy__title">Черный</div>
+                        <div class="hood-buy__color-black"></div>
+                      </div>
+                      <div class="brush-buy__count">
+                        <span class="hood-buy minus-brush__buy-black" data-change="-1">-</span>
+                        <input type="text" class="in-num" name="Цвет кисточки (покупка) - цвет черный" value="0">
+                        <span class="hood-buy plus-brush__buy-black" data-change="+1">+</span>
                       </div>
                     </div>
                   </div>
@@ -1209,6 +1221,15 @@
           <button class="btn step-2__btn form__submit" type="submit">Заказать</button>
         </div>
       
+        <div class="wrap-modal">
+          <div class="modal-close">
+            <div class="modal-loco__container">
+              <div class="modal-close__title">Ваш заказ принят!</div>
+              <div class="modal-close__text"><a href="https://www.mantiya.su/">Вернуться на главную</a></div>
+              <button class="modal-close__btn btn"><a href="#">Сделать новый заказ</a></button>
+            </div>
+          </div>
+        </div>
 
       </form>
     </div>

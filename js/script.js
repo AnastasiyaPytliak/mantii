@@ -5,13 +5,7 @@ const pickColorTieElement = document.querySelector('.bakalavr-tie');
 const formElement = document.querySelector('form');
 const colors = document.querySelectorAll('.color');
 const colorsMg = document.querySelectorAll('.color-mg');
-const minus = document.querySelector('.minus');
-const minusRent = document.querySelector('.minus-rent');
-const minusRentCap = document.querySelector('.minus-cap');
-const plus = document.querySelector('.plus');
-const plusRent = document.querySelector('.plus-rent');
-const plusRentCap = document.querySelector('.plus-cap');
-// const num = document.querySelector('.in-num');
+
 const sum = document.querySelector('.buy-sum__count p');
 const priceBakalavr = document.querySelector('.buy-price p');
 const sumRent = document.querySelector('.rent-sum__count p');
@@ -30,7 +24,7 @@ const rentCapValue = document.querySelector('.rent .step__buy-details .buy-count
 const logoValue = document.querySelector('.step__logo-summery .buy-sum__count p');
 const logoPrice = document.querySelector('.logo-price__fancy p');
 const sumAll = document.querySelector('.step__all-summery .buy-sum__count p');
-// const tabs = document.querySelector('.step-1__tabs');
+
 const colorTabs = document.querySelector('.step-1__tabs.bakalavr')
 const colorTieTabs = document.querySelector('.step-1__tabs.bakalavr-tie')
 const colorTabsMg = document.querySelector('.step-1__tabs.magistr')
@@ -38,7 +32,7 @@ const stepBakalavr = document.querySelector('.bakalavr-step')
 const stepMagistr = document.querySelector('.magistr-step')
 const orderName = document.querySelector('.buy-name')
 const step2 = document.querySelector('.step-2')
-// const step1AtiveBakalavr = document.querySelector('.step-1__btn .btn.active')
+
 const magistrImg = document.querySelector('.magistr-img img')
 const bakalavrImg = document.querySelector('.bakalavr-img img')
 const stepImg = document.querySelector('.step-3__img img')
@@ -52,14 +46,14 @@ const buySizeCountCh = document.querySelector('.buy-size__count-ch')
 const rentSizeCount = document.querySelector('.rent-size__count')
 const rentSizeCountCh = document.querySelector('.rent-size__count-ch')
 
-const sumOrder = document.querySelector('.step-4__sum .sum-all p')
-// const logoElement = document.querySelector('.step-3__logo')
+const sumOrder = document.querySelector('.step-4__sum .sum-all p') 
 
 const logoDivElement = document.querySelector('.logo__list')
 const logoModalElement = document.querySelector('.wrap')
 const hoodModalElement = document.querySelector('.wrap-hood')
 const tieModalElement = document.querySelector('.wrap-tie')
 const brushModalElement = document.querySelector('.wrap-brush')
+const closeModalElement = document.querySelector('.wrap-modal')
 
 const step3Element = document.querySelector('.step-3')
 
@@ -91,6 +85,7 @@ const orderForth = document.querySelector('.order-forth')
 const orderForthCount = document.querySelector('.order-forth .order-count p')
 
 const orderFifth = document.querySelector('.order-fifth')
+const orderFifthName = document.querySelector('.order-fifth .order-name')
 const orderFifthCount = document.querySelector('.order-fifth .order-count p')
 const orderFifthPrice = document.querySelector('.order-fifth .order-price p')
 
@@ -109,6 +104,9 @@ const modalTieRentBlock = document.querySelector('.modal-color__tie-rent')
 const modalBrushBuyBlock = document.querySelector('.modal-color__brush-buy')
 const modalBrushBtn = document.querySelector('.brush-colors')
 
+const select1 = document.getElementById("hood");
+const select2 = document.getElementById("tie");
+const select3 = document.getElementById("brush");
 
 nextBtn.forEach(button=>{
   button.addEventListener('click', () => {
@@ -256,7 +254,7 @@ function handleClickActiveColor (e) {
         bakalavrImg.src = './image/bakalavr-hood/bakalavr-hood-purple.jpg'
         stepImg.src = './image/bakalavr-hood/bakalavr-hood-purple.jpg'
         break;
-      case 'голубой':
+      case 'бирюзовый':
         bakalavrImg.src = './image/bakalavr-hood/bakalavr-hood-light-blue.jpg'
         stepImg.src = './image/bakalavr-hood/bakalavr-hood-light-blue.jpg'
         break;
@@ -265,11 +263,12 @@ function handleClickActiveColor (e) {
         stepImg.src = './image/bakalavr-hood/bakalavr-hood-bue.png'
     }
 
-    const select = document.querySelector('#hood').getElementsByTagName('option');
+    const select = document.querySelector('#hood').getElementsByTagName('option')
 
       for (let i = 0; i < select.length; i++) {
-          if (select[i].value === e.target.value) select[i].selected = true;
+          if (select[i].value === e.target.value) select[i].selected = true;       
       }
+
       e.target.classList.add('active')
 
   } else if (e.target.classList.contains('color-mg')) {
@@ -289,7 +288,7 @@ function handleClickActiveColor (e) {
           magistrImg.src = './image/magistr/magistr-gold.jpg'
           stepImg.src = './image/magistr/magistr-gold.jpg'
           break;
-        case 'серебрянный':
+        case 'серебристый':
           magistrImg.src = './image/magistr/magistr-silver.jpg'
           stepImg.src = './image/magistr/magistr-silver.jpg'
           break;
@@ -297,7 +296,7 @@ function handleClickActiveColor (e) {
           magistrImg.src = './image/magistr/magistr-purple.jpg'
           stepImg.src = './image/magistr/magistr-purple.jpg'
           break;
-        case 'голубой':
+        case 'бирюзовый':
           magistrImg.src = './image/magistr/magistr-light-blue.jpg'
           stepImg.src = './image/magistr/magistr-light-blue.jpg'
           break;
@@ -349,6 +348,125 @@ function handleClickActiveColor (e) {
       }
       e.target.classList.add('active')
     }
+}
+
+function selectedHood () {
+  const value = select1.value;
+
+  const item = document.querySelector('.next-btn.active')
+  if (item.dataset.role == 'order1') {
+    document.querySelectorAll('input.color').forEach(i => {
+      i.classList.remove('active')
+      if (i.value == value) {
+        i.classList.add('active')
+      }  
+      switch(value) {
+        case 'cиний':
+          bakalavrImg.src = './image/bakalavr-hood/bakalavr-hood-bue.png'
+          stepImg.src = './image/bakalavr-hood/bakalavr-hood-bue.png'
+          break;
+        case 'красный':
+          bakalavrImg.src = './image/bakalavr-hood/bakalavr-hood-red.jpg'
+          stepImg.src = './image/bakalavr-hood/bakalavr-hood-red.jpg'
+          break;
+        case 'золотой':
+          bakalavrImg.src = './image/bakalavr-hood/bakalavr-hood-gold.jpg'
+          stepImg.src = './image/bakalavr-hood/bakalavr-hood-gold.jpg'
+          break;
+        case 'серебристый':
+          bakalavrImg.src = './image/bakalavr-hood/bakalavr-hood-silver.jpg'
+          stepImg.src = './image/bakalavr-hood/bakalavr-hood-silver.jpg'
+          break;
+        case 'фиолетовый':
+          bakalavrImg.src = './image/bakalavr-hood/bakalavr-hood-purple.jpg'
+          stepImg.src = './image/bakalavr-hood/bakalavr-hood-purple.jpg'
+          break;
+        case 'бирюзовый':
+          bakalavrImg.src = './image/bakalavr-hood/bakalavr-hood-light-blue.jpg'
+          stepImg.src = './image/bakalavr-hood/bakalavr-hood-light-blue.jpg'
+          break;
+        default:
+          bakalavrImg.src = './image/bakalavr-hood/bakalavr-hood-bue.png'
+          stepImg.src = './image/bakalavr-hood/bakalavr-hood-bue.png'
+      }  
+    })
+  } else if (item.dataset.role == 'order2') {
+    document.querySelectorAll('input.color-mg').forEach(i => {
+      i.classList.remove('active')
+      if (i.value == value) {
+        i.classList.add('active')      
+        }
+        switch(value) {
+          case 'cиний':
+            magistrImg.src = './image/magistr/magistr-blue.jpg'
+            stepImg.src = './image/magistr/magistr-blue.jpg'
+            break;
+          case 'красный':
+            magistrImg.src = './image/magistr/magistr-red.jpg'
+            stepImg.src = './image/magistr/magistr-red.jpg'
+            break;
+          case 'золотой':
+            magistrImg.src = './image/magistr/magistr-gold.jpg'
+            stepImg.src = './image/magistr/magistr-gold.jpg'
+            break;
+          case 'серебристый':
+            magistrImg.src = './image/magistr/magistr-silver.jpg'
+            stepImg.src = './image/magistr/magistr-silver.jpg'
+            break;
+          case 'фиолетовый':
+            magistrImg.src = './image/magistr/magistr-purple.jpg'
+            stepImg.src = './image/magistr/magistr-purple.jpg'
+            break;
+          case 'бирюзовый':
+            magistrImg.src = './image/magistr/magistr-light-blue.jpg'
+            stepImg.src = './image/magistr/magistr-light-blue.jpg'
+            break;
+          default:
+            magistrImg.src = './image/magistr/magistr-blue.jpg'
+            stepImg.src = './image/magistr/magistr-blue.jpg'
+        }
+    })
+  }
+
+}
+
+function selectedTie () {
+  const value = select2.value;
+
+  const item = document.querySelector('.next-btn.active')
+  if (item.dataset.role == 'order1') {
+    document.querySelectorAll('input.color-tie').forEach(i => {
+      i.classList.remove('active')
+      if (i.value == value) {
+        i.classList.add('active')
+      }  
+      switch(value) {
+        case 'cиний':
+          bakalavrImg.src = './image/bakalavr-tie/bakalavr-tie-blue.png'
+          stepImg.src = './image/bakalavr-tie/bakalavr-tie-blue.png'
+          break;
+        case 'красный':
+          bakalavrImg.src = './image/bakalavr-tie/bakalavr-tie-red.png'
+          stepImg.src = './image/bakalavr-tie/bakalavr-tie-red.png'
+          break;
+        case 'золотой':
+          bakalavrImg.src = './image/bakalavr-tie/bakalavr-tie-gold.png'
+          stepImg.src = './image/bakalavr-tie/bakalavr-tie-gold.png'
+          break;
+        case 'белый':
+          bakalavrImg.src = './image/bakalavr-tie/bakalavr-tie-silver.png'
+          stepImg.src = './image/bakalavr-tie/bakalavr-tie-silver.png'
+          break;
+        case 'зеленый':
+          bakalavrImg.src = './image/bakalavr-tie/bakalavr-tie-green.jpg'
+          stepImg.src = './image/bakalavr-tie/bakalavr-tie-green.jpg'
+          break;
+        default:
+          bakalavrImg.src = './image/bakalavr-tie/bakalavr-tie-blue.png'
+          stepImg.src = './image/bakalavr-tie/bakalavr-tie-blue.png'
+      }
+    })
+  }
 }
 
 function reset () {
@@ -980,7 +1098,7 @@ function handleColorBrushBuy (e) {
     dataColorBrushBuy ()
   }
 
-  if (e.target.classList.contains("plus-brush__buy-purple") && dataColorBrushBuy() < +buySizeCount.textContent + +rentSizeCount.textContent) {
+  if (e.target.classList.contains("plus-brush__buy-purple") && dataColorBrushBuy() < +buySizeCount.textContent + +rentCapValue.textContent) {
     ++e.target.parentElement.querySelector("input").value;
     dataColorBrushBuy ()
   } else if (e.target.classList.contains("minus-brush__buy-purple") && +e.target.parentElement.querySelector("input").value > 0) {
@@ -988,10 +1106,18 @@ function handleColorBrushBuy (e) {
     dataColorBrushBuy ()
   }
 
-  if (e.target.classList.contains("plus-brush__buy-light") && dataColorBrushBuy() < +buySizeCount.textContent + +rentSizeCount.textContent) {
+  if (e.target.classList.contains("plus-brush__buy-light") && dataColorBrushBuy() < +buySizeCount.textContent + +rentCapValue.textContent) {
     ++e.target.parentElement.querySelector("input").value;
     dataColorBrushBuy ()
   } else if (e.target.classList.contains("minus-brush__buy-light") && +e.target.parentElement.querySelector("input").value > 0) {
+    --e.target.parentElement.querySelector("input").value;
+    dataColorBrushBuy ()
+  }
+
+  if (e.target.classList.contains("plus-brush__buy-black") && dataColorBrushBuy() < +buySizeCount.textContent + +rentCapValue.textContent) {
+    ++e.target.parentElement.querySelector("input").value;
+    dataColorBrushBuy ()
+  } else if (e.target.classList.contains("minus-brush__buy-black") && +e.target.parentElement.querySelector("input").value > 0) {
     --e.target.parentElement.querySelector("input").value;
     dataColorBrushBuy ()
   }
@@ -1093,14 +1219,60 @@ function handleShowTieChoice (e) {
   } 
 }
 
-const number = '375295203312';
-function sendToWhatsapp(text, phone) {
+const brush = () => {
+  let arrayBrush = []
+  let sum = 0
+  let array = formElement.querySelectorAll('.brush-buy__count .in-num')
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i].value
+  }
+  if (sum == 0) {
+    arrayBrush.push({name: 'Цвет кисточки', value: select3.value})
+  }
+  return arrayBrush
+}
 
-  text = encodeURIComponent(text);
+const tie = () => {
+  let arrayBrush = []
+  let sum = 0
+  let array = formElement.querySelectorAll('.tie-buy__count .in-num')
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i].value
+  }
+  if (sum == 0 && document.querySelector('.step-1__btn .btn.active').value == 'с галстуком') {
+    arrayBrush.push({name: 'Цвет галстука', value: select2.value})
+  }
+  return arrayBrush
+}
 
-  let url = `https://web.whatsapp.com/send?phone=${phone}&text=${text}&source=&data=`;
+const hood = () => {
+  let arrayBrush = []
+  let sum = 0
+  let array = formElement.querySelectorAll('.hood-buy__count .in-num')
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i].value
+  }
+  if (sum == 0 && document.querySelector('.step-1__btn .btn.active').value == 'с капюшоном') {
+    arrayBrush.push({name: 'Цвет капюшона', value: select1.value})
+  }
+  return arrayBrush
+}
 
-  window.open(url);
+const costItems = () => {
+  let data = []
+  if (+orderFirstPrice.textContent) {
+    data.push({name: `${orderFirstName.textContent} (покупка)`, value: orderFirstPrice.textContent})
+  }
+  if (+orderSecondPrice.textContent) {
+    data.push({name: `${orderSecondName.textContent} (аренда)`, value: orderSecondPrice.textContent})
+  }
+  if (+orderThirdPrice.textContent) {
+    data.push({name: `${orderThirdName.textContent} (с покупкой шапки)`, value: orderThirdPrice.textContent})
+  }
+  if (+orderFifthPrice.textContent) {
+    data.push({name: orderFifthName.textContent, value: orderFifthPrice.textContent})
+  }
+  return data
 }
 
 validate()
@@ -1108,10 +1280,8 @@ validate()
 function handleSubmitForm (e) {
   e.preventDefault();
   const data = []
-  formElement.querySelectorAll('.active').forEach(i => {
-    const {name, value} = i;
-    data.push({name, value})
-  })
+  data.push(...costItems(), ...hood(), ...tie(), ...brush())
+
   formElement.querySelectorAll('.in-num').forEach(i => {
     const {name, value} = i;
     if (+i.value > 0 && i.value != '') {
@@ -1129,13 +1299,15 @@ function handleSubmitForm (e) {
       data.push({name, value})
     })
   }
+
   formElement.querySelectorAll('.text-input').forEach(i => {
     const {name, value} = i;
     data.push({name, value})
   })
-  const text = 'Ваш заказ оформлен.'
 
-  sendToWhatsapp(text, number);
+  data.push({name: 'Общая сумма заказа', value: sumOrder.textContent})
+
+  closeModalElement.setAttribute('style', 'display: flex')
   console.log(data);
 }
 
@@ -1169,3 +1341,6 @@ formElement.addEventListener('submit', handleSubmitForm)
 
 step3sizeRent.addEventListener('click', handleGetSizeRent)
 step3sizeBuy.addEventListener('click', handleGetSizeBuy)
+
+select1.addEventListener('click', selectedHood)
+select2.addEventListener('click', selectedTie)
