@@ -23,6 +23,7 @@ const rentValue = document.querySelector('.rent .step__buy-details .buy-count .i
 const rentCapValue = document.querySelector('.rent .step__buy-details .buy-count .in-num__cap');
 const logoValue = document.querySelector('.step__logo-summery .buy-sum__count p');
 const logoPrice = document.querySelector('.logo-price__fancy p');
+const logoStickPrice = document.querySelector('.logo-price p');
 const sumAll = document.querySelector('.step__all-summery .buy-sum__count p');
 
 const colorTabs = document.querySelector('.step-1__tabs.bakalavr')
@@ -84,6 +85,7 @@ const orderThirdPrice = document.querySelector('.order-third .order-price p')
 const orderForth = document.querySelector('.order-forth')
 const orderForthName = document.querySelector('.order-forth .order-name')
 const orderForthCount = document.querySelector('.order-forth .order-count p')
+const orderForthPrice = document.querySelector('.order-forth .order-price p')
 
 const orderFifth = document.querySelector('.order-fifth')
 const orderFifthName = document.querySelector('.order-fifth .order-name')
@@ -503,6 +505,7 @@ function reset () {
   orderForthCount.textContent = '0'
   uniElement.value = ''
   orderFifthCount.textContent = '0'
+  orderForthPrice.textContent = '0'
   logoValue.textContent = '0'
   orderFifthPrice.textContent = '0'
 
@@ -725,6 +728,7 @@ function handleToggleBrush () {
   }
 }
 
+
 function handleCountLogo (e) {
   if (e.target.classList.contains("plus-logo")) {
     ++e.target.parentElement.querySelector("input").value;
@@ -733,6 +737,11 @@ function handleCountLogo (e) {
       orderForth.setAttribute('style', 'display:flex')
     } 
     orderForthCount.textContent = e.target.parentElement.querySelector("input").value
+    const sumLogo = +logoStickPrice.textContent * +e.target.parentElement.querySelector("input").value;
+    logoValue.textContent = sumLogo + +logoPrice.textContent * document.querySelector('.fancy .in-num').value
+    orderForthPrice.textContent = sumLogo
+    sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent 
+    sumOrder.textContent = sumAll.textContent
 
   } else if (e.target.classList.contains("minus-logo") && +e.target.parentElement.querySelector("input").value > 0) {
     --e.target.parentElement.querySelector("input").value;
@@ -741,6 +750,11 @@ function handleCountLogo (e) {
       orderForth.setAttribute('style', 'display:none')
     } 
     orderForthCount.textContent = e.target.parentElement.querySelector("input").value
+    const sumLogo = +logoStickPrice.textContent * +e.target.parentElement.querySelector("input").value;
+    logoValue.textContent = sumLogo + +logoPrice.textContent * document.querySelector('.fancy .in-num').value
+    orderForthPrice.textContent = sumLogo
+    sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent 
+    sumOrder.textContent = sumAll.textContent
   }
 }
 
@@ -1133,8 +1147,9 @@ function handleCountLogoFancy (e) {
       orderFifth.setAttribute('style', 'display:flex')
     } 
     orderFifthCount.textContent = e.target.parentElement.querySelector("input").value
-    logoValue.textContent = +logoPrice.textContent * +e.target.parentElement.querySelector("input").value;
-    orderFifthPrice.textContent = logoValue.textContent
+    const sumLogoFancy = +logoPrice.textContent * +e.target.parentElement.querySelector("input").value;
+    logoValue.textContent = +sumLogoFancy + +logoStickPrice.textContent * +document.querySelector('.stick .in-num').value
+    orderFifthPrice.textContent = sumLogoFancy
     sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent 
     sumOrder.textContent = sumAll.textContent
   } else if (e.target.classList.contains("minus-fancy") && +e.target.parentElement.querySelector("input").value > 0) {
@@ -1144,8 +1159,9 @@ function handleCountLogoFancy (e) {
       orderFifth.setAttribute('style', 'display:none')
     } 
     orderFifthCount.textContent = e.target.parentElement.querySelector("input").value
-    logoValue.textContent = +logoPrice.textContent * +e.target.parentElement.querySelector("input").value;
-    orderFifthPrice.textContent = logoValue.textContent
+    const sumLogoFancy = +logoPrice.textContent * +e.target.parentElement.querySelector("input").value;
+    logoValue.textContent = +sumLogoFancy + +logoStickPrice.textContent * +document.querySelector('.stick .in-num').value
+    orderFifthPrice.textContent = sumLogoFancy
     sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent 
     sumOrder.textContent = sumAll.textContent
   }
@@ -1273,8 +1289,9 @@ const getOrderDetails = () => {
     data.push({name: 'Комплект (аренда с покупкой шапки)', value: orderThirdName.textContent})
     data.push({name: 'Стоимость (аренда с покупкой шапки)', value: orderThirdPrice.textContent})
   }
-  if (+orderForthCount.textContent) {
+  if (+orderForthPrice.textContent) {
     data.push({name: 'Логотип', value: orderForthName.textContent})
+    data.push({name: 'Логотип (наклейка)', value: orderForthPrice.textContent})
   }
   if (+orderFifthPrice.textContent) {
     data.push({name: 'Логотип', value: orderFifthName.textContent})
