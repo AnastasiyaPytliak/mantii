@@ -1356,11 +1356,10 @@ function handleSubmitForm (e) {
     const {name, value} = i;
       data.push({name, value})
   })
-
-  data.push({name: 'Общая сумма заказа', value: sumOrder.textContent})
-
   closeModalElement.setAttribute('style', 'display: flex')
+  data.push({name: 'Общая сумма заказа', value: sumOrder.textContent})
   console.log(data);
+return data
 }
 
 header.addEventListener('click', handleClickToggleActive)
