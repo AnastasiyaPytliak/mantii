@@ -1338,9 +1338,7 @@ function handleSubmitForm (e) {
 
   formElement.querySelectorAll('.in-num').forEach(i => {
     const {name, value} = i;
-    if (+i.value > 0 && i.value != '') {
     data.push({name, value})
-    }
   })
   if (formElement.querySelector('.logo__img-ch').src && !logoInput.value) {
     formElement.querySelectorAll('.logo__img-ch').forEach(i => {
@@ -1356,9 +1354,7 @@ function handleSubmitForm (e) {
 
   formElement.querySelectorAll('.text-input').forEach(i => {
     const {name, value} = i;
-    if (i.value != '') {
       data.push({name, value})
-      }
   })
 
   data.push({name: 'Общая сумма заказа', value: sumOrder.textContent})
