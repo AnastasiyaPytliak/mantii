@@ -1359,13 +1359,19 @@ function handleSubmitForm (e) {
   closeModalElement.setAttribute('style', 'display: flex')
   data.push({name: 'Общая сумма заказа', value: sumOrder.textContent})
 
+  // Convert the array of objects to a single object using reduce()
+  const formData = data.reduce((obj, item) => {
+    obj[item.name] = item.value;
+    return obj;
+  }, {});
+
   // Send the data to the specified address using fetch()
   fetch('https://hook.eu1.make.com/ie7i66afp9ocx16qwm3dgj6i4mvix7eh', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(data)
+    body: JSON.stringify(formData)
   })
   .then(response => {
     // Handle the response from the server
