@@ -1265,11 +1265,18 @@ const brush = () => {
 const tie = () => {
   let arrayBrush = []
   let sum = 0
+  let sum1 = 0
   let array = formElement.querySelectorAll('.tie-buy__count .in-num')
+  let array1 = formElement.querySelectorAll('.tie-rent__count .in-num')
   for (let i = 0; i < array.length; i++) {
     sum += array[i].value
   }
-  if (sum == 0 && document.querySelector('.step-1__btn .btn.active').value == 'с галстуком') {
+  for (let i = 0; i < array.length; i++) {
+    sum1 += array1[i].value
+  }
+  let allSUm = sum + sum1
+  const item = document.querySelector('.next-btn.active')
+  if (allSUm == 0 && item.dataset.role == 'order1' && document.querySelector('.step-1__btn .btn.active').value == 'с галстуком') {
     arrayBrush.push({name: 'Цвет галстука', value: select2.value})
   }
   return arrayBrush
@@ -1278,11 +1285,20 @@ const tie = () => {
 const hood = () => {
   let arrayBrush = []
   let sum = 0
+  let sum1 = 0
   let array = formElement.querySelectorAll('.hood-buy__count .in-num')
+  let array1 = formElement.querySelectorAll('.hood-rent__count .in-num')
   for (let i = 0; i < array.length; i++) {
     sum += array[i].value
   }
-  if (sum == 0 && document.querySelector('.step-1__btn .btn.active').value == 'с капюшоном') {
+  for (let i = 0; i < array.length; i++) {
+    sum1 += array1[i].value
+  }
+  let allSum = sum + sum1
+  const item = document.querySelector('.next-btn.active')
+  if (allSum == 0 && item.dataset.role == 'order1' && document.querySelector('.step-1__btn .btn.active').value == 'с капюшоном') {
+    arrayBrush.push({name: 'Цвет капюшона', value: select1.value})
+  } else if (allSum == 0 && item.dataset.role == 'order2') {
     arrayBrush.push({name: 'Цвет капюшона', value: select1.value})
   }
   return arrayBrush
