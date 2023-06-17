@@ -586,7 +586,7 @@ function handleCountRent (e) {
     orderSecondCount.textContent = e.target.parentElement.querySelector("input").value
     inputRentSumValue.value = +rentValue.value + +rentCapValue.value
 
-    if (inputRentSumValue.value > 4) {
+    if (+inputRentSumValue.value > 4) {
       priceBakalavrRent.textContent = '400'
       priceBakalavrRentCap.textContent = '800'
     } 
@@ -622,7 +622,7 @@ function handleCountRent (e) {
     orderSecondCount.textContent = e.target.parentElement.querySelector("input").value
     inputRentSumValue.value = +rentValue.value + +rentCapValue.value
 
-    if (inputRentSumValue.value < 5) {
+    if (+inputRentSumValue.value < 5) {
       priceBakalavrRent.textContent = '500'
       priceBakalavrRentCap.textContent = '900'
     }  
@@ -657,6 +657,11 @@ function handleCountRent (e) {
 function handleCountRentCap (e) {
   if (e.target.classList.contains("plus-cap")) {
     ++e.target.parentElement.querySelector("input").value; 
+    inputRentSumValue.value = +rentValue.value + +rentCapValue.value
+    if (+inputRentSumValue.value > 4) {
+      priceBakalavrRent.textContent = '400'
+      priceBakalavrRentCap.textContent = '800'
+    } 
     
     if (+e.target.parentElement.querySelector("input").value > 0) {
       orderThird.setAttribute('style', 'display:flex')
@@ -673,7 +678,7 @@ function handleCountRentCap (e) {
       modalBrushBtn.setAttribute('style','display:block')
     }
     
-    inputRentSumValue.value = +rentValue.value + +rentCapValue.value
+
     countBuyWithBrush.textContent = +rentCapValue.value + +inputSumValue.value
     rentSizeCount.textContent = inputRentSumValue.value
 
@@ -689,6 +694,12 @@ function handleCountRentCap (e) {
 
   } else if (e.target.classList.contains("minus-cap") && +e.target.parentElement.querySelector("input").value > 0) {
     --e.target.parentElement.querySelector("input").value;
+    inputRentSumValue.value = +rentValue.value + +rentCapValue.value
+
+    if (+inputRentSumValue.value < 5) {
+      priceBakalavrRent.textContent = '500'
+      priceBakalavrRentCap.textContent = '900'
+    }  
 
     if (+e.target.parentElement.querySelector("input").value == 0) {
       orderThird.setAttribute('style', 'display:none')
@@ -705,7 +716,7 @@ function handleCountRentCap (e) {
       modalBrushBtn.setAttribute('style','display:block')
     }
 
-    inputRentSumValue.value = +rentValue.value + +rentCapValue.value
+
     rentSizeCount.textContent = inputRentSumValue.value
     countRentHood.textContent = inputRentSumValue.value 
 
