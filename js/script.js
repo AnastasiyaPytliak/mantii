@@ -1291,7 +1291,7 @@ const getOrderDetails = () => {
   }
   if (+orderForthPrice.textContent) {
     data.push({name: 'Логотип', value: orderForthName.textContent})
-    data.push({name: 'Логотип (наклейка)', value: orderForthPrice.textContent})
+    data.push({name: 'Cтоимость (наклейка)', value: orderForthPrice.textContent})
   }
   if (+orderFifthPrice.textContent) {
     data.push({name: 'Логотип', value: orderFifthName.textContent})
@@ -1327,7 +1327,9 @@ function handleSubmitForm (e) {
 
   formElement.querySelectorAll('.text-input').forEach(i => {
     const {name, value} = i;
-    data.push({name, value})
+    if (i.value != '') {
+      data.push({name, value})
+      }
   })
 
   data.push({name: 'Общая сумма заказа', value: sumOrder.textContent})
