@@ -1257,6 +1257,8 @@ const brush = () => {
   }
   if (sum == 0) {
     arrayBrush.push({name: 'Цвет кисточки', value: select3.value})
+  } else {
+    arrayBrush.push({name: 'Цвет кисточки', value: ''})
   }
   return arrayBrush
 }
@@ -1277,6 +1279,8 @@ const tie = () => {
   const item = document.querySelector('.next-btn.active')
   if (allSUm == 0 && item.dataset.role == 'order1' && document.querySelector('.step-1__btn .btn.active').value == 'с галстуком') {
     arrayBrush.push({name: 'Цвет галстука', value: select2.value})
+  } else {
+    arrayBrush.push({name: 'Цвет галстука', value: ''})
   }
   return arrayBrush
 }
@@ -1299,6 +1303,8 @@ const hood = () => {
     arrayBrush.push({name: 'Цвет капюшона', value: select1.value})
   } else if (allSum == 0 && item.dataset.role == 'order2') {
     arrayBrush.push({name: 'Цвет капюшона', value: select1.value})
+  } else {
+    arrayBrush.push({name: 'Цвет капюшона', value: ''})
   }
   return arrayBrush
 }
@@ -1308,22 +1314,37 @@ const getOrderDetails = () => {
   if (+orderFirstPrice.textContent) {
     data.push({name: 'Комплект (покупка)', value: orderFirstName.textContent})
     data.push({name: 'Cтоимость (покупка)', value: orderFirstPrice.textContent})
+  } else {
+    data.push({name: 'Комплект (покупка)', value: ''})
+    data.push({name: 'Cтоимость (покупка)', value: ''})
   }
   if (+orderSecondPrice.textContent) {
     data.push({name: 'Комплект (аренда)', value: orderSecondName.textContent})
     data.push({name: 'Стоимость (аренда)', value: orderSecondPrice.textContent})
+  } else {
+    data.push({name: 'Комплект (аренда)', value: ''})
+    data.push({name: 'Стоимость (аренда)', value: ''})
   }
   if (+orderThirdPrice.textContent) {
     data.push({name: 'Комплект (аренда с покупкой шапки)', value: orderThirdName.textContent})
     data.push({name: 'Стоимость (аренда с покупкой шапки)', value: orderThirdPrice.textContent})
+  } else {
+    data.push({name: 'Комплект (аренда с покупкой шапки)', value: ''})
+    data.push({name: 'Стоимость (аренда с покупкой шапки)', value: ''})
   }
   if (+orderForthPrice.textContent) {
-    data.push({name: 'Логотип', value: orderForthName.textContent})
+    data.push({name: 'Логотип (наклейка)', value: orderForthName.textContent})
     data.push({name: 'Cтоимость (наклейка)', value: orderForthPrice.textContent})
+  } else {
+    data.push({name: 'Логотип (наклейка)', value: ''})
+    data.push({name: 'Cтоимость (наклейка)', value: ''})
   }
   if (+orderFifthPrice.textContent) {
-    data.push({name: 'Логотип', value: orderFifthName.textContent})
+    data.push({name: 'Логотип (вышивка)', value: orderFifthName.textContent})
     data.push({name: 'Стоимость (вышивка)', value: orderFifthPrice.textContent})
+  } else {
+    data.push({name: 'Логотип (вышивка)', value: ''})
+    data.push({name: 'Стоимость (вышивка)', value: ''})
   }
   return data
 }
@@ -1339,18 +1360,14 @@ function handleSubmitForm (e) {
     const {name, value} = i;
     data.push({name, value})
   })
-  if (formElement.querySelector('.logo__img-ch').src && !logoInput.value) {
     formElement.querySelectorAll('.logo__img-ch').forEach(i => {
       const {name, src} = i;
-      data.push({name, src})
+      data.push({name, value: src})
     })
-  } else {
     formElement.querySelectorAll('.logo-input').forEach(i => {
       const {name, value} = i;
       data.push({name, value})
     })
-  }
-
   formElement.querySelectorAll('.text-input').forEach(i => {
     const {name, value} = i;
       data.push({name, value})
@@ -1366,22 +1383,23 @@ function handleSubmitForm (e) {
     }, {});
   
     // Send the data to the specified address using fetch()
-    fetch('https://hook.eu1.make.com/ie7i66afp9ocx16qwm3dgj6i4mvix7eh', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    })
-    .then(response => {
-      // Handle the response from the server
-      console.log('Form data sent successfully:', response);
-      // Reset the form or perform any other necessary actions
-    })
-    .catch(error => {
-      // Handle any errors that occur during the request
-      console.error('Error sending form data:', error);
-    });
+    // fetch('https://hook.eu1.make.com/ie7i66afp9ocx16qwm3dgj6i4mvix7eh', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify(formData)
+    // })
+    // .then(response => {
+    //   // Handle the response from the server
+    //   console.log('Form data sent successfully:', response);
+    //   // Reset the form or perform any other necessary actions
+    // })
+    // .catch(error => {
+    //   // Handle any errors that occur during the request
+    //   console.error('Error sending form data:', error);
+    // });
+    console.log(formData);
 }
 
 
