@@ -1360,6 +1360,8 @@ function handleSubmitForm (e) {
     const {name, value} = i;
     data.push({name, value})
   })
+  data.push({name: 'Количество шапок (покупка)', value: `${+inputSumValue.value + +rentCapValue.value}`})
+  data.push({name: 'Количество шапок (аренда)', value: rentValue.value})
     formElement.querySelectorAll('.logo__img-ch').forEach(i => {
       const {name, src} = i;
       data.push({name, value: src})
@@ -1399,7 +1401,6 @@ function handleSubmitForm (e) {
       // Handle any errors that occur during the request
       console.error('Error sending form data:', error);
     });
-
 }
 
 
