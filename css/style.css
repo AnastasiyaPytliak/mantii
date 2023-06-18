@@ -1419,7 +1419,7 @@ input:checked + .slider:before {
   }
   .step-3__img img {
     width: 400px;
-    max-height: inherit;
+    height: inherit;
   }
   .step-1__btn  {
     left: 10px;
