@@ -1093,7 +1093,7 @@ function dataColorBrushBuy () {
 }
 
 function handleColorBrushBuy (e) {
-  if (e.target.classList.contains("plus-brush__buy-blue") && dataColorBrushBuy() < +buySizeCount.textContent + +rentCapValue.value) {
+  if (e.target.classList.contains("plus-brush__buy-blue") && dataColorBrushBuy() < (+buySizeCount.textContent + +rentCapValue.value)) {
     ++e.target.parentElement.querySelector("input").value;
     dataColorBrushBuy ()
   } else if (e.target.classList.contains("minus-brush__buy-blue") && +e.target.parentElement.querySelector("input").value > 0) {
@@ -1109,7 +1109,7 @@ function handleColorBrushBuy (e) {
     dataColorBrushBuy ()
   }
 
-  if (e.target.classList.contains("plus-brush__buy-gold") && dataColorBrushBuy() < +buySizeCount.textContent + +rentCapValue.value) {
+  if (e.target.classList.contains("plus-brush__buy-gold") && dataColorBrushBuy() < (+buySizeCount.textContent + +rentCapValue.value)) {
     ++e.target.parentElement.querySelector("input").value;
     dataColorBrushBuy ()
   } else if (e.target.classList.contains("minus-brush__buy-gold") && +e.target.parentElement.querySelector("input").value > 0) {
@@ -1117,38 +1117,34 @@ function handleColorBrushBuy (e) {
     dataColorBrushBuy ()
   }
 
-  if (e.target.classList.contains("plus-brush__buy-silver") && dataColorBrushBuy() < +buySizeCount.textContent + +rentCapValue.value) {
+  if (e.target.classList.contains("plus-brush__buy-silver") && dataColorBrushBuy() < (+buySizeCount.textContent + +rentCapValue.value)) {
     ++e.target.parentElement.querySelector("input").value;
     dataColorBrushBuy ()
   } else if (e.target.classList.contains("minus-brush__buy-silver") && +e.target.parentElement.querySelector("input").value > 0) {
     --e.target.parentElement.querySelector("input").value;
     dataColorBrushBuy ()
   }
-
-  if (e.target.classList.contains("plus-brush__buy-purple") && dataColorBrushBuy() < +buySizeCount.textContent + +rentCapValue.textContent) {
+  if (e.target.classList.contains("plus-brush__buy-purple") && dataColorBrushBuy() < (+buySizeCount.textContent + +rentCapValue.value)) {
     ++e.target.parentElement.querySelector("input").value;
     dataColorBrushBuy ()
   } else if (e.target.classList.contains("minus-brush__buy-purple") && +e.target.parentElement.querySelector("input").value > 0) {
     --e.target.parentElement.querySelector("input").value;
     dataColorBrushBuy ()
   }
-
-  if (e.target.classList.contains("plus-brush__buy-light") && dataColorBrushBuy() < +buySizeCount.textContent + +rentCapValue.textContent) {
+  if (e.target.classList.contains("plus-brush__buy-light") && dataColorBrushBuy() < (+buySizeCount.textContent + +rentCapValue.value)) {
     ++e.target.parentElement.querySelector("input").value;
     dataColorBrushBuy ()
   } else if (e.target.classList.contains("minus-brush__buy-light") && +e.target.parentElement.querySelector("input").value > 0) {
     --e.target.parentElement.querySelector("input").value;
     dataColorBrushBuy ()
   }
-
-  if (e.target.classList.contains("plus-brush__buy-black") && dataColorBrushBuy() < +buySizeCount.textContent + +rentCapValue.textContent) {
+  if (e.target.classList.contains("plus-brush__buy-black") && dataColorBrushBuy() < (+buySizeCount.textContent + +rentCapValue.value)) {
     ++e.target.parentElement.querySelector("input").value;
     dataColorBrushBuy ()
   } else if (e.target.classList.contains("minus-brush__buy-black") && +e.target.parentElement.querySelector("input").value > 0) {
     --e.target.parentElement.querySelector("input").value;
     dataColorBrushBuy ()
   }
-
 }
 
 function handleCountLogoFancy (e) {

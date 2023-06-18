@@ -1184,6 +1184,11 @@ input:checked + .slider:before {
 .hood-buy__color-light {
   width: 24px;
   height: 24px;
+  background-color: #2cacc7;
+}
+.hood-buy__color-rph {
+  width: 24px;
+  height: 24px;
   background-image: url(../image/russia.png);
 }
 .hood-buy__color-black {
