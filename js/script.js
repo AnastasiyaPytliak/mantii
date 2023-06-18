@@ -1360,6 +1360,7 @@ function handleSubmitForm (e) {
     const {name, value} = i;
     data.push({name, value})
   })
+  data.push({name: 'Количество мантий (аренда)', value: inputRentSumValue.value})
   data.push({name: 'Количество шапок (покупка)', value: `${+inputSumValue.value + +rentCapValue.value}`})
   data.push({name: 'Количество шапок (аренда)', value: rentValue.value})
     formElement.querySelectorAll('.logo__img-ch').forEach(i => {
