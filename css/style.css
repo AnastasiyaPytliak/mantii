@@ -1426,6 +1426,8 @@ input:checked + .slider:before {
   }
   .step-1__btn .btn {
     max-width: 120px;
+    display: flex;
+    justify-content: center;
   }
   .rent-size {
     margin-top: 10px
