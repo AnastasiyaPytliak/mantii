@@ -114,12 +114,14 @@ const select3 = document.getElementById("brush");
 nextBtn.forEach(button=>{
   button.addEventListener('click', () => {
     changeStep('next')
+    document.documentElement.scrollTop = 0;
   })
 })
 
 prevBtn.forEach(button=>{
   button.addEventListener('click', () => {
     changeStep('prev')
+    document.documentElement.scrollTop = 0;
   })
 })
 
@@ -150,7 +152,6 @@ function handleClickActive (e) {
     e.target.classList.add('active')
 
     reset ()
-
     stepMagistr.querySelectorAll('.active').forEach(i => {
       i.classList.remove('active')
     })
@@ -186,7 +187,6 @@ function handleClickActive (e) {
       e.target.classList.add('active')
 
       reset ()
-
       priceBakalavr.textContent = '1750'
 
       if (document.querySelector('.color-mg.active').value == 'синий') {
@@ -740,7 +740,6 @@ function handleToggleBrush () {
     stepBrushShow.removeAttribute('disabled')
   }
 }
-
 
 function handleCountLogo (e) {
   if (e.target.classList.contains("plus-logo")) {
@@ -1366,12 +1365,17 @@ function handleSubmitForm (e) {
   }, {});
 
   // Send the data to the specified address using fetch()
-  fetch('https://hook.eu1.make.com/ie7i66afp9ocx16qwm3dgj6i4mvix7eh', {
+
+  fetch('https://wappi.pro/api/sync/message/send?profile_id=f181dd8a-cdab', {
     method: 'POST',
     headers: {
+      'Authorization': '74c1a0f6532c459dc510373010e77f648f9dce76',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(formData)
+    body: JSON.stringify({
+      "body":"Тестовое сообщение",
+      "recipient":"375295203312"
+    })
   })
   .then(response => {
     // Handle the response from the server
