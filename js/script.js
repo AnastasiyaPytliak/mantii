@@ -155,10 +155,10 @@ function handleClickActive (e) {
       i.classList.remove('active')
     })
     let activeValue = header.querySelector(".active").value
-    let category = () => activeValue == 'просто' ? '' : activeValue
+    let category = () => activeValue == 'классик' ? '' : activeValue
 
     switch(activeValue) {
-      case 'просто':
+      case 'классик':
         priceBakalavr.textContent = '1450'
         stepHoodShow.setAttribute('style', 'display:none')
         stepTieShow.setAttribute('style', 'display:none')

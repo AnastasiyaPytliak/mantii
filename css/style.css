@@ -1418,8 +1418,11 @@ input:checked + .slider:before {
     margin-top: 48px;
   }
   .step-3__img img {
-    max-width: 400px;
-    height: 100%;
+    width: 400px;
+    max-height: inherit;
+  }
+  .step-1__btn  {
+    left: 10px;
   }
   .rent-size {
     margin-top: 10px
