@@ -1382,27 +1382,6 @@ function handleSubmitForm (e) {
       // Handle any errors that occur during the request
       console.error('Error sending form data:', error);
     });
-    
-    const myHeaders = new Headers();
-    myHeaders.append("Authorization", "74c1a0f6532c459dc510373010e77f648f9dce76");
-    myHeaders.append("Content-Type", "application/json");
-    
-    const raw = JSON.stringify({
-      "body": "Тестовое сообщение",
-      "recipient": "375295203312"
-    });
-    
-    const requestOptions = {
-      method: 'POST',
-      headers: myHeaders,
-      body: raw,
-      redirect: 'follow'
-    };
-    
-    fetch("https://wappi.pro/api/sync/message/send?profile_id=f181dd8a-cdab", requestOptions)
-      .then(response => response.text())
-      .then(result => console.log(result))
-      .catch(error => console.log('error', error));
 }
 
 
