@@ -1307,6 +1307,12 @@ const hood = () => {
 
 const getOrderDetails = () => {
   let data = []
+  const item = document.querySelector('.next-btn.active')
+  if (item.dataset.role == 'order1') {
+    data.push({name: 'Комплект', value: 'Бакалавр'})
+  } else if (item.dataset.role == 'order2')  {
+    data.push({name: 'Комплект', value: 'Магистр'})
+  }
   if (+orderFirstPrice.textContent) {
     data.push({name: 'Комплект (покупка)', value: orderFirstName.textContent})
     data.push({name: 'Cтоимость (покупка)', value: orderFirstPrice.textContent})
@@ -1359,9 +1365,14 @@ function handleSubmitForm (e) {
   data.push({name: 'Количество мантий (аренда)', value: inputRentSumValue.value})
   data.push({name: 'Количество шапок (покупка)', value: `${+inputSumValue.value + +rentCapValue.value}`})
   data.push({name: 'Количество шапок (аренда)', value: rentValue.value})
+  const logo = document.querySelector('.modal-logo__item.show')
     formElement.querySelectorAll('.logo__img-ch').forEach(i => {
       const {name, src} = i;
-      data.push({name, value: src})
+      if (!logo) {
+        data.push({name, value: ''})
+      } else {
+        data.push({name, value: src})
+      }  
     })
     formElement.querySelectorAll('.logo-input').forEach(i => {
       const {name, value} = i;
