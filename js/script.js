@@ -188,8 +188,10 @@ function handleClickActive (e) {
 
       reset ()
       priceBakalavr.textContent = '1750'
-
-      if (document.querySelector('.color-mg.active').value == 'синий') {
+      let activenon = document.querySelector('.blue')
+      let active = document.querySelector('.color-mg.active')
+      if (!active) { 
+        activenon.classList.add('active')
         stepImg.src = './image/magistr/magistr-blue.jpg'
       }
 
@@ -425,6 +427,7 @@ function selectedHood () {
             stepImg.src = './image/magistr/magistr-light-blue.jpg'
             break;
           default:
+            document.querySelector('.blue').add('active')
             magistrImg.src = './image/magistr/magistr-blue.jpg'
             stepImg.src = './image/magistr/magistr-blue.jpg'
         }
@@ -492,6 +495,8 @@ function reset () {
   orderSecondCount.textContent = '0'
   countRentTie.textContent =  '0'
   countRentHood.textContent = '0'
+  buySizeCountCh.textContent = '0'
+  rentSizeCountCh.textContent = '0'
   
   sumRent.textContent = '0'
   orderSecondPrice.textContent = '0'
@@ -512,6 +517,9 @@ function reset () {
   document.querySelectorAll('.in-num__count').forEach(i => {
     i.value = '0'
   })
+  document.querySelectorAll('.step-4__row input').forEach(i => {
+    i.value = ''
+  })
 
   document.querySelectorAll('.in-num').forEach(i => {
     i.value = '0'
@@ -519,6 +527,10 @@ function reset () {
 
   document.querySelectorAll('.logo__img-ch').forEach(i => {
     i.src = ''
+  })
+
+  document.querySelectorAll('.step-4__order').forEach(i => {
+    i.setAttribute('style', 'display:none')
   })
 
   logoRowImgElement.querySelectorAll('.show').forEach(i => {
@@ -595,12 +607,10 @@ function handleCountRent (e) {
       orderSecond.setAttribute('style', 'display:flex')
       modalHoodRentBlock.setAttribute('style', 'display:block')
       modalTieRentBlock.setAttribute('style', 'display:block')
-    } 
-
-    if (+e.target.parentElement.querySelector("input").value > 0 && +inputSumValue.value == 0 && +rentCapValue.value == 0) {
+    } else if (+e.target.parentElement.querySelector("input").value > 0 && +inputSumValue.value == 0 && +rentCapValue.value == 0) {
       modalBrushBuyBlock.setAttribute('style', 'display:none')
       modalBrushBtn.setAttribute('style','display:none')
-    } else if (+e.target.parentElement.querySelector("input").value >= 0 && +inputSumValue.value != 0 && +rentCapValue.value != 0) {
+    } else if (+e.target.parentElement.querySelector("input").value >= 0 && (+inputSumValue.value > 0 || +rentCapValue.value > 0)) {
       modalBrushBuyBlock.setAttribute('style', 'display:block')
       modalBrushBtn.setAttribute('style','display:block')
     }
@@ -627,16 +637,14 @@ function handleCountRent (e) {
       priceBakalavrRentCap.textContent = '900'
     }  
 
-    if (+e.target.parentElement.querySelector("input").value == 0) {
-      orderSecond.setAttribute('style', 'display:none')
-      modalHoodRentBlock.setAttribute('style', 'display:none')
-      modalTieRentBlock.setAttribute('style', 'display:none')
-    } 
-
-    if (+e.target.parentElement.querySelector("input").value > 0 && +inputSumValue.value == 0 && +rentCapValue.value == 0) {
+    if (+e.target.parentElement.querySelector("input").value > 0) {
+      orderSecond.setAttribute('style', 'display:flex')
+      modalHoodRentBlock.setAttribute('style', 'display:block')
+      modalTieRentBlock.setAttribute('style', 'display:block')
+    } else if (+e.target.parentElement.querySelector("input").value > 0 && +inputSumValue.value == 0 && +rentCapValue.value == 0) {
       modalBrushBuyBlock.setAttribute('style', 'display:none')
       modalBrushBtn.setAttribute('style','display:none')
-    } else if (+e.target.parentElement.querySelector("input").value >= 0 && +inputSumValue.value != 0 && +rentCapValue.value != 0) {
+    } else if (+e.target.parentElement.querySelector("input").value >= 0 && (+inputSumValue.value > 0 || +rentCapValue.value > 0)) {
       modalBrushBuyBlock.setAttribute('style', 'display:block')
       modalBrushBtn.setAttribute('style','display:block')
     }
@@ -668,16 +676,7 @@ function handleCountRentCap (e) {
       modalHoodRentBlock.setAttribute('style', 'display:block')
       modalTieRentBlock.setAttribute('style', 'display:block')
       modalBrushBuyBlock.setAttribute('style', 'display:block')
-    } 
-
-    if (+e.target.parentElement.querySelector("input").value > 0 && +inputSumValue.value == 0 && +rentCapValue.value == 0) {
-      modalBrushBuyBlock.setAttribute('style', 'display:none')
-      modalBrushBtn.setAttribute('style','display:none')
-    } else if (+e.target.parentElement.querySelector("input").value >= 0 && (+inputSumValue.value != 0 || +rentCapValue.value != 0)) {
-      modalBrushBuyBlock.setAttribute('style', 'display:block')
-      modalBrushBtn.setAttribute('style','display:block')
-    }
-    
+    }     
 
     countBuyWithBrush.textContent = +rentCapValue.value + +inputSumValue.value
     rentSizeCount.textContent = inputRentSumValue.value
@@ -703,19 +702,10 @@ function handleCountRentCap (e) {
 
     if (+e.target.parentElement.querySelector("input").value == 0) {
       orderThird.setAttribute('style', 'display:none')
-      modalHoodRentBlock.setAttribute('style', 'display:none')
-      modalTieRentBlock.setAttribute('style', 'display:none')
+      modalHoodBuyBlock.setAttribute('style', 'display:none')
+      modalTieBuyBlock.setAttribute('style', 'display:none')
       modalBrushBuyBlock.setAttribute('style', 'display:none')
     } 
-
-    if (+e.target.parentElement.querySelector("input").value > 0 && +inputSumValue.value == 0 && +rentCapValue.value == 0) {
-      modalBrushBuyBlock.setAttribute('style', 'display:none')
-      modalBrushBtn.setAttribute('style','display:none')
-    } else if (+e.target.parentElement.querySelector("input").value >= 0 && +inputSumValue.value != 0 && +rentCapValue.value != 0) {
-      modalBrushBuyBlock.setAttribute('style', 'display:block')
-      modalBrushBtn.setAttribute('style','display:block')
-    }
-
 
     rentSizeCount.textContent = inputRentSumValue.value
     countRentHood.textContent = inputRentSumValue.value 
@@ -1351,12 +1341,23 @@ const getOrderDetails = () => {
   return data
 }
 
+function date () {
+  let data = []
+  let date = document.querySelector('.step-4__date').value
+  let newDate = new Date(date) 
+  let day = () => newDate.getDate() < 10 ? `0${newDate.getDate()}` : `${newDate.getDate()}`
+  let month = () => (newDate.getMonth() + 1) < 10 ? `0${newDate.getMonth() + 1}` : `${newDate.getMonth() +1}`
+  let dateForm = day() + '.' + month() + '.' +  newDate.getFullYear()
+  data.push({name: 'Дата доставки', value: dateForm})
+  return data
+}
+
 validate()
 
 function handleSubmitForm (e) {
   e.preventDefault();
   const data = []
-  data.push(...getOrderDetails(), ...hood(), ...tie(), ...brush())
+  data.push(...getOrderDetails(), ...hood(), ...tie(), ...brush(), ...date())
 
   formElement.querySelectorAll('.in-num').forEach(i => {
     const {name, value} = i;
@@ -1411,6 +1412,11 @@ function handleSubmitForm (e) {
     });
 }
 
+document.querySelector('.phone').addEventListener('input', 
+    function(e){
+      this.value = this.value.replace(/[^\d.]/g, '');
+    }
+)
 
 header.addEventListener('click', handleClickToggleActive)
 header.addEventListener('click', handleClickShowColor)
