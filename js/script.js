@@ -1324,7 +1324,7 @@ const getOrderDetails = () => {
     data.push({name: 'Комплект (аренда с покупкой шапки)', value: ''})
     data.push({name: 'Стоимость (аренда с покупкой шапки)', value: ''})
   }
-  if (+orderForthPrice.textContent) {
+  if (+orderForthCount.textContent) {
     data.push({name: 'Логотип (наклейка)', value: orderForthName.textContent})
     data.push({name: 'Cтоимость (наклейка)', value: orderForthPrice.textContent})
   } else {
