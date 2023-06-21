@@ -1354,10 +1354,18 @@ function date () {
 
 validate()
 
+function phone () {
+  let data = []
+  let phone = document.querySelector('.phone').value
+  let rightphone = phone.replace(/\D/g, '')
+  data.push({name: 'Whatsapp', value: rightphone})
+  return data
+}
+
 function handleSubmitForm (e) {
   e.preventDefault();
   const data = []
-  data.push(...getOrderDetails(), ...hood(), ...tie(), ...brush(), ...date())
+  data.push(...getOrderDetails(), ...hood(), ...tie(), ...brush(), ...date(), ...phone())
 
   formElement.querySelectorAll('.in-num').forEach(i => {
     const {name, value} = i;
@@ -1411,12 +1419,6 @@ function handleSubmitForm (e) {
       console.error('Error sending form data:', error);
     });
 }
-
-document.querySelector('.phone').addEventListener('input', 
-    function(e){
-      this.value = this.value.replace(/[^\d.]/g, '');
-    }
-)
 
 header.addEventListener('click', handleClickToggleActive)
 header.addEventListener('click', handleClickShowColor)
