@@ -111,6 +111,8 @@ const select1 = document.getElementById("hood");
 const select2 = document.getElementById("tie");
 const select3 = document.getElementById("brush");
 
+document.documentElement.scrollTop = 350
+
 nextBtn.forEach(button=>{
   button.addEventListener('click', () => {
     changeStep('next')
