@@ -191,9 +191,13 @@ function handleClickActive (e) {
       reset ()
       priceBakalavr.textContent = '1750'
       let activenon = document.querySelector('.blue')
+      let activeBlue = document.querySelector('.active.blue')
       let active = document.querySelector('.color-mg.active')
       if (!active) { 
         activenon.classList.add('active')
+        stepImg.src = './image/magistr/magistr-blue.jpg'
+      }
+      if (activeBlue) {
         stepImg.src = './image/magistr/magistr-blue.jpg'
       }
 
