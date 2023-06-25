@@ -784,16 +784,19 @@ textarea {
   max-height: 120px;
   max-width: 510px;
 }
-.step-4__politics {
+.step-4__politics,
+.step-samovyvoz {
   position: absolute;
   z-index: -1;
   opacity: 0;
 }
-.step-4__politics + label {
+.step-4__politics + label,
+.step-samovyvoz + label {
   display: inline-flex;
   align-items: center;
   user-select: none;
 }
+
 .step-4__politics + label::before {
   content: '';
   display: inline-block;
@@ -813,6 +816,29 @@ textarea {
   border-color: #707070;
   background-color: #000;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+.label-s {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #000;
+  border-radius: 0.25em;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+  cursor: pointer;
+  margin-right: 30px;
+}
+.label-pol {
+  border-color: #707070;
+  background-color: #000;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+.samovyvoz .span-s {
+  margin-left: -20px;
 }
 .switch {
   position: relative;
@@ -1482,6 +1508,9 @@ input:checked + .slider:before {
   }
   .buy-price, .rent-price, .rent-price__cap, .logo-price, .logo-price__fancy  {
     margin-bottom: 15px;
+  }
+  .samovyvoz {
+    display: flex;
   }
 }
 

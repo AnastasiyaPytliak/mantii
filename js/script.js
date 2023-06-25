@@ -1368,6 +1368,21 @@ function phone () {
   return data
 }
 
+const lab = document.querySelector('.label-s')
+const input = document.querySelector("#samovyvoz");
+
+lab.addEventListener("click", () => {
+  if (!input.checked) {
+    input.setAttribute("checked", 'checked');
+    lab.classList.add('label-pol')
+    document.querySelector('.step-4__delivery').value = 'метро Раменки 4й выход. Мичуринский 36. C 19.00 до 23.00'
+  } else {
+    input.setAttribute("checked", ' ');
+    lab.classList.remove('label-pol')
+    document.querySelector('.step-4__delivery').value = ''
+  }
+});
+
 function handleSubmitForm (e) {
   e.preventDefault();
   const data = []
