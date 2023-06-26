@@ -697,7 +697,8 @@ function handleCountRentCap (e) {
     orderThirdPrice.textContent = sumRentCap.textContent
 
     rentSumValue.textContent = +sumRentCap.textContent + +sumRent.textContent 
-    sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent 
+    sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent
+    sumOrder.textContent = sumAll.textContent 
 
   } else if (e.target.classList.contains("minus-cap") && +e.target.parentElement.querySelector("input").value > 0) {
     --e.target.parentElement.querySelector("input").value;
@@ -726,6 +727,7 @@ function handleCountRentCap (e) {
 
     rentSumValue.textContent = +sumRentCap.textContent + +sumRent.textContent 
     sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent 
+    sumOrder.textContent = sumAll.textContent
   }
 }
 
