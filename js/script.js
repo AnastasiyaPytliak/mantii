@@ -519,6 +519,8 @@ function reset () {
   orderForthPrice.textContent = '0'
   logoValue.textContent = '0'
   orderFifthPrice.textContent = '0'
+  priceBakalavrRent.textContent = '500'
+  priceBakalavrRentCap.textContent = '900'
 
   document.querySelectorAll('.in-num__count').forEach(i => {
     i.value = '0'
