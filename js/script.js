@@ -1399,6 +1399,7 @@ function handleSubmitForm (e) {
   data.push({name: 'Количество мантий (аренда)', value: inputRentSumValue.value})
   data.push({name: 'Количество шапок (покупка)', value: `${+inputSumValue.value + +rentCapValue.value}`})
   data.push({name: 'Количество шапок (аренда)', value: rentValue.value})
+  data.push({name: 'Сумма залога', value: '0'})
   const logo = document.querySelector('.modal-logo__item.show')
     formElement.querySelectorAll('.logo__img-ch').forEach(i => {
       const {name, src} = i;
