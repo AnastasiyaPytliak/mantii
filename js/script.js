@@ -514,7 +514,6 @@ function reset () {
   sumRentCap.textContent = '0'
   orderThirdPrice.textContent = '0'
   orderForthCount.textContent = '0'
-  uniElement.value = ''
   orderFifthCount.textContent = '0'
   orderForthPrice.textContent = '0'
   logoValue.textContent = '0'
@@ -1399,6 +1398,7 @@ function handleSubmitForm (e) {
   data.push({name: 'Количество мантий (аренда)', value: inputRentSumValue.value})
   data.push({name: 'Количество шапок (покупка)', value: `${+inputSumValue.value + +rentCapValue.value}`})
   data.push({name: 'Количество шапок (аренда)', value: rentValue.value})
+  data.push({name: 'Название учебного заведения и факультет', value: "РЭУ Плеханова"})
   data.push({name: 'Сумма залога', value: '0'})
   const logo = document.querySelector('.modal-logo__item.show')
     formElement.querySelectorAll('.logo__img-ch').forEach(i => {
@@ -1428,22 +1428,23 @@ function handleSubmitForm (e) {
     }, {});
   
     // Send the data to the specified address using fetch()
-    fetch('https://hook.eu1.make.com/ie7i66afp9ocx16qwm3dgj6i4mvix7eh', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    })
-    .then(response => {
-      // Handle the response from the server
-      console.log('Form data sent successfully:', response);
-      // Reset the form or perform any other necessary actions
-    })
-    .catch(error => {
-      // Handle any errors that occur during the request
-      console.error('Error sending form data:', error);
-    });
+    // fetch('https://hook.eu1.make.com/ie7i66afp9ocx16qwm3dgj6i4mvix7eh', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify(formData)
+    // })
+    // .then(response => {
+    //   // Handle the response from the server
+    //   console.log('Form data sent successfully:', response);
+    //   // Reset the form or perform any other necessary actions
+    // })
+    // .catch(error => {
+    //   // Handle any errors that occur during the request
+    //   console.error('Error sending form data:', error);
+    // });
+    console.log(formData);
 }
 
 header.addEventListener('click', handleClickToggleActive)
