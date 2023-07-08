@@ -1428,23 +1428,22 @@ function handleSubmitForm (e) {
     }, {});
   
     // Send the data to the specified address using fetch()
-    // fetch('https://hook.eu1.make.com/ie7i66afp9ocx16qwm3dgj6i4mvix7eh', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(formData)
-    // })
-    // .then(response => {
-    //   // Handle the response from the server
-    //   console.log('Form data sent successfully:', response);
-    //   // Reset the form or perform any other necessary actions
-    // })
-    // .catch(error => {
-    //   // Handle any errors that occur during the request
-    //   console.error('Error sending form data:', error);
-    // });
-    console.log(formData);
+    fetch('https://hook.eu1.make.com/ie7i66afp9ocx16qwm3dgj6i4mvix7eh', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => {
+      // Handle the response from the server
+      console.log('Form data sent successfully:', response);
+      // Reset the form or perform any other necessary actions
+    })
+    .catch(error => {
+      // Handle any errors that occur during the request
+      console.error('Error sending form data:', error);
+    });
 }
 
 header.addEventListener('click', handleClickToggleActive)
