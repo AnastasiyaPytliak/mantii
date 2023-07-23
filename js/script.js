@@ -113,6 +113,82 @@ const select3 = document.getElementById("brush");
 
 document.documentElement.scrollTop = 350
 
+// Change Input value 
+const allBtns = document.querySelectorAll('.buy-count__sign')
+allBtns.forEach(allbtn => {
+  allbtn.addEventListener('click',
+  function(e) {
+    if (e.target.dataset.change == '-1' && +e.target.parentElement.querySelector("input").value > 0) {
+      --e.target.parentElement.querySelector("input").value;
+    } else if (e.target.dataset.change == '+1') {
+      ++e.target.parentElement.querySelector("input").value;
+    }
+  })
+})
+
+
+
+// Array of Image
+const arrayLogoImg = [
+'./image/logo/01-02-03 (1).png', './image/logo/01-02-03 (2).png', './image/logo/01-02-03 (3).png', './image/logo/01-02-03 (4).png',
+'./image/logo/01-02-03 (5).png', './image/logo/01-02-03 (6).png', './image/logo/01-02-03 (7).png', './image/logo/01-02-03 (8).png',
+'./image/logo/01-02-03 (9).png', './image/logo/01-02-03 (10).png', './image/logo/01-02-03 (11).png', './image/logo/01-02-03 (12).png',
+'./image/logo/01-02-03 (13).png', './image/logo/01-02-03 (14).png', './image/logo/01-02-03 (15).png', './image/logo/01-02-03 (16).png',
+'./image/logo/01-02-03 (17).png', './image/logo/01-02-03 (18).png', './image/logo/01-02-03 (19).png', './image/logo/01-02-03 (20).png',
+'./image/logo/01-02-03 (21).png', './image/logo/01-02-03 (22).png', './image/logo/01-02-03 (23).png', './image/logo/01-02-03 (24).png',
+'./image/logo/01-02-03 (25).png', './image/logo/01-02-03 (26).png', './image/logo/01-02-03 (27).png', './image/logo/01-02-03 (28).png',
+'./image/logo/01-02-03 (29).png', './image/logo/01-02-03 (30).png', './image/logo/01-02-03 (31).png', './image/logo/01-02-03 (32).png',
+'./image/logo/01-02-03 (33).png', './image/logo/01-02-03 (34).png', './image/logo/01-02-03 (35).png', './image/logo/01-02-03 (36).png',
+'./image/logo/01-02-03 (37).png', './image/logo/01-02-03 (38).png', './image/logo/01-02-03 (39).png', './image/logo/01-02-03 (40).png',
+'./image/logo/01-02-03 (41).png', './image/logo/01-02-03 (42).png', './image/logo/01-02-03 (43).png', './image/logo/01-02-03 (44).png',
+'./image/logo/01-02-03 (45).png', './image/logo/01-02-03 (46).png', './image/logo/01-02-03 (47).png', './image/logo/01-02-03 (48).png',
+'./image/logo/01-02-03 (49).png', './image/logo/01-02-03 (50).png', './image/logo/01-02-03 (51).png', './image/logo/01-02-03 (52).png',
+'./image/logo/01-02-03 (53).png', './image/logo/01-02-03 (54).png', './image/logo/01-02-03 (55).png', './image/logo/01-02-03 (56).png',
+'./image/logo/01-02-03 (57).png', './image/logo/01-02-03 (58).png', './image/logo/01-02-03 (59).png', './image/logo/01-02-03 (1).jpg'
+]
+
+// Array of Img's title
+const arrayLogoImgTitle = [
+'ВШЭ', 'МГЛУ', 'ВАВТ', 'МГУ ВШГА', 'ВШЭ', 'Дипломатическая академия МИД', 'МАДИ', 'МАИ', 'МАСИ', 'МГИМО', 'МГОУ', 'МГППУ', 'МГПУ', 'МГСУ',
+'МГУ', 'МГУ высшая школа телевидения', 'МГУ геологический факультет', 'МГУ ИССА', 'МГУ исторический факультет', 'МГУ факультет биотехнологий',
+'МГУ факультет журналистики', 'МГУ факультет мировой политики', 'МГУ физический факультет', 'МГУ ФФМ', 'МГУ химический факультет', 
+'МГУ экономический факультет', 'МГУ юридический факультет', 'МГУ юридический факультет', 'МГУ социологический факультет', 'МГЮА', 'МИРЭА',
+'МИТУ МАСИ', 'МИФИ', 'Московский политех', 'Институт междун. образования МПГУ', 'МПГУ', 'МФЮА', 'НИД', 'РАНХиГС', 'РГАУ МСХА', 'РГГУ', 'РГГУ',
+'РГУНГ', 'РУДН инженерный факультет', 'РУДН', 'РУДН медицинский факультет', 'РУДН', 'РХТУ Менделеева', 'РХТУ Менделеева', 'РЭУ Плеханова',
+'Сеченовский Университет', 'Синергия ШБ', 'ТГМУ', 'Университет Косыгина', 'Университет прокуратуры', 'Гос. ИРЯ им. А.С.Пушкина', 
+'Фин. университет при правительстве РФ', 'ФЭФМ', 'ЮФ РГСУ', 'МГПУ'
+]
+
+const modalLogoElement = document.querySelector('.modal-logo__row')
+let array = []
+
+for (let i = 0; i < arrayLogoImg.length; i++) {
+  array.push({
+    title: arrayLogoImgTitle[i],
+    src: arrayLogoImg[i]
+  })
+}
+
+function createItemLogoImg (item) {
+  return `
+  <div class="modal-logo__item">
+    <img class="modal-logo__img" src="${item.src}" alt="">
+    <div class="modal-title__logo">${item.title}</div>
+  </div>
+  `
+}
+
+// Create item of Logo
+function render () {
+  const div = array.reduce((sum, item) => {
+    const divItem = createItemLogoImg(item)
+
+    return sum + divItem
+  }, '')
+
+  modalLogoElement.innerHTML = div
+}
+
 nextBtn.forEach(button=>{
   button.addEventListener('click', () => {
     changeStep('next')
@@ -551,7 +627,6 @@ function reset () {
 
 function handleCountBuy (e) {
   if (e.target.classList.contains("plus")) {
-    ++e.target.parentElement.querySelector("input").value;
 
     if (+e.target.parentElement.querySelector("input").value > 0) {
       orderFirst.setAttribute('style', 'display:flex')
@@ -575,7 +650,6 @@ function handleCountBuy (e) {
     sumOrder.textContent = sumAll.textContent
     
   } else if (e.target.classList.contains("minus") && +e.target.parentElement.querySelector("input").value > 0) {
-    --e.target.parentElement.querySelector("input").value;
 
     if (+e.target.parentElement.querySelector("input").value == 0) {
       orderFirst.setAttribute('style', 'display:none')
@@ -600,136 +674,136 @@ function handleCountBuy (e) {
   }
 }
 
-function handleCountRent (e) {
-  if (e.target.classList.contains("plus-rent")) {
-    ++e.target.parentElement.querySelector("input").value
-    orderSecondCount.textContent = e.target.parentElement.querySelector("input").value
-    inputRentSumValue.value = +rentValue.value + +rentCapValue.value
+// function handleCountRent (e) {
+//   if (e.target.classList.contains("plus-rent")) {
+//     ++e.target.parentElement.querySelector("input").value
+//     orderSecondCount.textContent = e.target.parentElement.querySelector("input").value
+//     inputRentSumValue.value = +rentValue.value + +rentCapValue.value
 
-    if (+inputRentSumValue.value > 4) {
-      priceBakalavrRent.textContent = '400'
-      priceBakalavrRentCap.textContent = '800'
-    } 
+//     if (+inputRentSumValue.value > 4) {
+//       priceBakalavrRent.textContent = '400'
+//       priceBakalavrRentCap.textContent = '800'
+//     } 
 
-    if (+e.target.parentElement.querySelector("input").value > 0) {
-      orderSecond.setAttribute('style', 'display:flex')
-      modalHoodRentBlock.setAttribute('style', 'display:block')
-      modalTieRentBlock.setAttribute('style', 'display:block')
-    } else if (+e.target.parentElement.querySelector("input").value > 0 && +inputSumValue.value == 0 && +rentCapValue.value == 0) {
-      modalBrushBuyBlock.setAttribute('style', 'display:none')
-      modalBrushBtn.setAttribute('style','display:none')
-    } else if (+e.target.parentElement.querySelector("input").value >= 0 && (+inputSumValue.value > 0 || +rentCapValue.value > 0)) {
-      modalBrushBuyBlock.setAttribute('style', 'display:block')
-      modalBrushBtn.setAttribute('style','display:block')
-    }
+//     if (+e.target.parentElement.querySelector("input").value > 0) {
+//       orderSecond.setAttribute('style', 'display:flex')
+//       modalHoodRentBlock.setAttribute('style', 'display:block')
+//       modalTieRentBlock.setAttribute('style', 'display:block')
+//     } else if (+e.target.parentElement.querySelector("input").value > 0 && +inputSumValue.value == 0 && +rentCapValue.value == 0) {
+//       modalBrushBuyBlock.setAttribute('style', 'display:none')
+//       modalBrushBtn.setAttribute('style','display:none')
+//     } else if (+e.target.parentElement.querySelector("input").value >= 0 && (+inputSumValue.value > 0 || +rentCapValue.value > 0)) {
+//       modalBrushBuyBlock.setAttribute('style', 'display:block')
+//       modalBrushBtn.setAttribute('style','display:block')
+//     }
 
 
-    rentSizeCount.textContent = inputRentSumValue.value
-    countRentTie.textContent =  inputRentSumValue.value
-    countRentHood.textContent = inputRentSumValue.value
+//     rentSizeCount.textContent = inputRentSumValue.value
+//     countRentTie.textContent =  inputRentSumValue.value
+//     countRentHood.textContent = inputRentSumValue.value
   
-    sumRent.textContent = +priceBakalavrRent.textContent * +e.target.parentElement.querySelector("input").value;
-    orderSecondPrice.textContent = sumRent.textContent
+//     sumRent.textContent = +priceBakalavrRent.textContent * +e.target.parentElement.querySelector("input").value;
+//     orderSecondPrice.textContent = sumRent.textContent
 
-    rentSumValue.textContent = +sumRentCap.textContent + +sumRent.textContent 
-    sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent 
-    sumOrder.textContent = sumAll.textContent
+//     rentSumValue.textContent = +sumRentCap.textContent + +sumRent.textContent 
+//     sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent 
+//     sumOrder.textContent = sumAll.textContent
 
-  } else if (e.target.classList.contains("minus-rent") && +e.target.parentElement.querySelector("input").value > 0) {
-    --e.target.parentElement.querySelector("input").value
-    orderSecondCount.textContent = e.target.parentElement.querySelector("input").value
-    inputRentSumValue.value = +rentValue.value + +rentCapValue.value
+//   } else if (e.target.classList.contains("minus-rent") && +e.target.parentElement.querySelector("input").value > 0) {
+//     --e.target.parentElement.querySelector("input").value
+//     orderSecondCount.textContent = e.target.parentElement.querySelector("input").value
+//     inputRentSumValue.value = +rentValue.value + +rentCapValue.value
 
-    if (+inputRentSumValue.value < 5) {
-      priceBakalavrRent.textContent = '500'
-      priceBakalavrRentCap.textContent = '900'
-    }  
+//     if (+inputRentSumValue.value < 5) {
+//       priceBakalavrRent.textContent = '500'
+//       priceBakalavrRentCap.textContent = '900'
+//     }  
 
-    if (+e.target.parentElement.querySelector("input").value > 0) {
-      orderSecond.setAttribute('style', 'display:flex')
-      modalHoodRentBlock.setAttribute('style', 'display:block')
-      modalTieRentBlock.setAttribute('style', 'display:block')
-    } else if (+e.target.parentElement.querySelector("input").value > 0 && +inputSumValue.value == 0 && +rentCapValue.value == 0) {
-      modalBrushBuyBlock.setAttribute('style', 'display:none')
-      modalBrushBtn.setAttribute('style','display:none')
-    } else if (+e.target.parentElement.querySelector("input").value >= 0 && (+inputSumValue.value > 0 || +rentCapValue.value > 0)) {
-      modalBrushBuyBlock.setAttribute('style', 'display:block')
-      modalBrushBtn.setAttribute('style','display:block')
-    }
+//     if (+e.target.parentElement.querySelector("input").value > 0) {
+//       orderSecond.setAttribute('style', 'display:flex')
+//       modalHoodRentBlock.setAttribute('style', 'display:block')
+//       modalTieRentBlock.setAttribute('style', 'display:block')
+//     } else if (+e.target.parentElement.querySelector("input").value > 0 && +inputSumValue.value == 0 && +rentCapValue.value == 0) {
+//       modalBrushBuyBlock.setAttribute('style', 'display:none')
+//       modalBrushBtn.setAttribute('style','display:none')
+//     } else if (+e.target.parentElement.querySelector("input").value >= 0 && (+inputSumValue.value > 0 || +rentCapValue.value > 0)) {
+//       modalBrushBuyBlock.setAttribute('style', 'display:block')
+//       modalBrushBtn.setAttribute('style','display:block')
+//     }
 
-    rentSizeCount.textContent = inputRentSumValue.value
-    countRentTie.textContent =  inputRentSumValue.value
-    countRentHood.textContent = inputRentSumValue.value
+//     rentSizeCount.textContent = inputRentSumValue.value
+//     countRentTie.textContent =  inputRentSumValue.value
+//     countRentHood.textContent = inputRentSumValue.value
 
-    sumRent.textContent = +priceBakalavrRent.textContent * +e.target.parentElement.querySelector("input").value;
-    orderSecondPrice.textContent = sumRent.textContent
+//     sumRent.textContent = +priceBakalavrRent.textContent * +e.target.parentElement.querySelector("input").value;
+//     orderSecondPrice.textContent = sumRent.textContent
 
-    rentSumValue.textContent = +sumRentCap.textContent + +sumRent.textContent 
-    sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent 
-    sumOrder.textContent = sumAll.textContent
-  }
-}
+//     rentSumValue.textContent = +sumRentCap.textContent + +sumRent.textContent 
+//     sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent 
+//     sumOrder.textContent = sumAll.textContent
+//   }
+// }
 
-function handleCountRentCap (e) {
-  if (e.target.classList.contains("plus-cap")) {
-    ++e.target.parentElement.querySelector("input").value; 
-    inputRentSumValue.value = +rentValue.value + +rentCapValue.value
-    if (+inputRentSumValue.value > 4) {
-      priceBakalavrRent.textContent = '400'
-      priceBakalavrRentCap.textContent = '800'
-    } 
+// function handleCountRentCap (e) {
+//   if (e.target.classList.contains("plus-cap")) {
+//     ++e.target.parentElement.querySelector("input").value; 
+//     inputRentSumValue.value = +rentValue.value + +rentCapValue.value
+//     if (+inputRentSumValue.value > 4) {
+//       priceBakalavrRent.textContent = '400'
+//       priceBakalavrRentCap.textContent = '800'
+//     } 
     
-    if (+e.target.parentElement.querySelector("input").value > 0) {
-      orderThird.setAttribute('style', 'display:flex')
-      modalHoodRentBlock.setAttribute('style', 'display:block')
-      modalTieRentBlock.setAttribute('style', 'display:block')
-      modalBrushBuyBlock.setAttribute('style', 'display:block')
-    }     
+//     if (+e.target.parentElement.querySelector("input").value > 0) {
+//       orderThird.setAttribute('style', 'display:flex')
+//       modalHoodRentBlock.setAttribute('style', 'display:block')
+//       modalTieRentBlock.setAttribute('style', 'display:block')
+//       modalBrushBuyBlock.setAttribute('style', 'display:block')
+//     }     
 
-    countBuyWithBrush.textContent = +rentCapValue.value + +inputSumValue.value
-    rentSizeCount.textContent = inputRentSumValue.value
+//     countBuyWithBrush.textContent = +rentCapValue.value + +inputSumValue.value
+//     rentSizeCount.textContent = inputRentSumValue.value
 
-    orderThirdCount.textContent = e.target.parentElement.querySelector("input").value
+//     orderThirdCount.textContent = e.target.parentElement.querySelector("input").value
 
-    countRentHood.textContent = inputRentSumValue.value 
+//     countRentHood.textContent = inputRentSumValue.value 
     
-    sumRentCap.textContent = +priceBakalavrRentCap.textContent * +e.target.parentElement.querySelector("input").value;
-    orderThirdPrice.textContent = sumRentCap.textContent
+//     sumRentCap.textContent = +priceBakalavrRentCap.textContent * +e.target.parentElement.querySelector("input").value;
+//     orderThirdPrice.textContent = sumRentCap.textContent
 
-    rentSumValue.textContent = +sumRentCap.textContent + +sumRent.textContent 
-    sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent
-    sumOrder.textContent = sumAll.textContent 
+//     rentSumValue.textContent = +sumRentCap.textContent + +sumRent.textContent 
+//     sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent
+//     sumOrder.textContent = sumAll.textContent 
 
-  } else if (e.target.classList.contains("minus-cap") && +e.target.parentElement.querySelector("input").value > 0) {
-    --e.target.parentElement.querySelector("input").value;
-    inputRentSumValue.value = +rentValue.value + +rentCapValue.value
+//   } else if (e.target.classList.contains("minus-cap") && +e.target.parentElement.querySelector("input").value > 0) {
+//     --e.target.parentElement.querySelector("input").value;
+//     inputRentSumValue.value = +rentValue.value + +rentCapValue.value
 
-    if (+inputRentSumValue.value < 5) {
-      priceBakalavrRent.textContent = '500'
-      priceBakalavrRentCap.textContent = '900'
-    }  
+//     if (+inputRentSumValue.value < 5) {
+//       priceBakalavrRent.textContent = '500'
+//       priceBakalavrRentCap.textContent = '900'
+//     }  
 
-    if (+e.target.parentElement.querySelector("input").value == 0) {
-      orderThird.setAttribute('style', 'display:none')
-      modalHoodBuyBlock.setAttribute('style', 'display:none')
-      modalTieBuyBlock.setAttribute('style', 'display:none')
-      modalBrushBuyBlock.setAttribute('style', 'display:none')
-    } 
+//     if (+e.target.parentElement.querySelector("input").value == 0) {
+//       orderThird.setAttribute('style', 'display:none')
+//       modalHoodBuyBlock.setAttribute('style', 'display:none')
+//       modalTieBuyBlock.setAttribute('style', 'display:none')
+//       modalBrushBuyBlock.setAttribute('style', 'display:none')
+//     } 
 
-    rentSizeCount.textContent = inputRentSumValue.value
-    countRentHood.textContent = inputRentSumValue.value 
+//     rentSizeCount.textContent = inputRentSumValue.value
+//     countRentHood.textContent = inputRentSumValue.value 
 
-    orderThirdCount.textContent = e.target.parentElement.querySelector("input").value
-    countBuyWithBrush.textContent = +rentCapValue.value + +inputSumValue.value
+//     orderThirdCount.textContent = e.target.parentElement.querySelector("input").value
+//     countBuyWithBrush.textContent = +rentCapValue.value + +inputSumValue.value
 
-    sumRentCap.textContent = +priceBakalavrRentCap.textContent * +e.target.parentElement.querySelector("input").value;
-    orderThirdPrice.textContent = sumRentCap.textContent
+//     sumRentCap.textContent = +priceBakalavrRentCap.textContent * +e.target.parentElement.querySelector("input").value;
+//     orderThirdPrice.textContent = sumRentCap.textContent
 
-    rentSumValue.textContent = +sumRentCap.textContent + +sumRent.textContent 
-    sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent 
-    sumOrder.textContent = sumAll.textContent
-  }
-}
+//     rentSumValue.textContent = +sumRentCap.textContent + +sumRent.textContent 
+//     sumAll.textContent = +buySumValue.textContent + +rentSumValue.textContent + +logoValue.textContent 
+//     sumOrder.textContent = sumAll.textContent
+//   }
+// }
 
 function handleToggleBrush () {
   if (+rentValue.value > 0 && (+rentCapValue.value == 0 && +inputSumValue.value == 0) ) {
@@ -1200,9 +1274,11 @@ function showRent() {
   }
 }
 
+
 function handleChooseLogo (e) {
   if (e.target.classList.contains('logo__list')) {
     logoModalElement.setAttribute('style', 'display:flex')
+    render ()
   } else if (e.target.classList.contains('modal-logo__close')) {
     logoModalElement.setAttribute('style', 'display:none')
   } else if (e.target.classList.contains('modal-logo__img')) {
@@ -1428,23 +1504,25 @@ function handleSubmitForm (e) {
     }, {});
   
     // Send the data to the specified address using fetch()
-    fetch('https://hook.eu1.make.com/ie7i66afp9ocx16qwm3dgj6i4mvix7eh', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    })
-    .then(response => {
-      // Handle the response from the server
-      console.log('Form data sent successfully:', response);
-      // Reset the form or perform any other necessary actions
-    })
-    .catch(error => {
-      // Handle any errors that occur during the request
-      console.error('Error sending form data:', error);
-    });
+    // fetch('https://hook.eu1.make.com/ie7i66afp9ocx16qwm3dgj6i4mvix7eh', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify(formData)
+    // })
+    // .then(response => {
+    //   // Handle the response from the server
+    //   console.log('Form data sent successfully:', response);
+    //   // Reset the form or perform any other necessary actions
+    // })
+    // .catch(error => {
+    //   // Handle any errors that occur during the request
+    //   console.error('Error sending form data:', error);
+    // });
+    console.log(formData);
 }
+
 
 header.addEventListener('click', handleClickToggleActive)
 header.addEventListener('click', handleClickShowColor)
@@ -1464,9 +1542,9 @@ step3Element.addEventListener('click', handleColorBuyTie)
 step3Element.addEventListener('click', handleColorRentTie)
 step3Element.addEventListener('click', handleColorBrushBuy)
 
-formElement.addEventListener('click', handleCountBuy)
-formElement.addEventListener('click', handleCountRent)
-formElement.addEventListener('click', handleCountRentCap)
+// formElement.addEventListener('click', handleCountBuy)
+// formElement.addEventListener('click', handleCountRent)
+// formElement.addEventListener('click', handleCountRentCap)
 formElement.addEventListener('click', handleCountLogoFancy)
 formElement.addEventListener('click', handleCountLogo)
 formElement.addEventListener('click', showRent)

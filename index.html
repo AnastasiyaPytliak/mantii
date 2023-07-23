@@ -13,7 +13,7 @@
     <div class="container">
       <form class="form" action="https://hook.eu1.make.com/ie7i66afp9ocx16qwm3dgj6i4mvix7eh" method="post">
 
-        <div class="step step-1 active-step">
+        <div class="step step-1">
           <div class="step-1__container">
             <div class="step__header">
               <div class="step__title">
@@ -132,7 +132,7 @@
           </div>
         </div>
 
-        <div class="step step-2 ">
+        <div class="step step-2  active-step">
           <div class="step-2__container">
           <div class="step__header">
             <button class="step__prev prev-btn">
@@ -152,7 +152,7 @@
                   <p>1450</p><span>р/шт</span></div>
                 <div class="buy-count">
                   <span class="buy-count__sign minus" data-change="-1">-</span>
-                  <input type="text" class="in-num__count" value="0">
+                  <input type="text" class="input in-num__count" value="0">
                   <span class="buy-count__sign plus" data-change="+1">+</span>
                 </div>
                 <div class="buy-sum">
@@ -171,14 +171,15 @@
             </div>
 
             <div class="step__buy rent">
-              <div class="step__buy-title">Аренда *<span class="notification"> от 5-ти - 400 руб</span></div>
+              <div class="step__buy-title">Аренда <img class="info-rent" src="./image/info.png" alt="">
+                <span class="notification"> от 5-ти - 400 руб</span></div>
               <div class="step__buy-details">
                 <div class="buy-name name">Комплект Бакалавра </div><span class="info">(мантия + шапочка)</span>
                 <div class="rent-price">
                   <p>500</p><span>р/шт</span></div>
                 <div class="buy-count">
                   <span class="buy-count__sign minus-rent" data-change="-1">-</span>
-                  <input type="text" class="in-num in-num__rent" name="Количество к аренде" value="0">
+                  <input type="text" class="input in-num in-num__rent" name="Количество к аренде" value="0">
                   <span class="buy-count__sign plus-rent" data-change="+1">+</span>
                 </div>
                 <div class="buy-sum">
@@ -192,7 +193,7 @@
                   <p>900</p><span>р/шт</span></div>
                 <div class="buy-count">
                   <span class="buy-count__sign minus-cap" data-change="-1">-</span>
-                  <input type="text" class="in-num in-num__cap" name="Количество к аренде с покупкой шапки" value="0">
+                  <input type="text" class="input in-num in-num__cap" name="Количество к аренде с покупкой шапки" value="0">
                   <span class="buy-count__sign plus-cap" data-change="+1">+</span>
                 </div>
                 <div class="buy-sum">
@@ -234,7 +235,7 @@
                   <p>0</p><span>р/шт</span></div>
                 <div class="buy-count stick">
                   <span class="buy-count__sign minus-logo" data-change="-1">-</span>
-                  <input type="text" class="in-num" name="Логотип Наклейка" value="0">
+                  <input type="text" class="input in-num" name="Логотип Наклейка" value="0">
                   <span class="buy-count__sign plus-logo" data-change="+1">+</span>
                 </div>
               </div>
@@ -244,7 +245,7 @@
                   <p>200</p><span>р/шт</span></div>
                 <div class="buy-count fancy">
                   <span class="buy-count__sign minus-fancy" data-change="-1">-</span>
-                  <input type="text" class="in-num" name="Логотип Вышивка" value="0">
+                  <input type="text" class="input in-num" name="Логотип Вышивка" value="0">
                   <span class="buy-count__sign plus-fancy" data-change="+1">+</span>
                 </div>
                 <div class="buy-sum">
@@ -277,248 +278,7 @@
             <div class="modal-loco__container">
               <div class="modal-logo__title">Выберите логотип</div>
               <div class="modal-logo__close"></div>
-              <div class="modal-logo__row">
-                <!-- <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (47).png" alt="">
-                  <div class="modal-title__logo">РУДН</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (45).png" alt="">
-                  <div class="modal-title__logo">РУДН</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (44).png" alt="">
-                  <div class="modal-title__logo">РУДН инженерный факультет</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (46).png" alt="">
-                  <div class="modal-title__logo">РУДН медицинский факультет</div>
-                </div> -->
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (50).png" alt="">
-                  <div class="modal-title__logo">РЭУ Плеханова</div>
-                </div>
-                <!-- <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (5).png" alt="">
-                  <div class="modal-title__logo">ВШЭ</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (1).png" alt="">
-                  <div class="modal-title__logo">ВШЭ</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (30).png" alt="">
-                  <div class="modal-title__logo">МГЮА</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (15).png" alt="">
-                  <div class="modal-title__logo">МГУ</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (16).png" alt="">
-                  <div class="modal-title__logo">МГУ высшая школа телевидения</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (17).png" alt="">
-                  <div class="modal-title__logo">МГУ геологический факультет</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (18).png" alt="">
-                  <div class="modal-title__logo">МГУ ИССА</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (19).png" alt="">
-                  <div class="modal-title__logo">МГУ исторический факультет</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (20).png" alt="">
-                  <div class="modal-title__logo">МГУ факультет биотехнологий</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (21).png" alt="">
-                  <div class="modal-title__logo">МГУ факультет журналистики</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (22).png" alt="">
-                  <div class="modal-title__logo">МГУ факультет мировой политики</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (23).png" alt="">
-                  <div class="modal-title__logo">МГУ физический факультет</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (24).png" alt="">
-                  <div class="modal-title__logo">МГУ ФФМ</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (25).png" alt="">
-                  <div class="modal-title__logo">МГУ химический факультет</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (26).png" alt="">
-                  <div class="modal-title__logo">МГУ экономический факультет</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (27).png" alt="">
-                  <div class="modal-title__logo">МГУ юридический факультет</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (28).png" alt="">
-                  <div class="modal-title__logo">МГУ юридический факультет</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (29).png" alt="">
-                  <div class="modal-title__logo">МГУ социологический факультет</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (4).png" alt="">
-                  <div class="modal-title__logo">МГУ ВШГА</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (2).png" alt="">
-                  <div class="modal-title__logo">МГЛУ</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (3).png" alt="">
-                  <div class="modal-title__logo">ВАВТ</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (6).png" alt="">
-                  <div class="modal-title__logo">Дипломатическая академия МИД</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (7).png" alt="">
-                  <div class="modal-title__logo">МАДИ</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (8).png" alt="">
-                  <div class="modal-title__logo">МАИ</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (9).png" alt="">
-                  <div class="modal-title__logo">МАСИ</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (10).png" alt="">
-                  <div class="modal-title__logo">МГИМО</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (11).png" alt="">
-                  <div class="modal-title__logo">МГОУ</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (12).png" alt="">
-                  <div class="modal-title__logo">МГППУ</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (1).jpg" alt="">
-                  <div class="modal-title__logo">МГПУ</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (13).png" alt="">
-                  <div class="modal-title__logo">МГПУ</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (14).png" alt="">
-                  <div class="modal-title__logo">МГСУ</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (31).png" alt="">
-                  <div class="modal-title__logo">МИРЭА</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (32).png" alt="">
-                  <div class="modal-title__logo">МИТУ МАСИ</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (33).png" alt="">
-                  <div class="modal-title__logo">МИФИ</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (34).png" alt="">
-                  <div class="modal-title__logo">Московский политех</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (35).png" alt="">
-                  <div class="modal-title__logo">Институт междун. образования МПГУ</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (36).png" alt="">
-                  <div class="modal-title__logo">МПГУ</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (37).png" alt="">
-                  <div class="modal-title__logo">МФЮА</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (38).png" alt="">
-                  <div class="modal-title__logo">НИД</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (39).png" alt="">
-                  <div class="modal-title__logo">РАНХиГС</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (40).png" alt="">
-                  <div class="modal-title__logo">РГАУ МСХА</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (41).png" alt="">
-                  <div class="modal-title__logo">РГГУ</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (42).png" alt="">
-                  <div class="modal-title__logo">РГГУ</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (43).png" alt="">
-                  <div class="modal-title__logo">РГУНГ</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (48).png" alt="">
-                  <div class="modal-title__logo">РХТУ Менделеева</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (49).png" alt="">
-                  <div class="modal-title__logo">РХТУ Менделеева</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (51).png" alt="">
-                  <div class="modal-title__logo">Сеченовский Университет</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (52).png" alt="">
-                  <div class="modal-title__logo">Синергия ШБ</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (53).png" alt="">
-                  <div class="modal-title__logo">ТГМУ</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (54).png" alt="">
-                  <div class="modal-title__logo">Университет Косыгина</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (55).png" alt="">
-                  <div class="modal-title__logo">Университет прокуратуры</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (56).png" alt="">
-                  <div class="modal-title__logo">Гос. ИРЯ им. А.С.Пушкина</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (57).png" alt="">
-                  <div class="modal-title__logo">Фин. университет при правительстве РФ</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (58).png" alt="">
-                  <div class="modal-title__logo">ФЭФМ</div>
-                </div>
-                <div class="modal-logo__item">
-                  <img class="modal-logo__img" src="./image/logo/01-02-03 (59).png" alt="">
-                  <div class="modal-title__logo">ЮФ РГСУ</div>
-                </div> -->
-              </div>
+              <div class="modal-logo__row"></div>
             </div>
           </div>
         </div>
@@ -550,36 +310,36 @@
                       <div class="buy-size__item-title">S</div>
                       <div class="buy-size__sm">150 - 164 см</div>
                       <div class="buy-count__s">
-                        <span class="buy-coun minus__buy-s" data-change="-1">-</span>
+                        <span class="buy-count__sign buy-coun minus__buy-s" data-change="-1">-</span>
                         <input type="text" class="in-num" name="Покупка - Размер S" value="0">
-                        <span class="buy-coun plus__buy-s" data-change="+1">+</span>
+                        <span class="buy-count__sign buy-coun plus__buy-s" data-change="+1">+</span>
                       </div>
                     </div>
                     <div class="buy-size__item">
                       <div class="buy-size__item-title">M</div>
                       <div class="buy-size__sm">165 - 182 см</div>
                       <div class="buy-count__s">
-                        <span class="buy-coun minus__buy-m" data-change="-1">-</span>
+                        <span class="buy-count__sign buy-coun minus__buy-m" data-change="-1">-</span>
                         <input type="text" class="in-num" name="Покупка - Размер M" value="0">
-                        <span class="buy-coun plus__buy-m" data-change="+1">+</span>
+                        <span class="buy-count__sign buy-coun plus__buy-m" data-change="+1">+</span>
                       </div>
                     </div>
                     <div class="buy-size__item">
                       <div class="buy-size__item-title">L</div>
                       <div class="buy-size__sm">183 - 190 см</div>
                       <div class="buy-count__s">
-                        <span class="buy-coun minus__buy-l" data-change="-1">-</span>
+                        <span class="buy-count__sign buy-coun minus__buy-l" data-change="-1">-</span>
                         <input type="text" class="in-num" name="Покупка - Размер L" value="0">
-                        <span class="buy-coun plus__buy-l" data-change="+1">+</span>
+                        <span class="buy-count__sign buy-coun plus__buy-l" data-change="+1">+</span>
                       </div>
                     </div>
                     <div class="buy-size__item">
                       <div class="buy-size__item-title">XL</div>
                       <div class="buy-size__sm">191 см и выше</div>
                       <div class="buy-count__s">
-                        <span class="buy-coun minus__buy-xl" data-change="-1">-</span>
+                        <span class="buy-count__sign buy-coun minus__buy-xl" data-change="-1">-</span>
                         <input type="text" class="in-num" name="Покупка - Размер XL" value="0">
-                        <span class="buy-coun plus__buy-xl" data-change="+1">+</span>
+                        <span class="buy-count__sign buy-coun plus__buy-xl" data-change="+1">+</span>
                       </div>
                     </div>
                 </div>
@@ -603,36 +363,36 @@
                       <div class="rent-size__item-title">S</div>
                       <div class="rent-size__sm">150 - 164 см</div>
                       <div class="rent-count">
-                        <span class="rent-coun minus-s" data-change="-1">-</span>
+                        <span class="buy-count__sign rent-coun minus-s" data-change="-1">-</span>
                         <input type="text" class="in-num" name="Аренда - Размер S" value="0">
-                        <span class="rent-coun plus-s" data-change="+1">+</span>
+                        <span class="buy-count__sign rent-coun plus-s" data-change="+1">+</span>
                       </div>
                     </div>
                     <div class="rent-size__item">
                       <div class="rent-size__item-title">M</div>
                       <div class="rent-size__sm">165 - 182 см</div>
                       <div class="rent-count">
-                        <span class="rent-coun minus-m" data-change="-1">-</span>
+                        <span class="buy-count__sign rent-coun minus-m" data-change="-1">-</span>
                         <input type="text" class="in-num" name="Аренда - Размер M" value="0">
-                        <span class="rent-coun plus-m" data-change="+1">+</span>
+                        <span class="buy-count__sign rent-coun plus-m" data-change="+1">+</span>
                       </div>
                     </div>
                     <div class="rent-size__item">
                       <div class="rent-size__item-title">L</div>
                       <div class="rent-size__sm">183 - 190 см</div>
                       <div class="rent-count">
-                        <span class="rent-coun minus-l" data-change="-1">-</span>
+                        <span class="buy-count__sign rent-coun minus-l" data-change="-1">-</span>
                         <input type="text" class="in-num" name="Аренда - Размер L" value="0">
-                        <span class="rent-coun plus-l" data-change="+1">+</span>
+                        <span class="buy-count__sign rent-coun plus-l" data-change="+1">+</span>
                       </div>
                     </div>
                     <div class="rent-size__item">
                       <div class="rent-size__item-title">XL</div>
                       <div class="rent-size__sm">191 см и выше</div>
                       <div class="rent-count">
-                        <span class="rent-coun minus-xl" data-change="-1">-</span>
+                        <span class="buy-count__sign rent-coun minus-xl" data-change="-1">-</span>
                         <input type="text" class="in-num" name="Аренда - Размер XL" value="0">
-                        <span class="rent-coun plus-xl" data-change="+1">+</span>
+                        <span class="buy-count__sign rent-coun plus-xl" data-change="+1">+</span>
                       </div>
                     </div>
                   </div>

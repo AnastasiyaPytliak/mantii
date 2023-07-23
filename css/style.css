@@ -1261,16 +1261,32 @@ input:checked + .slider:before {
   background-color: #000;
   transform: 0.5s;
 }
+.step__buy-title {
+  position: relative;
+}
 .notification {
+  display: none;
   font-family: 'Lato', sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 19px;
   position: relative;
-  top: -12px;
-  color: #000;
-}
+  top: -20px;
+  color: #636262;
+  border: 1px solid rgba(146, 144, 144, 0.4);
+  border-radius: 5px;
+  padding: 5px 8px;
 
+}
+.info-rent {
+  position: relative;
+  bottom: 10px;
+  cursor: pointer;
+}
+.info-rent:hover + .notification {
+  display: inline-block;
+  transition: all 1s ease-out;
+}
 @media (max-width: 992px) {
   .container {
     align-items: center;
