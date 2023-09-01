@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap');
 
 * {
   margin: 0;
@@ -11,51 +12,9 @@ a {
   text-decoration: none;
 }
 
-@font-face {
-  font-weight: 350; 
-  font-family: Segoe UI;
-  src: url("../fonts/SegoeUI-Semilight.ttf");
-}
-
-@font-face {
-  font-weight: 400; 
-  font-family: Segoe UI;
-  src: url("../fonts/SegoeUI-Regular.ttf");
-}
-
-@font-face {
-  font-weight: 600; 
-  font-family: Segoe UI;
-  src: url("../fonts/SegoeUI-SemiBold.ttf");
-}
-
-@font-face {
-  font-weight: 700; 
-  font-family: Segoe UI;
-  src: url("../fonts/SegoeUI-Bold.ttf");
-}
-
-@font-face {
-  font-weight: 300; 
-  font-family: Lato;
-  src: url("../fonts/Lato-Light.ttf");
-}
-
-@font-face {
-  font-weight: 400; 
-  font-family: Lato;
-  src: url("../fonts/Lato-Regular.ttf");
-}
-
-@font-face {
-  font-weight: 700; 
-  font-family: Lato;
-  src: url("../fonts/Lato-Bold.ttf");
-}
-
 body {
   width: 100%;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
@@ -84,18 +43,13 @@ button {
   flex-direction: column;
   justify-content: center;
 }
-.step-1 {
-  display: none;
-}
-.step-2 {
-  display: none;
-}
-.step-3 {
-  display: none;
-}
+.step-1,
+.step-2,
+.step-3,
 .step-4 {
   display: none;
 }
+
 .active-step {
   display: block;
 }
@@ -106,7 +60,7 @@ button {
   display: flex;
   align-items: center;
 
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 22px;
@@ -122,7 +76,7 @@ button {
   margin: 13px auto;
 }
 .step__title {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 22px;
@@ -136,7 +90,7 @@ button {
   right: -40px;
   top: -5px;
 }
-.step__group-first {
+.step-1__group-first {
   display: flex;
   width: 960px;
 }
@@ -164,7 +118,6 @@ button {
   flex-direction: column;
 }
 .btn {
-  font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -194,7 +147,7 @@ button {
   right: 14px;
 }
 .step-1__tabs-name {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   font-size: 15px;
   line-height: 24px;
@@ -270,16 +223,17 @@ button {
   max-height: 464px;
 }
 .step-1__title {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 500;
   font-size: 28px;
   line-height: 42px;
+  letter-spacing: -1px;
   color: #202020;
   margin-top: 37px;
   margin-bottom: 22px;
 }
 .step-1__title + .btn {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -300,7 +254,7 @@ button {
   width: 100%;
 }
 .step__buy-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   font-size: 28px;
   line-height: 42px;
@@ -372,19 +326,20 @@ button {
   margin-left: 36px;
 }
 .buy-name {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-weight: 400;
   font-size: 22px;
   line-height: 26px;
   color: #707070;
   width: 220px;
+  letter-spacing: -1px;
 }
 .buy-price,
 .rent-price,
 .rent-price__cap,
 .logo-price,
 .logo-price__fancy {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   font-size: 22px;
   line-height: 26px;
@@ -399,18 +354,21 @@ button {
   margin-right: 5px;
 }
 .buy-count,
-.buy-count__s,
+.size-item__value,
 .rent-count {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-size: 22px;
   line-height: 26px;
 }
-.buy-count__sign {
+.color-item__title::first-letter {
+  text-transform: uppercase;
+}
+.sign {
   display: block;
-  font-family: 'Lato';
+  font-family: 'Ubuntu';
   font-weight: 700;
   font-size: 22px;
   line-height: 22px;
@@ -428,7 +386,7 @@ input.in-num {
   border: none;
   max-width: 26px;
 
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   font-size: 22px;
   line-height: 26px;
@@ -440,7 +398,7 @@ input.in-num__count {
   border: none;
   max-width: 26px;
 
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   font-size: 22px;
   line-height: 26px;
@@ -451,7 +409,7 @@ input.in-num__count {
   display: flex;
 }
 .buy-sum__name {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-weight: 400;
   font-size: 22px;
   line-height: 26px;
@@ -461,7 +419,7 @@ input.in-num__count {
 .buy-sum__count,
 .rent-sum__count,
 .rent-sum__count-cap {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   font-size: 22px;
   line-height: 26px;
@@ -476,7 +434,7 @@ input.in-num__count {
   margin-right: 5px;
 }
 .logo-sum__name {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
@@ -488,7 +446,7 @@ input.in-num__count {
   margin-top: 70px;
 }
 .step__info {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
@@ -499,8 +457,8 @@ input.in-num__count {
   text-decoration: underline;
   color: #202020
 }
-.step-2__btn {
-  font-family: 'Poppins', sans-serif;
+.step-btn {
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 600;
   font-size: 20px;
   line-height: 30px;
@@ -509,19 +467,20 @@ input.in-num__count {
   border-radius: 10px;
   margin-top: 70px;
 }
-.step-2__btn:hover,
-.step-2__btn.active {
+.step-btn:hover,
+.step-btn.active {
   background: #181B20;
   color: #fff;
 }
 .step__more,
 .step-3__notification {
-  font-family: 'Lato', sans-serif;
-  font-weight: 600;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
   font-size: 18px;
   line-height: 22px;
   color: #181B20;
   margin-top: 10px;
+  letter-spacing: -1px;
 }
 .step-4__block-second .step__more {
   border: 1px solid #000;
@@ -553,7 +512,7 @@ input.in-num__count {
 }
 .logo__list {
   display: inline-block;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -573,7 +532,7 @@ input.in-num__count {
   flex-direction: column;
 }
 .logo__add label {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
@@ -595,7 +554,7 @@ input.in-num__count {
 }
 .step-3__block {
   display: grid;
-  grid-template-columns: 340px 340px;
+  grid-template-columns: 345px 345px;
   gap: 32px;
   margin-right: 32px;
   margin-top: 32px;
@@ -608,7 +567,7 @@ input.in-num__count {
   height: 700px;
 }
 .size__title {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-weight: 400;
   font-size: 22px;
   line-height: 26px;
@@ -621,18 +580,16 @@ input.in-num__count {
   border-radius: 6px;
   padding: 25px;
 }
-.buy-size__item-title,
-.rent-size__item-title {
-  font-family: 'Poppins', sans-serif;
+.size-item__title {
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
   color: #202020;
-  margin-right: 35px;
+  margin-right: 20px;
   width: 18px;
 }
-.buy-size__item,
-.rent-size__item {
+.size-item {
   border-bottom: 1px solid #EBEBEB;
   display: flex;
   justify-content: center;
@@ -640,15 +597,13 @@ input.in-num__count {
   padding-bottom: 20px;
   margin-bottom: 20px;
 }
-.buy-size__sm,
-.rent-size__sm {
-  margin-right: 45px;
+.size-item__type {
+  /* margin-right: 45px; */
   width: 110px;
 }
-.buy-size__item .buy-count__s .in-num ,
-.rent-size__item .rent-count .in-num{
+.size-item .size-item__value .in-num{
   margin: 0 16px;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -669,6 +624,7 @@ input.in-num__count {
 .buy-size__choice,
 .rent-size__choice {
   display: flex;
+  align-items: baseline;
 }
 .buy-size__all,
 .rent-size__all {
@@ -681,7 +637,7 @@ input.in-num__count {
 .buy-size__count-ch,
 .rent-size__count-ch,
 .rent-size__count {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
@@ -695,19 +651,20 @@ input.in-num__count {
 .hood-title,
 .tie-title,
 .brush-title {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-weight: 400;
   font-size: 22px;
   line-height: 26px;
   color: #707070;
   margin-bottom: 20px;
+  letter-spacing: -1px;
 }
 select {
   width: 346px;
   padding: 12px 16px;
   border-radius: 6px;
   border: 1px solid #B2B3B4;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
@@ -728,7 +685,7 @@ select {
   padding: 12px 20px;
   background: #EBEBEB;
   border-radius: 6px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
@@ -756,10 +713,11 @@ select {
   flex-direction: column;
   margin-right: 30px;
   width: 100%;
+  position: relative;
 }
 .step-4__row label,
 .step-4__block-item label {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-weight: 300;
   font-size: 14px;
   line-height: 17px;
@@ -771,17 +729,18 @@ select {
 .step-4__block-item textarea{
   background: #F5F5F5;
   border-radius: 6px;
-  border: none;
   padding: 16px;
 
-  font-family: 'Lato', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
   color: #181B20;
+  border: 1px solid #F5F5F5;
 }
 textarea {
   max-height: 120px;
+  min-width: 100%;
   max-width: 510px;
 }
 .step-4__politics,
@@ -937,7 +896,7 @@ input:checked + .slider:before {
 }
 .step-4__order {
   display: flex;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 24px;
@@ -992,7 +951,7 @@ input:checked + .slider:before {
   margin-bottom: 160px;
 }
 .sum-text {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-weight: 350;
   font-size: 14px;
   line-height: 19px;
@@ -1000,7 +959,7 @@ input:checked + .slider:before {
   margin-bottom: 9px;
 }
 .sum-all {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   font-size: 28px;
   line-height: 37px;
@@ -1012,6 +971,7 @@ input:checked + .slider:before {
   margin-right: 5px;
 }
 .return {
+  display: none;
   transition: 0.55s opacity, 0.55s visibility;
 }
 .wrap,
@@ -1063,16 +1023,15 @@ input:checked + .slider:before {
 .modal-brush::-webkit-scrollbar {
   width: 10px;
 }
-.modal-loco__container {
-}
 .modal-logo__title,
 .modal-close__title,
 .modal-block__title {
-  font-weight: 700;
+  font-weight: 500;
   font-size: 21px;
   line-height: 25px;
   text-align: center;
   margin: 16px 0;
+  letter-spacing: -1px;
 }
 .modal-color__brush-buy,
 .modal-color__hood-rent,
@@ -1103,7 +1062,7 @@ input:checked + .slider:before {
 .modal-tie__buy-count,
 .modal-tie__rent-count  {
   margin-left: 5px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
@@ -1138,6 +1097,12 @@ input:checked + .slider:before {
   padding: 10px 16px;
   background: #fff;
 }
+.error {
+  position: absolute;
+  bottom: -18px;
+  font-size: 12px;
+  transition: 0.5s all ease-in-out;
+}
 .modal-logo__item:hover,
 .modal-logo__item.show {
   background: linear-gradient(135deg, #d4d7db 13.33%, #f4f7fc 86.77%);
@@ -1149,15 +1114,15 @@ input:checked + .slider:before {
   margin-bottom: 10px;
   margin-top: 10px;
 }
-.modal-title__logo{
+.modal-logo__item-title{
   text-align: center;
   height: 45px;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 21px;
 }
-.hood-buy {
+.color-item__sign {
   cursor: pointer;
   font-size: 20px;
   text-align: center;
@@ -1165,70 +1130,74 @@ input:checked + .slider:before {
   height: 30px;
   display: inline-block;
 }
-.hood-buy__item {
+.color-item {
   padding: 15px 17px;
   border: 1px solid #B2B3B4;
   box-shadow: 18px 18px 50px rgba(0, 0, 0, 0.1), inset -4px -4px 6px #cfd2d7, inset 4px 4px 6px #fafdff;
   border-radius: 8px;
 }
-.hood-buy__items {
+.hood-buy__items,
+.hood-rent__items,
+.tie-buy__items,
+.tie-rent__items,
+.brush-buy__items {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 21px;
   margin-top: 20px;
 }
-.hood-buy__info {
+.color-item__info {
   display: flex;
   justify-content: space-between;
   margin-bottom: 16px;
 }
-.hood-buy__color-blue {
+.color-item__blue {
   width: 24px;
   height: 24px;
   background-color: #0c60dd;
 }
-.hood-buy__color-red {
+.color-item__red {
   width: 24px;
   height: 24px;
   background-color: #d02a45;
 }
-.hood-buy__color-gold {
+.color-item__gold {
   width: 24px;
   height: 24px;
   background-color: #ffd988;
 }
-.hood-buy__color-silver {
+.color-item__silver {
   width: 24px;
   height: 24px;
   background-color: #c4d0d9;
 }
-.hood-buy__color-purple {
+.color-item__purple {
   width: 24px;
   height: 24px;
   background-color: #54387F;
 }
-.hood-buy__color-light {
+.color-item__blue-light {
   width: 24px;
   height: 24px;
   background-color: #2cacc7;
 }
-.hood-buy__color-rph {
+.color-item__rph {
   width: 24px;
   height: 24px;
   background-image: url(../image/russia.png);
 }
-.hood-buy__color-black {
+.color-item__black {
   width: 24px;
   height: 24px;
   background-color: #000;
 }
-.hood-buy__color-white {
+.color-item__white {
   width: 24px;
   height: 24px;
   background-color: #fff;
   border: 1px solid #000;
 }
-.hood-buy__color-green {
+.color-item__green {
   width: 24px;
   height: 24px;
   background-color: green;
@@ -1266,8 +1235,7 @@ input:checked + .slider:before {
 }
 .notification {
   display: none;
-  font-family: 'Lato', sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 16px;
   line-height: 19px;
   position: relative;
@@ -1376,7 +1344,7 @@ input:checked + .slider:before {
     align-items: center;
   }
   .step-3__block {
-    grid-template-columns: 340px;
+    grid-template-columns: 345px;
     margin: 0;
   }
   .hood__block, .tie__block, .brush__block  {
@@ -1442,7 +1410,7 @@ input:checked + .slider:before {
   .step-4__block-item {
     margin-bottom: 0px;
   }
-  .step-4__container + .step-2__btn {
+  .step-4__container + .step-btn {
     position: relative;
     left: calc(50% - 182px/2);
   }
@@ -1456,7 +1424,7 @@ input:checked + .slider:before {
     margin-top: 30px;
   }
   .buy-count, 
-  .buy-count__s, 
+  .size-item__value, 
   .rent-count {
     margin-right: -47px;
     margin-left: -20px;

@@ -13,14 +13,14 @@
     <div class="container">
       <form class="form" action="https://hook.eu1.make.com/ie7i66afp9ocx16qwm3dgj6i4mvix7eh" method="post">
 
-        <div class="step step-1">
+        <div class="step step-1 active-step">
           <div class="step-1__container">
             <div class="step__header">
               <div class="step__title">
                 Выберите комплект:
               </div>
             </div>
-            <div class="step__group-first">
+            <div class="step-1__group-first">
               <div class="step-1__group bakalavr-step">
                 <div class="step-1__btn">
                   <input id="btn" class="btn active" name="Комплектация" value="классик" type="button">
@@ -86,7 +86,7 @@
                   <img src="./image/bakalavr.png" alt="">
                 </div>
                 <div class="step__btn">
-                <div id="#bak" class="step-1__title">Комплект Бакалавра</div>
+                <div class="step-1__title">Комплект Бакалавра</div>
                 <input class="btn next-btn" data-role="order1" type="button" name="Комплект Бакалавра" value="Заказать">
                 </div>
               </div>
@@ -125,14 +125,14 @@
                 </div>
                 <div class="step__btn">
                 <div class="step-1__title">Комплект Магистра</div>
-                <input class="btn next-btn" href="javascript:void(0)" onclick="scroll(0,0)" data-role="order2" type="button" name="Комплект Магистра" value="Заказать">
+                <input class="btn next-btn" data-role="order2" type="button" name="Комплект Магистра" value="Заказать">
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="step step-2  active-step">
+        <div class="step step-2">
           <div class="step-2__container">
           <div class="step__header">
             <button class="step__prev prev-btn">
@@ -144,61 +144,53 @@
             </div>
           </div>
           <div class="step__group">
-            <div class="step__buy">
+            <div class="step__buy buy">
               <div class="step__buy-title">Покупка</div>
               <div class="step__buy-details">
                 <div class="buy-name name">Комплект Бакалавра </div>
-                <div class="buy-price">
+                <div class="buy-price price">
                   <p>1450</p><span>р/шт</span></div>
                 <div class="buy-count">
-                  <span class="buy-count__sign minus" data-change="-1">-</span>
-                  <input type="text" class="input in-num__count" value="0">
-                  <span class="buy-count__sign plus" data-change="+1">+</span>
+                  <span class="sign" data-change="-1">-</span>
+                  <input type="text" name="Количество комлектов (покупка)" class="input in-num in-num__count buy-count__complects" value="0">
+                  <span class="sign" data-change="+1">+</span>
                 </div>
                 <div class="buy-sum">
                   <div class="buy-sum__name">сумма:</div>
-                  <div class="buy-sum__count"><p>0</p> <span>р</span></div>
-                </div>
-              </div>
-              <div class="step__summery">
-                <div class="buy-count">
-                  <input type="text" class="in-num" name="Количество к покупке" value="0">
-                </div>
-                <div class="buy-sum">
-                  <div class="buy-sum__count"><p>0</p> <span>р</span></div>
+                  <div class="buy-sum__count summ"><p>0</p> <span>р</span></div>
                 </div>
               </div>
             </div>
 
             <div class="step__buy rent">
               <div class="step__buy-title">Аренда <img class="info-rent" src="./image/info.png" alt="">
-                <span class="notification"> от 5-ти - 400 руб</span></div>
+                <span class="notification">При заказе от 5-ти штук стоимость аренды комплекта составит 400 руб</span></div>
               <div class="step__buy-details">
-                <div class="buy-name name">Комплект Бакалавра </div><span class="info">(мантия + шапочка)</span>
-                <div class="rent-price">
+                <div class="buy-name name">Комплект Бакалавра </div>
+                <div class="rent-price price">
                   <p>500</p><span>р/шт</span></div>
                 <div class="buy-count">
-                  <span class="buy-count__sign minus-rent" data-change="-1">-</span>
-                  <input type="text" class="input in-num in-num__rent" name="Количество к аренде" value="0">
-                  <span class="buy-count__sign plus-rent" data-change="+1">+</span>
+                  <span class="sign" data-change="-1">-</span>
+                  <input type="text" class="in-num in-num__rent rent-count__complects" name="Количество комлектов (аренда)" value="0">
+                  <span class="sign" data-change="+1">+</span>
                 </div>
                 <div class="buy-sum">
                   <div class="buy-sum__name">сумма:</div>
-                  <div class="rent-sum__count"><p>0</p> <span>р</span></div>
+                  <div class="rent-sum__count summ"><p>0</p> <span>р</span></div>
                 </div>
               </div>
               <div class="step__buy-details">
                 <div class="buy-name">Аренда мантии с покупкой шапки</div>
-                <div class="rent-price__cap">
+                <div class="rent-price__cap price">
                   <p>900</p><span>р/шт</span></div>
                 <div class="buy-count">
-                  <span class="buy-count__sign minus-cap" data-change="-1">-</span>
-                  <input type="text" class="input in-num in-num__cap" name="Количество к аренде с покупкой шапки" value="0">
-                  <span class="buy-count__sign plus-cap" data-change="+1">+</span>
+                  <span class="sign" data-change="-1">-</span>
+                  <input type="text" class="in-num in-num__cap rent-count__complects-cap" name="Количество комлектов (аренда+покупка шапки)" value="0">
+                  <span class="sign" data-change="+1">+</span>
                 </div>
                 <div class="buy-sum">
                   <div class="buy-sum__name">сумма:</div>
-                  <div class="rent-sum__count-cap"><p>0</p> <span>р</span></div>
+                  <div class="rent-sum__count-cap summ"><p>0</p> <span>р</span></div>
                 </div>
               </div>
               <div class="step__rent-summery">
@@ -206,7 +198,7 @@
                   <input type="text" class="in-num__count" value="0">
                 </div>
                 <div class="buy-sum">
-                  <div class="buy-sum__count"><p>0</p> <span>р</span></div>
+                  <div class="buy-sum__count rent-count__all"><p>0</p> <span>р</span></div>
                 </div>
             </div>
           </div>
@@ -222,7 +214,7 @@
               <div>или</div>
               <div class="logo__add">
                 <label for="logo">Вставьте URL с изображением вашего логотипа</label>
-                <input class="logo-input" type="text" id="logo" name="Ссылка на логотип" value="">
+                <input class="text-input logo-input" type="text" id="logo" name="Ссылка на логотип" value="">
               </div>
             </div>
           </div>
@@ -231,30 +223,28 @@
               <div class="step__buy-title">Логотип</div>
               <div class="step-logo__buy-details">
                 <div class="buy-name">Логотип Наклейка</div>
-                <div class="logo-price">
-                  <p>0</p><span>р/шт</span></div>
+                <div class="logo-price price">
+                  <p>50</p><span>р/шт</span></div>
                 <div class="buy-count stick">
-                  <span class="buy-count__sign minus-logo" data-change="-1">-</span>
-                  <input type="text" class="input in-num" name="Логотип Наклейка" value="0">
-                  <span class="buy-count__sign plus-logo" data-change="+1">+</span>
+                  <span class="sign" data-change="-1">-</span>
+                  <input type="text" class="input in-num logo-stikers" name="Логотип Наклейка" value="0">
+                  <span class="sign" data-change="+1">+</span>
                 </div>
               </div>
               <div class="step-logo__buy-details">
                 <div class="buy-name">Логотип Вышивка</div>
-                <div class="logo-price__fancy">
+                <div class="logo-price__fancy price">
                   <p>200</p><span>р/шт</span></div>
                 <div class="buy-count fancy">
-                  <span class="buy-count__sign minus-fancy" data-change="-1">-</span>
-                  <input type="text" class="input in-num" name="Логотип Вышивка" value="0">
-                  <span class="buy-count__sign plus-fancy" data-change="+1">+</span>
-                </div>
-                <div class="buy-sum">
-                  <div class="logo-sum__name">Только для МГУ, РУДН и РЭУ</div>
+                  <span class="sign" data-change="-1">-</span>
+                  <input type="text" class="input in-num logo-embroidery" name="Логотип Вышивка" value="0">
+                  <span class="sign" data-change="+1">+</span>
+                  <span class="logo-sum__name">Только для МГУ, РУДН и РЭУ</span>
                 </div>
               </div>
               <div class="step__logo-summery">
                 <div class="buy-sum">
-                  <div class="buy-sum__count"><p>0</p> <span>р</span></div>
+                  <div class="buy-sum__count summ"><p>0</p> <span>р</span></div>
                 </div>
               </div>
           </div>
@@ -262,7 +252,7 @@
         <div class="step__all-summery">
           <div class="buy-sum">
             <div class="buy-sum__name">Итого:</div>
-            <div class="buy-sum__count"><p>0</p> <span>р</span></div>
+            <div class="buy-sum__count sum-all"><p>0</p> <span>р</span></div>
           </div>
         </div>
         <div class="step__more">Стоимость доставки по Москве в пределах МКАД - 500 руб.<br/>
@@ -275,7 +265,7 @@
 
         <div class="wrap">
           <div class="modal-logo">
-            <div class="modal-loco__container">
+            <div class="modal-logo__container">
               <div class="modal-logo__title">Выберите логотип</div>
               <div class="modal-logo__close"></div>
               <div class="modal-logo__row"></div>
@@ -283,7 +273,7 @@
           </div>
         </div>
 
-        <button class="btn step-2__btn next-btn" type="button">Размеры</button>
+        <button class="btn step-btn next-btn" type="button">Размеры</button>
         </div>
       </div>
 
@@ -306,42 +296,7 @@
                 <div class="size__title">Размер / Покупка</div>
                 <div class="buy-size__details">
                   <div class="buy-size__items">
-                    <div class="buy-size__item">
-                      <div class="buy-size__item-title">S</div>
-                      <div class="buy-size__sm">150 - 164 см</div>
-                      <div class="buy-count__s">
-                        <span class="buy-count__sign buy-coun minus__buy-s" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Покупка - Размер S" value="0">
-                        <span class="buy-count__sign buy-coun plus__buy-s" data-change="+1">+</span>
-                      </div>
-                    </div>
-                    <div class="buy-size__item">
-                      <div class="buy-size__item-title">M</div>
-                      <div class="buy-size__sm">165 - 182 см</div>
-                      <div class="buy-count__s">
-                        <span class="buy-count__sign buy-coun minus__buy-m" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Покупка - Размер M" value="0">
-                        <span class="buy-count__sign buy-coun plus__buy-m" data-change="+1">+</span>
-                      </div>
-                    </div>
-                    <div class="buy-size__item">
-                      <div class="buy-size__item-title">L</div>
-                      <div class="buy-size__sm">183 - 190 см</div>
-                      <div class="buy-count__s">
-                        <span class="buy-count__sign buy-coun minus__buy-l" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Покупка - Размер L" value="0">
-                        <span class="buy-count__sign buy-coun plus__buy-l" data-change="+1">+</span>
-                      </div>
-                    </div>
-                    <div class="buy-size__item">
-                      <div class="buy-size__item-title">XL</div>
-                      <div class="buy-size__sm">191 см и выше</div>
-                      <div class="buy-count__s">
-                        <span class="buy-count__sign buy-coun minus__buy-xl" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Покупка - Размер XL" value="0">
-                        <span class="buy-count__sign buy-coun plus__buy-xl" data-change="+1">+</span>
-                      </div>
-                    </div>
+                 
                 </div>
                 <div class="buy-size__sum">
                   <div class="buy-size__all">
@@ -359,42 +314,7 @@
                 <div class="size__title">Размер / Аренда</div>
                 <div class="rent-size__details">
                   <div class="rent-size__items">
-                    <div class="rent-size__item">
-                      <div class="rent-size__item-title">S</div>
-                      <div class="rent-size__sm">150 - 164 см</div>
-                      <div class="rent-count">
-                        <span class="buy-count__sign rent-coun minus-s" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Аренда - Размер S" value="0">
-                        <span class="buy-count__sign rent-coun plus-s" data-change="+1">+</span>
-                      </div>
-                    </div>
-                    <div class="rent-size__item">
-                      <div class="rent-size__item-title">M</div>
-                      <div class="rent-size__sm">165 - 182 см</div>
-                      <div class="rent-count">
-                        <span class="buy-count__sign rent-coun minus-m" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Аренда - Размер M" value="0">
-                        <span class="buy-count__sign rent-coun plus-m" data-change="+1">+</span>
-                      </div>
-                    </div>
-                    <div class="rent-size__item">
-                      <div class="rent-size__item-title">L</div>
-                      <div class="rent-size__sm">183 - 190 см</div>
-                      <div class="rent-count">
-                        <span class="buy-count__sign rent-coun minus-l" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Аренда - Размер L" value="0">
-                        <span class="buy-count__sign rent-coun plus-l" data-change="+1">+</span>
-                      </div>
-                    </div>
-                    <div class="rent-size__item">
-                      <div class="rent-size__item-title">XL</div>
-                      <div class="rent-size__sm">191 см и выше</div>
-                      <div class="rent-count">
-                        <span class="buy-count__sign rent-coun minus-xl" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Аренда - Размер XL" value="0">
-                        <span class="buy-count__sign rent-coun plus-xl" data-change="+1">+</span>
-                      </div>
-                    </div>
+                  
                   </div>
                   <div class="rent-size__sum">
                     <div class="rent-size__all">
@@ -456,7 +376,7 @@
               <div class="step-3__notification">* При аренде шапочка предоставляется только с кисточкой черного цвета, 
                 но вы можете оставить заявку в комментариях, мы постараемся 
                 предоставить вам шапочку с кисточкой в указанном вами цвете</div>
-              <button class="btn step-2__btn next-btn" type="button">Оформить заказ</button>
+              <button class="btn step-btn next-btn" type="button">Оформить заказ</button>
               </div>
               <div class="step-3__img">
                 <img src='./image/bakalavr.png' alt="">
@@ -466,81 +386,16 @@
 
           <div class="wrap-hood">
             <div class="modal-hood">
-              <div class="modal-loco__container">
+              <div class="modal-logo__container">
                 <div class="modal-logo__close"></div>
                   <div class="modal-color__hood-buy">
                     <div class="modal-block__title">Цвет капюшона (покупка):</div>
                     <div class="modal-block__number">
                       <p>Всего:</p>
-                      <p class="modal-hood__buy-count">0</p>
+                      <p class="modal-hood__buy-count buy-size__count">0</p>
                     </div>
                     <div class="hood-buy__items">
-                      <div class="hood-buy__item">
-                        <div class="hood-buy__info">
-                          <div class="hood-buy__title">Синий</div>
-                          <div class="hood-buy__color-blue"></div>
-                        </div>
-                        <div class="hood-buy__count">
-                          <span class="hood-buy minus__buy-blue" data-change="-1">-</span>
-                          <input type="text" class="in-num" name="Цвет капюшона (покупка) - цвет синий" value="0">
-                          <span class="hood-buy plus__buy-blue" data-change="+1">+</span>
-                        </div>
-                      </div>
-                      <div class="hood-buy__item">
-                        <div class="hood-buy__info">
-                          <div class="hood-buy__title">Красный</div>
-                          <div class="hood-buy__color-red"></div>
-                        </div>
-                        <div class="hood-buy__count">
-                          <span class="hood-buy minus__buy-red" data-change="-1">-</span>
-                          <input type="text" class="in-num" name="Цвет капюшона (покупка) - цвет красный" value="0">
-                          <span class="hood-buy plus__buy-red" data-change="+1">+</span>
-                        </div>
-                      </div>
-                      <div class="hood-buy__item">
-                        <div class="hood-buy__info">
-                          <div class="hood-buy__title">Золотой</div>
-                          <div class="hood-buy__color-gold"></div>
-                        </div>
-                        <div class="hood-buy__count">
-                          <span class="hood-buy minus__buy-gold" data-change="-1">-</span>
-                          <input type="text" class="in-num" name="Цвет капюшона (покупка) - цвет золотой" value="0">
-                          <span class="hood-buy plus__buy-gold" data-change="+1">+</span>
-                        </div>
-                      </div>
-                      <div class="hood-buy__item">
-                        <div class="hood-buy__info">
-                          <div class="hood-buy__title">Серебристый</div>
-                          <div class="hood-buy__color-silver"></div>
-                        </div>
-                        <div class="hood-buy__count">
-                          <span class="hood-buy minus__buy-silver" data-change="-1">-</span>
-                          <input type="text" class="in-num" name="Цвет капюшона (покупка) - цвет серебристиый" value="0">
-                          <span class="hood-buy plus__buy-silver" data-change="+1">+</span>
-                        </div>
-                      </div>
-                      <div class="hood-buy__item">
-                        <div class="hood-buy__info">
-                          <div class="hood-buy__title">Фиолетовый</div>
-                          <div class="hood-buy__color-purple"></div>
-                        </div>
-                        <div class="hood-buy__count">
-                          <span class="hood-buy minus__buy-purple" data-change="-1">-</span>
-                          <input type="text" class="in-num" name="Цвет капюшона (покупка) - цвет фиолетовый" value="0">
-                          <span class="hood-buy plus__buy-purple" data-change="+1">+</span>
-                        </div>
-                      </div>
-                      <div class="hood-buy__item">
-                        <div class="hood-buy__info">
-                          <div class="hood-buy__title">Бирюзовый</div>
-                          <div class="hood-buy__color-light"></div>
-                        </div>
-                        <div class="hood-buy__count">
-                          <span class="hood-buy minus__buy-light" data-change="-1">-</span>
-                          <input type="text" class="in-num" name="Цвет капюшона (покупка) - цвет бирюзовый" value="0">
-                          <span class="hood-buy plus__buy-light" data-change="+1">+</span>
-                        </div>
-                      </div>
+
                     </div>
                   </div>
 
@@ -548,148 +403,29 @@
                     <div class="modal-block__title">Цвет капюшона (аренда):</div>
                     <div class="modal-block__number">
                       <p>Всего:</p>
-                      <p class="modal-hood__rent-count">0</p>
+                      <p class="modal-hood__rent-count rent-size__count">0</p>
                     </div>
-                    <div class="hood-buy__items">
-                      <div class="hood-buy__item">
-                        <div class="hood-buy__info">
-                          <div class="hood-buy__title">Синий</div>
-                          <div class="hood-buy__color-blue"></div>
-                        </div>
-                        <div class="hood-rent__count">
-                          <span class="hood-buy minus__rent-blue" data-change="-1">-</span>
-                          <input type="text" class="in-num" name="Цвет капюшона (аренда) - цвет синий" value="0">
-                          <span class="hood-buy plus__rent-blue" data-change="+1">+</span>
-                        </div>
-                      </div>
-                      <div class="hood-buy__item">
-                        <div class="hood-buy__info">
-                          <div class="hood-buy__title">Красный</div>
-                          <div class="hood-buy__color-red"></div>
-                        </div>
-                        <div class="hood-rent__count">
-                          <span class="hood-buy minus__rent-red" data-change="-1">-</span>
-                          <input type="text" class="in-num" name="Цвет капюшона (аренда) - цвет красный" value="0">
-                          <span class="hood-buy plus__rent-red" data-change="+1">+</span>
-                        </div>
-                      </div>
-                      <div class="hood-buy__item">
-                        <div class="hood-buy__info">
-                          <div class="hood-buy__title">Золотой</div>
-                          <div class="hood-buy__color-gold"></div>
-                        </div>
-                        <div class="hood-rent__count">
-                          <span class="hood-buy minus__rent-gold" data-change="-1">-</span>
-                          <input type="text" class="in-num" name="Цвет капюшона (аренда) - цвет золотой" value="0">
-                          <span class="hood-buy plus__rent-gold" data-change="+1">+</span>
-                        </div>
-                      </div>
-                      <div class="hood-buy__item">
-                        <div class="hood-buy__info">
-                          <div class="hood-buy__title">Серебристый</div>
-                          <div class="hood-buy__color-silver"></div>
-                        </div>
-                        <div class="hood-rent__count">
-                          <span class="hood-buy minus__rent-silver" data-change="-1">-</span>
-                          <input type="text" class="in-num" name="Цвет капюшона (аренда) - цвет серебристый" value="0">
-                          <span class="hood-buy plus__rent-silver" data-change="+1">+</span>
-                        </div>
-                      </div>
-                      <div class="hood-buy__item">
-                        <div class="hood-buy__info">
-                          <div class="hood-buy__title">Фиолетовый</div>
-                          <div class="hood-buy__color-purple"></div>
-                        </div>
-                        <div class="hood-rent__count">
-                          <span class="hood-buy minus__rent-purple" data-change="-1">-</span>
-                          <input type="text" class="in-num" name="Цвет капюшона (аренда) - цвет фиолетовый" value="0">
-                          <span class="hood-buy plus__rent-purple" data-change="+1">+</span>
-                        </div>
-                      </div>
-                      <div class="hood-buy__item">
-                        <div class="hood-buy__info">
-                          <div class="hood-buy__title">Голубой</div>
-                          <div class="hood-buy__color-light"></div>
-                        </div>
-                        <div class="hood-rent__count">
-                          <span class="hood-buy minus__rent-light" data-change="-1">-</span>
-                          <input type="text" class="in-num" name="Цвет капюшона (аренда) - цвет голубой" value="0">
-                          <span class="hood-buy plus__rent-light" data-change="+1">+</span>
-                        </div>
-                      </div>
+                    <div class="hood-rent__items">
+                  
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+          </div>
 
           <div class="wrap-tie">
             <div class="modal-tie">
-              <div class="modal-loco__container">
+              <div class="modal-logo__container">
                 <div class="modal-logo__close"></div>
                 
                 <div class="modal-color__tie-buy">
                   <div class="modal-block__title">Цвет галстука (покупка):</div>
                   <div class="modal-block__number">
                     <p>Всего:</p>
-                    <p class="modal-tie__buy-count">0</p>
+                    <p class="modal-tie__buy-count buy-size__count">0</p>
                   </div>
-                  <div class="hood-buy__items">
-                    <div class="hood-buy__item">
-                      <div class="hood-buy__info">
-                        <div class="hood-buy__title">Синий</div>
-                        <div class="hood-buy__color-blue"></div>
-                      </div>
-                      <div class="tie-buy__count">
-                        <span class="hood-buy minus-tie__buy-blue" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Цвет галстука (покупка) - цвет синий" value="0">
-                        <span class="hood-buy plus-tie__buy-blue" data-change="+1">+</span>
-                      </div>
-                    </div>
-                    <div class="hood-buy__item">
-                      <div class="hood-buy__info">
-                        <div class="hood-buy__title">Красный</div>
-                        <div class="hood-buy__color-red"></div>
-                      </div>
-                      <div class="tie-buy__count">
-                        <span class="hood-buy minus-tie__buy-red" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Цвет галстука (покупка) - цвет красный" value="0">
-                        <span class="hood-buy plus-tie__buy-red" data-change="+1">+</span>
-                      </div>
-                    </div>
-                    <div class="hood-buy__item">
-                      <div class="hood-buy__info">
-                        <div class="hood-buy__title">Золотой</div>
-                        <div class="hood-buy__color-gold"></div>
-                      </div>
-                      <div class="tie-buy__count">
-                        <span class="hood-buy minus-tie__buy-gold" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Цвет галстука (покупка) - цвет золотой" value="0">
-                        <span class="hood-buy plus-tie__buy-gold" data-change="+1">+</span>
-                      </div>
-                    </div>
-                    <div class="hood-buy__item">
-                      <div class="hood-buy__info">
-                        <div class="hood-buy__title">Белый</div>
-                        <div class="hood-buy__color-white"></div>
-                      </div>
-                      <div class="tie-buy__count">
-                        <span class="hood-buy minus-tie__buy-white" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Цвет галстука (покупка) - цвет белый" value="0">
-                        <span class="hood-buy plus-tie__buy-white" data-change="+1">+</span>
-                      </div>
-                    </div>
-                    <div class="hood-buy__item">
-                      <div class="hood-buy__info">
-                        <div class="hood-buy__title">Зеленый</div>
-                        <div class="hood-buy__color-green"></div>
-                      </div>
-                      <div class="tie-buy__count">
-                        <span class="hood-buy minus-tie__buy-green" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Цвет галстука (покупка) - цвет зеленый" value="0">
-                        <span class="hood-buy plus-tie__buy-green" data-change="+1">+</span>
-                      </div>
-                    </div>
+                  <div class="tie-buy__items">
+
                   </div>
                 </div>
 
@@ -697,64 +433,10 @@
                   <div class="modal-block__title">Цвет галстука (аренда):</div>
                   <div class="modal-block__number">
                     <p>Всего:</p>
-                    <p class="modal-tie__rent-count">0</p>
+                    <p class="modal-tie__rent-count rent-size__count">0</p>
                   </div>
-                  <div class="hood-buy__items">
-                    <div class="hood-buy__item">
-                      <div class="hood-buy__info">
-                        <div class="hood-buy__title">Синий</div>
-                        <div class="hood-buy__color-blue"></div>
-                      </div>
-                      <div class="tie-rent__count">
-                        <span class="hood-buy minus-tie__rent-blue" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Цвет галстука (аренда) - цвет синий" value="0">
-                        <span class="hood-buy plus-tie__rent-blue" data-change="+1">+</span>
-                      </div>
-                    </div>
-                    <div class="hood-buy__item">
-                      <div class="hood-buy__info">
-                        <div class="hood-buy__title">Красный</div>
-                        <div class="hood-buy__color-red"></div>
-                      </div>
-                      <div class="tie-rent__count">
-                        <span class="hood-buy minus-tie__rent-red" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Цвет галстука (аренда) - цвет красный" value="0">
-                        <span class="hood-buy plus-tie__rent-red" data-change="+1">+</span>
-                      </div>
-                    </div>
-                    <div class="hood-buy__item">
-                      <div class="hood-buy__info">
-                        <div class="hood-buy__title">Золотой</div>
-                        <div class="hood-buy__color-gold"></div>
-                      </div>
-                      <div class="tie-rent__count">
-                        <span class="hood-buy minus-tie__rent-gold" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Цвет галстука (аренда) - цвет золотой" value="0">
-                        <span class="hood-buy plus-tie__rent-gold" data-change="+1">+</span>
-                      </div>
-                    </div>
-                    <div class="hood-buy__item">
-                      <div class="hood-buy__info">
-                        <div class="hood-buy__title">Белый</div>
-                        <div class="hood-buy__color-white"></div>
-                      </div>
-                      <div class="tie-rent__count">
-                        <span class="hood-buy minus-tie__rent-white" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Цвет галстука (аренда) - цвет белый" value="0">
-                        <span class="hood-buy plus-tie__rent-white" data-change="+1">+</span>
-                      </div>
-                    </div>
-                    <div class="hood-buy__item">
-                      <div class="hood-buy__info">
-                        <div class="hood-buy__title">Зеленый</div>
-                        <div class="hood-buy__color-green"></div>
-                      </div>
-                      <div class="tie-rent__count">
-                        <span class="hood-buy minus-tie__rent-green" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Цвет галстука (аренда) - цвет зеленый" value="0">
-                        <span class="hood-buy plus-tie__rent-green" data-change="+1">+</span>
-                      </div>
-                    </div>
+                  <div class="tie-rent__items">
+                  
                   </div>
                 </div>
 
@@ -764,92 +446,16 @@
 
           <div class="wrap-brush">
             <div class="modal-brush">
-              <div class="modal-loco__container">
+              <div class="modal-logo__container">
                 <div class="modal-logo__close"></div>
                 <div class="modal-color__brush-buy">
                   <div class="modal-block__title">Цвет кисточки (покупка):</div>
                   <div class="modal-block__number">
                     <p>Всего: </p>
-                    <p class="modal-brush__buy-count">0</p>
+                    <p class="modal-brush__buy-count buy-size__count">0</p>
                   </div>
-                  <div class="hood-buy__items">
-                    <div class="hood-buy__item">
-                      <div class="hood-buy__info">
-                        <div class="hood-buy__title">Синий</div>
-                        <div class="hood-buy__color-blue"></div>
-                      </div>
-                      <div class="brush-buy__count">
-                        <span class="hood-buy minus-brush__buy-blue" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Цвет кисточки (покупка) - цвет синий" value="0">
-                        <span class="hood-buy plus-brush__buy-blue" data-change="+1">+</span>
-                      </div>
-                    </div>
-                    <div class="hood-buy__item">
-                      <div class="hood-buy__info">
-                        <div class="hood-buy__title">Красный</div>
-                        <div class="hood-buy__color-red"></div>
-                      </div>
-                      <div class="brush-buy__count">
-                        <span class="hood-buy minus-brush__buy-red" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Цвет кисточки (покупка) - цвет красный" value="1">
-                        <span class="hood-buy plus-brush__buy-red" data-change="+1">+</span>
-                      </div>
-                    </div>
-                    <div class="hood-buy__item">
-                      <div class="hood-buy__info">
-                        <div class="hood-buy__title">Золотой</div>
-                        <div class="hood-buy__color-gold"></div>
-                      </div>
-                      <div class="brush-buy__count">
-                        <span class="hood-buy minus-brush__buy-gold" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Цвет кисточки (покупка) - цвет золотой" value="0">
-                        <span class="hood-buy plus-brush__buy-gold" data-change="+1">+</span>
-                      </div>
-                    </div>
-                    <div class="hood-buy__item">
-                      <div class="hood-buy__info">
-                        <div class="hood-buy__title">Серебристый</div>
-                        <div class="hood-buy__color-silver"></div>
-                      </div>
-                      <div class="brush-buy__count">
-                        <span class="hood-buy minus-brush__buy-silver" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Цвет кисточки (покупка) - цвет серебристый" value="0">
-                        <span class="hood-buy plus-brush__buy-silver" data-change="+1">+</span>
-                      </div>
-                    </div>
-                    <div class="hood-buy__item">
-                      <div class="hood-buy__info">
-                        <div class="hood-buy__title">Фиолетовый</div>
-                        <div class="hood-buy__color-purple"></div>
-                      </div>
-                      <div class="brush-buy__count">
-                        <span class="hood-buy minus-brush__buy-purple" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Цвет кисточки (покупка) - цвет фиолетовый" value="0">
-                        <span class="hood-buy plus-brush__buy-purple" data-change="+1">+</span>
-                      </div>
-                    </div>
-                    <div class="hood-buy__item">
-                      <div class="hood-buy__info">
-                        <div class="hood-buy__title">Флаг РФ</div>
-                        <div class="hood-buy__color-rph"></div>
-                      </div>
-                      <div class="brush-buy__count">
-                        <span class="hood-buy minus-brush__buy-light" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Цвет кисточки (покупка) - цвет флаг рф" value="0">
-                        <span class="hood-buy plus-brush__buy-light" data-change="+1">+</span>
-                      </div>
-                    </div>
-                    <div class="hood-buy__item">
-                      <div class="hood-buy__info">
-                        <div class="hood-buy__title">Черный</div>
-                        <div class="hood-buy__color-black"></div>
-                      </div>
-                      <div class="brush-buy__count">
-                        <span class="hood-buy minus-brush__buy-black" data-change="-1">-</span>
-                        <input type="text" class="in-num" name="Цвет кисточки (покупка) - цвет черный" value="0">
-                        <span class="hood-buy plus-brush__buy-black" data-change="+1">+</span>
-                      </div>
-                    </div>
+                  <div class="brush-buy__items">
+                 
                   </div>
                 </div>
               </div>
@@ -873,47 +479,47 @@
               <div class="step-4__block-item">
                 <div class="step-4__row">
                   <label for="">Название учебного заведения и факультет</label>
-                  <input class="step-4__uni" type="text" name="Название учебного заведения и факультет" id="" placeholder="РЭУ Плеханова" value="РЭУ Плеханова" readonly>
+                  <input class="text-input step-4__uni field"  name="Название учебного заведения и факультет" type="text">
                 </div>
                 <div class="step-4__row">
                   <label for="">Группа</label>
-                  <input class="text-input step-4__group" type="text" name="Группа" id="" value="">
+                  <input class="text-input step-4__group" name="Группа" type="text" value="">
                 </div>
               </div>
               <div class="step-4__block-item">
                 <div class="step-4__row">
                   <label for="">Имя</label>
-                  <input class="text-input" type="text" name="Имя" id="" value="" required>
+                  <input class="text-input field" name="Имя" type="text" value="">
                 </div>
                 <div class="step-4__row">
                   <label for="">Whatsapp</label>
-                  <input class="phone" type="tel" maxlength="18" name="Whatsapp" data-tel-input id="" placeholder="+7 (111) 111-11-11" value="" required>
+                  <input class="phone field" type="tel" maxlength="18" data-tel-input placeholder="+7 (111) 111-11-11" value="">
                 </div>
               </div>
               <div class="step-4__block-item">
                 <div class="step-4__row">
                   <label for="">Адрес доставки</label>
-                  <input class="text-input step-4__delivery" type="text" name="Адрес доставки" id="" value="" required>
+                  <input class="text-input step-4__delivery field" name="Адрес доставки" type="text" value="">
                 </div>
               </div>
               <div class="step-4__block-item samovyvoz">
-                <input class="step-samovyvoz" type="checkbox" name="" id="samovyvoz">
+                <input class="step-samovyvoz" type="checkbox" id="samovyvoz">
                 <label class="label-s" for="samovyvoz"></label>
                 <span class="span-s">Самовывоз</span>
               </div>
               <div class="step-4__block-item">
                 <div class="step-4__row">
                   <label for="">Дата доставки</label>
-                  <input class="step-4__date" type="date" name="Дата доставки" id="" placeholder="01.01.2023" value="" required>
+                  <input class="step-4__date field" type="date" value="">
                 </div>
                 <div class="step-4__row">
                   <label for="">Время доставки</label>
-                  <input class="text-input" type="time" name="Время доставки" id="" placeholder="14:00" value="" required>
+                  <input class="text-input field" name="Время доставки" type="time" value="">
                 </div>
               </div>
               <div class="step-4__block-item add-address">
                 <label for="address" class="switch">
-                  <input class="step-4__add-address" type="checkbox" id="address" onclick="validate()">
+                  <input class="step-4__add-address" type="checkbox" id="address">
                   <span class="slider round"></span>
                 </label>
                 <span>Адрес возврата не совпадает с адресом доставки</span>
@@ -921,17 +527,17 @@
               <div class="step-4__block-item return">
                 <div class="step-4__row">
                   <label for="">Адрес возврата</label>
-                  <input class="text-input step-4__return" type="text" name="Адрес возврата" id="" value="">
+                  <input class="text-input step-4__return" name="Адрес возврата" type="text" value="">
                 </div>
               </div>
               <div class="step-4__block-item">
                 <div class="step-4__row">
                   <label for="">Комментарий</label>
-                  <textarea class="text-input" name="Комментарий" id="" placeholder="Оставьте Ваш номер телефона если он не совпадает с номером whatsapp" ></textarea>
+                  <textarea class="text-input" name="Комментарий" placeholder="Оставьте Ваш номер телефона если он не совпадает с номером whatsapp" ></textarea>
                 </div>
               </div>
               <div class="step-4__block-item politic">
-                <input class="step-4__politics" type="checkbox" name="" id="politics" required>
+                <input class="step-4__politics" type="checkbox" id="politics" required>
                 <label for="politics">Согласен с <span><a href="">политикой обработки персональных данных</a></span></label>
               </div>
             </div>
@@ -942,38 +548,7 @@
                 <p>Кол-во</p>
                 <p>Итого</p>
               </div>
-              <div class="step-4__orders">
-                <div class="step-4__order order-first">
-                  <div class="order-name">Комплект Бакалавра</div>  
-                  <div class="order-serive">покупка</div>  
-                  <div class="order-count"><p>0</p> <span>шт</span></div>  
-                  <div class="order-price"><p>0</p><span>р</span></div>  
-                </div>
-                <div class="step-4__order order-second">
-                  <div class="order-name">Комплект Бакалавра</div>  
-                  <div class="order-serive">аренда</div>  
-                  <div class="order-count"><p>0</p> <span>шт</span></div>  
-                  <div class="order-price"><p>0</p><span>р</span></div>  
-                </div>
-                <div class="step-4__order order-third">
-                  <div class="order-name">Комплект Бакалавра</div>  
-                  <div class="order-serive">аренда <span>+ покупка шапки</span></div>  
-                  <div class="order-count"><p>0</p> <span>шт</span></div>  
-                  <div class="order-price"><p>0</p><span>р</span></div>  
-                </div>
-                <div class="step-4__order order-forth">
-                  <div class="order-name">Логотип Наклейка</div>  
-                  <div class="order-serive"></div>  
-                  <div class="order-count"><p>0</p> <span>шт</span></div>  
-                  <div class="order-price"><p>0</p><span>р</span></div>  
-                </div>
-                <div class="step-4__order order-fifth">
-                  <div class="order-name">Логотип Вышивка</div>  
-                  <div class="order-serive"></div>  
-                  <div class="order-count"><p>0</p> <span>шт</span></div>  
-                  <div class="order-price"><p>0</p><span>р</span></div>  
-                </div>
-              </div>
+              <div class="step-4__orders"> </div>
               <div class="step-4__sum">
                 <div class="sum-text">Итого к оплате</div>
                 <div class="sum-all"><p>0</p><span>р</span></div>
@@ -985,12 +560,12 @@
             </div>
           
           </div>
-          <button class="btn step-2__btn form__submit" type="submit">Заказать</button>
+          <button class="btn step-btn form__submit" type="submit">Заказать</button>
         </div>
       
         <div class="wrap-modal">
           <div class="modal-close">
-            <div class="modal-loco__container">
+            <div class="modal-logo__container">
               <div class="modal-close__title">Ваш заказ принят!</div>
               <div class="modal-close__text"><a href="https://www.mantiya.su/">Вернуться на главную</a></div>
               <button class="modal-close__btn btn"><a href="#">Сделать новый заказ</a></button>
@@ -1002,7 +577,7 @@
     </div>
   </div>
   
-  <script src="./js/script.js"></script>
-  <script src="./js/phoneinput.js"></script>
+  <script src="./js/script.js"  type="module"></script>
+  <script src="./js/module/phoneinput.js"></script>
 </body>
 </html>
